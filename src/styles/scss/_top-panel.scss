@@ -1,0 +1,200 @@
+.top-panel {
+
+	h1 {
+		font-family: $font-light;
+		font-size: 2em;
+		margin: 0 auto 4px;
+		color: $blueThin;
+		width: 768px;
+		position: relative;
+
+		@include mobile {
+  		line-height: 24px;
+  		padding: 0px 0px 5px;
+  		width: 280px;
+		}
+	}
+
+	.name {
+		text-transform: uppercase;
+		opacity: 0;
+		visibility: hidden;
+		@include prefixed(transition, all 0.25s ease-out 2.25s);
+		margin-right: 6px;
+		position: relative;
+		@include hacks();
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		&.remove-delay {
+			@include prefixed(transition, 0s all ease-out 0s);
+		}
+
+		@include mobile {
+			@include prefixed(transition, all 0.25s ease-out 2.25s);
+
+			&.show {
+				left: 10px;
+			}
+		}
+	}
+
+	.title {
+		text-transform: uppercase;
+		font: 0.75em $font-extralight;
+		margin: 0;
+		opacity: 0;
+		visibility: hidden;
+		@include prefixed(transition, all 0.35s ease-out 2.4s);
+		@include hacks();
+		right: -30px;
+		top: 4px;
+		position: relative;
+		color: $blueThin;
+		font-weight: bold;
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+			right: 0px;
+		}
+
+		&.remove-delay {
+			@include prefixed(transition, 0s all ease-out 0s);
+		}
+
+		@include mobile {
+			@include prefixed(transition, all 0.35s ease-out 2.4s);
+		}
+	}
+
+	.tagline {
+		font: 1em $font-light;
+		font-weight: bold;
+		margin: 0em auto;
+		text-transform: uppercase;
+		opacity: 0;
+		visibility: hidden;
+		@include prefixed(transition, all 0.35s linear 2.6s);
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		left: -30px;
+		@include hacks();
+		
+
+		&.show {
+			opacity: 1;
+			visibility: visible;
+			left: 0;
+		}
+
+		&.remove-delay {
+			@include prefixed(transition, 0s all ease-out 0s);
+		}
+
+		@include mobile {
+			margin: 0.5em auto;
+		}
+	}
+
+	.skills {
+		font-family: $font-light;
+		text-transform: uppercase;
+		padding: 60px 0 0;
+		margin: 0 auto;
+		display: block;
+		opacity: 0;
+		@include prefixed(transition, all 0.25s linear 0s);
+		position: relative;
+		overflow: hidden;
+		@include hacks();
+		width: 100%;
+
+		@include mobile {
+			padding: 40px 0 0;
+		}
+
+		&.remove-delay {
+			@include prefixed(transition, 0s all ease-out 0s);
+			
+			.to-reveal {
+				@include prefixed(transition, 0s all ease-out 0s);
+			}
+		}
+
+		ul {
+			width: 100%;
+			margin: 0 auto;
+			padding: 0;
+
+			@include mobile {
+				width: 296px;
+			}
+
+			@include tablet {
+				width: 600px;
+			}
+		}
+
+		li {
+			list-style-type: none;
+			display: inline-block;
+		}
+		
+
+		.to-reveal {
+			transform: translateY(35px);
+			@include prefixed(transition, all 0.15s ease-out);
+			//@include hacks();
+			position: relative;
+			opacity: 0;
+			color: #fff;
+
+			&.pipe {
+				transform: translateY(35px);
+				//transform: translateY(0);
+			}
+
+			&.show {
+				transform: translateY(0px);
+				opacity: 1;
+				display: inline-block;
+
+				&.pipe {
+					top: -1px;
+					transform: translateY(0px);
+				}
+			}
+
+			&.hide-tablet {
+
+				@include tablet {
+					display: none;
+				}
+			}
+
+			&.hide {
+				display: none;
+			}
+		}
+		
+
+		&.show {
+			opacity: 1;
+		}
+	}
+}
+
+@include keyframes(showHide) {
+  0% {
+  	width:100%
+  }
+
+  100% {
+  	width:0%;
+  }
+}

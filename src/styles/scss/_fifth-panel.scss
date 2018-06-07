@@ -1,0 +1,257 @@
+.fifth-panel {
+
+	h2 {
+
+		.logo {
+			left: 0;
+		}
+	}
+
+  h3 {
+  	color: #fff;
+  	font-size: 1.25rem;
+  	font-family: $font-light;
+  	margin-top: 10px;
+
+  	@include mobile {
+  		margin-top: 0;
+  	}
+  }
+
+  .block {
+  	display: inline-block;
+  	@include box-sizing(border-box);
+  	width: 100%;
+  	margin-bottom: 10px;
+
+  	@include mobile {
+  		width: 100%;
+		}
+		
+		.contact {
+			width: 100%;
+			display: block;
+ 
+			ul {
+				padding: 0;
+				display: inline-block;
+				width: 100%;
+				margin-top: 0px;
+			 	margin-bottom: 10px;
+			}
+ 
+			li {
+				width: 100%;
+			 	padding: 0 0px;
+				@include box-sizing(border-box);
+				display: inline-block;
+				text-align: left;
+				list-style-type: none;
+				color: $blueThin;
+				text-transform: uppercase;
+				font-weight: bold;
+	
+				@include mobile {
+					margin: 0 0 5px;
+				}
+	
+				a {
+					color: $blueThin;
+				}
+					.definition {
+					color: #fff;
+				}
+			}
+		}
+
+		.social {
+			ul {
+				padding: 0;
+				display: inline-block;
+				width: 100%;
+				margin-top: 0px;
+			}
+
+			li {
+				padding: 0 32px 0 0;
+				max-width: 84px;
+				width: 25%;
+				@include box-sizing(border-box);
+				display: inline-block;
+				text-align: left;
+				list-style-type: none;
+				color: $blueThin;
+				text-transform: uppercase;
+				font-weight: bold;
+
+				@include mobile {
+					padding: 0 32px 0 0;
+					max-width: 72px;
+				}
+
+				a {
+					cursor: pointer;
+					position: relative;
+					display: block;
+
+					.so-info-wrap {
+						position: absolute;
+						z-index: 10;
+						bottom: 0;
+						width: 50px;
+						right: -15px;
+
+						&:hover {
+							.so-tooltip {
+								transform: scale(1) translateY(0);
+							}
+						}
+
+						@include mobile {
+							bottom: -5px;
+							right: -22px;
+						}
+
+						.so-tooltip {
+							width: 90px;
+							height: 90px;
+							background: #ff7c00;
+							color: #fff;
+							padding: 0.5rem;
+							border-radius: 12px;
+							transform: scale(0) translateY(50px);
+							transition: all 0.15s ease-out;
+							font-size: 0.75rem;
+							transform-origin: bottom left;
+
+							p {
+								font-weight: 900;
+							}
+
+							hr {
+								border-style: solid;
+							}
+
+							ul {
+								margin-left: 12px;
+							}
+
+							li {
+								list-style-type: disc;
+								font-weight: 900;
+								color: #fff;
+								width: 100%;
+								padding: 0;
+								display: inline-block;
+							}
+
+							&:after {
+								content: "";
+								width: 0; 
+								height: 0; 
+								border-left: 8px solid transparent;
+								border-right: 8px solid transparent;
+								border-top: 6px solid #ff7c00;
+								display: block;
+								margin: 0 auto;
+								position: absolute;
+								left: 20px;
+								bottom: -6px;
+							}
+						}
+					}
+
+					.so-info {
+						position: relative;
+						background: #ff7c00;
+						width: 21px;
+						height: 17px;
+						color: #fff;
+						font-size: 0.6875rem;
+						display: inline-block;
+						padding: 0px 0px 0 0px;
+						box-sizing: border-box;
+						left: 0px;
+						font-weight: bold;
+						text-align: center;
+						line-height: 16px;
+
+						&.rep {
+							border-radius: 3px 0 0 3px;
+							border-right: 1px solid #fff;
+						}
+
+						&.badges {
+							border-radius: 0 3px 3px 0;
+							left: 0px;
+						}
+					}
+				}
+			}
+		}
+  }
+
+  .special-note {
+  	display: inline-block;
+    padding-bottom: 24px;
+
+  	p {
+    	color: $blueThin;
+    	font-weight: bold;
+    	margin: 0;
+      text-transform: uppercase;
+
+    	@include mobile {
+    		font-size: 1rem;
+    		line-height: 24px;
+    	}
+  	}
+  }
+	
+ 	.info-block {
+ 		display: inline-block;
+ 		width: 100%;
+ 		@include box-sizing(border-box);
+
+ 		p {
+   		text-align: left;
+
+   		@include mobile {
+   			font-size: 0.8125rem;
+   		}
+		}
+ 	}
+
+  p {
+  	padding: 0px 0px 0px;
+  	font: 1em $font-light;
+  	width: 100%;
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+    @include box-sizing(border-box);
+
+  	@include mobile {
+  		padding: 0px 0px;
+  		width: 100%;
+  	}  	
+
+  	&.clickable {
+  		color: #fff;
+  		padding: 0 0 10px;
+  	}
+  }
+
+  .align-right {
+		text-align: left;
+    padding: 0px 0px 10px;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+
+    p {
+    	text-align: left;
+    }
+	}
+
+}

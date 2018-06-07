@@ -1,0 +1,145 @@
+.fourth-panel {
+  
+	h2 {
+
+		.logo {
+			left: 0;
+		}
+	}
+
+	.inner-wrap {
+
+		ul {
+			margin: 0px auto 0;
+			padding: 0;
+			display: inline-block;
+			width: 100%;
+
+			@include mobile {
+				margin: 0px auto 0;
+			}
+
+			&:last-child {
+
+				li {
+					&:first-child {
+						border-top-left-radius: 0px;
+						border-bottom-left-radius: 10px;
+
+						@include mobile {
+							border-radius: 0;
+						}
+					}
+
+					&:last-child {
+						border-top-right-radius: 0px;
+						border-bottom-right-radius: 10px;
+
+						@include mobile {
+							border-radius: 0;
+						}
+					}
+				}
+			}
+
+			li {
+				@include box-sizing(border-box);
+				display: inline-block;
+				opacity: 1;
+				transition: 0.1s all ease-out 0s;
+				width: 100%;
+			    margin: 0 0px 8px 0;
+			    color: #fff;
+			    padding: 0 0px 0px;
+				vertical-align: middle;
+				position: relative;
+				overflow: hidden;
+				-webkit-tap-highlight-color: transparent;
+				@include hacks();
+				text-transform: uppercase;
+				text-align: left;
+
+				@include mobile {
+				}
+
+				.code-link {
+					cursor: pointer;
+					color: $blueThin;				
+
+					.bio-icon-inner {
+					    fill: #fff;
+					}
+
+					.bio-icon-circle {
+					    fill: #51d4ff;
+					}
+				}			
+
+				.bio-icon {
+					display: block;
+				    width: 32px;
+				    height: 32px;
+				    position: relative;
+				    top: 0px;
+				    float: left;
+
+				    @include mobile {
+				    	width: 24px;
+				    	height: 24px;
+				    }
+
+				    .bio-icon-inner {
+							fill: #fff;
+						}
+
+				    .bio-icon-circle {
+							fill: $highlightColor;
+						}
+
+						&.left {
+							margin-right: 10px;
+						}
+
+						&.right {
+							margin-left: 6px;
+						}
+
+						.bio-icon-svg {
+							fill: #fff;
+						}
+					}
+
+				&.show-li {
+					opacity: 1;
+					top: 0;
+					transition: 0.41s all ease-out 0s;
+				}
+
+				@include mobile {
+					transition: all 0s ease-out 0s;
+				}
+
+				.reveal {
+					color: $blueThin;
+					font-weight: bold;
+				}
+
+				&:first-child {
+					border-top-left-radius: 10px;
+
+					@include mobile {
+						border-radius: 0;
+					}
+				}
+
+				&:last-child {
+					border-top-right-radius: 10px;
+
+					@include mobile {
+						border-radius: 0;
+					}
+				}
+			}
+		}
+	}
+}
