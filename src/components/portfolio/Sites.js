@@ -43,9 +43,9 @@ class Sites extends Component {
     render() {
         
         const sites = this.props.sites.map((site, index) => 
-                <li key={index}>
-                    <a className="proj-link" href={site.modal ? '#' : site.link} target={site.modal ? '_self' : '_blank'} onClick={site.modal ? e => this.getModal(site.name) : null}>{site.name}</a>
-                </li>
+            <li key={index}>
+                <a className="proj-link" href={site.modal ? '#' : site.link} target={site.modal ? '_self' : '_blank'} onClick={site.modal ? e => this.getModal(site.name) : null}>{site.name}</a>
+            </li>
         )  
 
         return (
