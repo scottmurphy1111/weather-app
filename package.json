@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "pluralsight-project-build-an-album-store-product-page-with-angular",
   "version": "0.0.2",
   "license": "MIT",
@@ -70,5 +71,34 @@
     "ts-node": "4.1.0",
     "tslint": "5.9.1",
     "typescript": "2.5.3"
+=======
+  "homepage": "https://scottmurphy1111.github.io/sm-port-react/",
+  "name": "sm-port-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "NODE_PATH=src react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "sass": "sass --watch src/styles/scss:src/styles/css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0",
+    "gulp": "^3.9.1",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.9.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^3.0.1"
+>>>>>>> remove gulp pages, add gh pages
   }
 }
