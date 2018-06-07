@@ -57,8 +57,3 @@ class Sites extends Component {
 }
 
 export default Sites
-
-//                     <li ng-repeat="site in project.sites">
-            //                     <a ng-if="project.companyName === 'Celerity IT'" class="proj-link" sm-modal ng-click="portfolio.chosenTemplate='app/components/portfolio/modal-templates/personal-loans.html'" href="#">{{site.name}}</a>
-            //                     <a ng-if="project.companyName !== 'Celerity IT'" class="proj-link" ng-href="{{site.link}}" target="_blank">{{site.name}}</a>
-            //                     </li>
