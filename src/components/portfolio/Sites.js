@@ -37,7 +37,6 @@ class Sites extends Component {
             xhr.setRequestHeader('Content-type', 'text/html');
             xhr.send();
         }
-        
     }
 
     render() {
