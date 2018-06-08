@@ -471,10 +471,7 @@ span.logo {
 	}
 
 	&.remove-delay {
-
-		span.text {
-			@include prefixed(transition, 0s all ease-out 0s !important);
-		}
+		@include prefixed(transition, 0s all ease-out 0s !important);
 	}
 
 	&:hover {

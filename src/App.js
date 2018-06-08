@@ -58,7 +58,7 @@ class App extends Component {
 					</div>
 					<div className="bg-image load-image"></div>
 					<p className={"enter " + (this.state.loadMainContent ? 'load-icon' : '') + ' ' + (this.state.removeDelays ? 'remove-delay' : '')}>
-						<span className="text"><span className="mobile-only">SWIPE&nbsp;</span><span className="desktop-only">SCROLL&nbsp;</span>UP / DOWN</span><br />
+						<span className="text" ><span className="mobile-only">SWIPE&nbsp;</span><span className="desktop-only">SCROLL&nbsp;</span>UP / DOWN</span><br />
 						<span className="icon">
 						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 							viewBox="0 0 69 50">

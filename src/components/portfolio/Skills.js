@@ -41,7 +41,7 @@ class Skills extends Component {
         const skills = this.props.content.skills.map((skill, index) => 
             <li key={index}>
                 <span className="to-reveal ">{skill}</span>
-                <span className={"to-reveal pipe " + (index === 2 ? 'desktop-only': '') + ' ' + (index === 4 ? 'desktop-only': '') + ' ' + (index === 3 ? 'hide-tablet': '') + ' ' + (index === 6 ? 'hide': '')}>|</span> 
+                <span className={"to-reveal pipe " + (index === 1 ? 'desktop-only': '') + ' ' + (index === 4 ? 'desktop-only': '') + ' ' + (index === 3 ? 'hide-tablet': '') + ' ' + (index === 6 ? 'hide': '')}>|</span> 
             </li>
         );
         return (

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import TopPanel from './TopPanel';
 import SecondPanel from './SecondPanel';
+import ThirdPanel from './ThirdPanel';
+import FourthPanel from './FourthPanel';
+import FifthPanel from './FifthPanel';
 
 class Portfolio extends React.Component {
     constructor(props) {
@@ -14,7 +17,10 @@ class Portfolio extends React.Component {
         return (
             <div>
                 <TopPanel content={content} loadMainContent={this.props.loadMainContent} removeDelays={this.props.removeDelays} />
-                <SecondPanel content={content} loadMainContent={this.props.loadMainContent} removeDelays={this.props.removeDelays} />
+                <SecondPanel content={content} />
+                <ThirdPanel content={content} />
+                <FourthPanel content={content} />
+                <FifthPanel content={content} />
             </div>
             
             // <div>
