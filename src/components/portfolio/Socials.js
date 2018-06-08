@@ -11,10 +11,9 @@ export class Socials extends Component {
     };
     
     getSoData = () => {
-        const url = 'http://api.stackexchange.com/2.2/users/5711949/?site=stackoverflow';
+        const url = 'https://api.stackexchange.com/2.2/users/5711949/?site=stackoverflow';
         axios.get(url)
             .then(resp => {
-                console.log(resp)
                 var allItems = resp.data.items[0],
                 badgeCounts = allItems.badge_counts;
                 this.setState({ 
