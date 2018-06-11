@@ -4,7 +4,7 @@
   "subHeadingA": "Front-End & User Interface",
   "subHeadingB": "Web Development",
   "skills": [
-    "react/angular",
+    "react/angularjs",
     "javascript",
     "sass/less",
     "html",
@@ -115,7 +115,7 @@
     {
       "heading": "Experience",
       "icon": "assets/images/portfolio/exp.svg",
-      "description": "I have been coding for <span class=\"experience-time\">7</span> years+"
+      "description": "I have been coding for 8 years+"
     },
     {
       "heading": "Work Style",
@@ -130,12 +130,12 @@
     {
       "heading": "Favorite Languages",
       "icon": "assets/images/portfolio/langs.svg",
-      "description": "I love Sass and AngularJs"
+      "description": "I love Sass, React and AngularJs"
     },
     {
       "heading": "Hobbies",
       "icon": "assets/images/portfolio/golf.svg",
-      "description": "Bass/Guitar, Golf"
+      "description": "Golf, Music"
     }
   ],
   "contact": [

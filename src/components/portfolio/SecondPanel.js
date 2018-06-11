@@ -4,7 +4,11 @@ import Projects from './Projects';
 class SecondPanel extends Component {
     render() {
         return (
-            <section className="second-panel sliding-panel fade-out">
+            <section className="second-panel sliding-panel fade-out" 
+                onWheel={this.props.onWheel}
+                onTouchStart={this.props.onTouchStart}
+                onTouchMove={this.props.onTouchMove}
+                onTouchEnd={this.props.onTouchEnd}>
                 
                  <div className="panel-wrapper">
                     <div className="inner-wrap projects-list">

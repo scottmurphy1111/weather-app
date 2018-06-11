@@ -3,11 +3,6 @@ import data from './data/data.json';
 import VertNav from './components/portfolio/VertNav';
 import Portfolio from './components/portfolio/Portfolio';
 
-// import { connect } from 'react-redux';
-// import { createSelector } from 'reselect';
-// import { loadMainContent, removeDelays, apiRequest } from './actions/initActions';
-
-
 class App extends Component {
 	constructor(props) {
 		super(props)
@@ -90,24 +85,5 @@ class App extends Component {
 		);
 	}
 }
-
-// const initSelector = createSelector(
-// 	state => state.loaded,
-// 	loaded => loaded
-// )
-
-// const mapStateToProps = createSelector(
-// 	initSelector,
-// 	(loaded) => ({
-// 		loaded
-// 	})
-	
-// );
-
-// const mapActionsToProps = {
-// 	onLoadMainContent: loadMainContent,
-// 	onRemoveDelays: removeDelays,
-// 	onApiRequest: apiRequest
-// }
-
+  
 export default App;

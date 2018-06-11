@@ -3,7 +3,7 @@ import Socials from './Socials';
 
 export class FifthPanel extends Component {
     loadContact() {
-        var phone = '336-602-3121',
+        let phone = '336-602-3121',
         phoneDiv = document.querySelector('.insert-phone'),
         user = 'scottmurphy1111',
         domain = 'gmail.com',
@@ -19,7 +19,11 @@ export class FifthPanel extends Component {
 
     render() {
         return (
-            <section className="fifth-panel sliding-panel fade-out">
+            <section className="fifth-panel sliding-panel fade-out" 
+                onWheel={this.props.onWheel}
+                onTouchStart={this.props.onTouchStart}
+                onTouchMove={this.props.onTouchMove}
+                onTouchEnd={this.props.onTouchEnd}>
                 <div className="panel-wrapper">
                     <div className="inner-wrap">
                     <div className="special-note">

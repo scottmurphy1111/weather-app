@@ -1,49 +1,16 @@
-import $ from 'jquery';
+export const SET_IS_WHEEL = 'init:SET_IS_WHEEL';
+export const SET_MOVING_PANEL = 'init:SET_MOVING_PANEL';
 
-export const LOAD_MAIN_CONTENT = 'loaded:loadMainContent';
-export const REMOVE_DELAYS = 'loaded:removeDelays';
-export const SHOW_ERROR = 'loaded:showError'
-
-export function loadMainContent(isLoaded) {
+export function setIsWheel(isWheel) {
     return {
-        type: LOAD_MAIN_CONTENT,
-        payload: {
-            loaded: isLoaded
-        }
+        type: SET_IS_WHEEL,
+        isWheel
     }
 }
 
-export function removeDelays(isLoaded) {
+export function setMovingPanel(movingPanel) {
     return {
-        type: REMOVE_DELAYS,
-        payload: {
-            loaded: isLoaded
-        }
-    }
-}
-
-export function showError() {
-    return {
-        type: SHOW_ERROR,
-        payload: {
-            loaded: 'ERROR!!!'
-        }
-    }
-}
-
-export function apiRequest() {
-    return dispatch => {
-        $.ajax({
-            url: '../data/data.json',
-            success() {
-                console.log('success');
-                
-            },
-            error() {
-                console.log('error');
-
-                dispatch(showError());
-            }
-        });
+        type: SET_MOVING_PANEL,
+        movingPanel
     }
 }

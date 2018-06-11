@@ -4,30 +4,33 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './styles/css/index.css';
 
-// import thunk from 'redux-thunk';
-// import { applyMiddleware, compose, combineReducers, createStore } from "redux";
-// import { Provider } from "react-redux";
-// import initReducer from './reducers/initReducer';
+import { combineReducers, createStore, compose } from "redux";
+import { Provider } from "react-redux";
+import initReducer from './reducers/initReducer';
 
+const allReducers = combineReducers({
+    init: initReducer
+});
 
-// const allReducers = combineReducers({
-//     loaded: initReducer
-// });
+const allStoreEnhancers = compose(
+    window.devToolsExtension && window.devToolsExtension()
+)
 
-// const allStoreEnhancers = compose(
-//     applyMiddleware(thunk),
-//     window.devToolsExtension && window.devToolsExtension()
-// )
-
-// const store = createStore(
-//     allReducers, {
-//         loaded: false
-//     },
-//     allStoreEnhancers
-// );
+const store = createStore(
+    allReducers,
+    {
+        init: {
+            isWheel: false,
+            movingPanel: false
+        }
+    },
+    allStoreEnhancers
+);
 
 ReactDOM.render(
-    <App />, 
+    <Provider store={store}>
+        <App />
+    </Provider>, 
     document.getElementById('root')
 );
 

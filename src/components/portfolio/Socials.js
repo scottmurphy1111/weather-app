@@ -14,7 +14,7 @@ export class Socials extends Component {
         const url = 'https://api.stackexchange.com/2.2/users/5711949/?site=stackoverflow';
         axios.get(url)
             .then(resp => {
-                var allItems = resp.data.items[0],
+                let allItems = resp.data.items[0],
                 badgeCounts = allItems.badge_counts;
                 this.setState({ 
                     totalSoRep: allItems.reputation,
@@ -53,7 +53,7 @@ export class Socials extends Component {
                         : null
                         )}
                     </div>
-                    <img src={social.icon} />
+                    <img src={social.icon} alt={social.title} />
                 </a>
             </li>
         )

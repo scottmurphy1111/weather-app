@@ -2,23 +2,24 @@ import React, { Component } from 'react';
 
 class Sites extends Component {
     getModal = modal => {
+        let link = '';
         document.querySelector('.modal-overlay').classList.add('show');
         setTimeout(() => {
             document.querySelector('.modal-window').classList.add('show');
         }, 200);
         
         if(modal === 'Personal Loans') {
-            var link = 'assets/modal-templates/personal-loans.html';
+            link = 'assets/modal-templates/personal-loans.html';
             appendModal(link);
         }
 
         if(modal === 'Creditwise') {
-            var link = 'assets/modal-templates/creditwise.html';
+            link = 'assets/modal-templates/creditwise.html';
             appendModal(link);
         }
 
         if(modal === 'Income Calculator') {
-            var link = 'assets/modal-templates/income-calc.html';
+            link = 'assets/modal-templates/income-calc.html';
             appendModal(link);
         }
 
@@ -28,7 +29,7 @@ class Sites extends Component {
             xhr = new XMLHttpRequest();
 
             xhr.onreadystatechange = function (e) { 
-                if (xhr.readyState == 4 && xhr.status == 200) {
+                if (xhr.readyState === 4 && xhr.status === 200) {
                     modalDisplay.innerHTML = xhr.responseText;
                 }
             }
@@ -43,7 +44,7 @@ class Sites extends Component {
         
         const sites = this.props.sites.map((site, index) => 
             <li key={index}>
-                <a className="proj-link" href={site.modal ? '#' : site.link} target={site.modal ? '_self' : '_blank'} onClick={site.modal ? e => this.getModal(site.name) : null}>{site.name}</a>
+                <a className="proj-link" style={{cursor: 'pointer'}} href={site.modal ? null : site.link} target={site.modal ? '_self' : '_blank'} onClick={site.modal ? e => this.getModal(site.name) : null}>{site.name}</a>
             </li>
         )  
 

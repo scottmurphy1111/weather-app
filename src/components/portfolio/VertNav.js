@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 
 
-class VertNav extends React.Component {
-    constructor(props) {
-        super(props);
-
-        //this.handleClick = this.handleClick.bind(this);
-    }
-
+class VertNav extends Component {
     handleClick(e) {
         e.stopPropagation();
 
-        var clickedLiVal = e.target.dataset.active,
+        let clickedLiVal = e.target.dataset.active,
         currentActiveLi = document.querySelector('.vert-nav li.active'),
         allPanels = document.querySelectorAll('.sliding-panel'),
         activatePanel = '',
@@ -20,7 +14,7 @@ class VertNav extends React.Component {
         activatePanel = document.querySelector('.' + clickedLiVal);
 
         //loop through nav li's
-        for(var i = 0; i < allPanels.length; i++) {
+        for(let i = 0; i < allPanels.length; i++) {
             allPanels[i].classList.add('fade-out');
             allPanels[i].classList.remove('fade-in');              
         }
