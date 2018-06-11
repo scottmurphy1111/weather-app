@@ -128,6 +128,7 @@
 	overflow: hidden;
 	display: inline-block;
 	@include box-sizing(border-box);
+	touch-action: none;
 
 	&.start-scroll {
 		overflow-y: scroll;
