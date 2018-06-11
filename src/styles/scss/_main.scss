@@ -21,6 +21,7 @@ body {
   @include box-sizing(border-box);
   color: #fff;
   -webkit-backface-visibility: hidden;
+  overflow-y: hidden;
 
   &:after {
 		position:absolute; 

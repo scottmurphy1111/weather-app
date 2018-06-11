@@ -21,7 +21,8 @@ body {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   color: #fff;
-  -webkit-backface-visibility: hidden; }
+  -webkit-backface-visibility: hidden;
+  overflow-y: hidden; }
   body:after {
     position: absolute;
     width: 0;
