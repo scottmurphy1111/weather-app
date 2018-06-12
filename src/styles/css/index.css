@@ -288,29 +288,27 @@ a {
       top: 12px; } }
   .panel-static .static-inner {
     position: relative;
-    transform: scale(0, 0);
-    font-size: 1.5rem; }
+    transform: scale(1, 1);
+    font-size: 1.5rem;
+    -webkit-transition: all 0.5s ease-out 0.5s;
+    -moz-transition: all 0.5s ease-out 0.5s;
+    -ms-transition: all 0.5s ease-out 0.5s;
+    -o-transition: all 0.5s ease-out 0.5s;
+    transition: all 0.5s ease-out 0.5s;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale; }
     @media only screen and (min-width: 0px) and (max-width: 767px) {
       .panel-static .static-inner {
         font-size: 1.125rem; } }
-    .panel-static .static-inner.show {
-      transform: scale(1, 1);
-      -webkit-transition: all 0.5s ease-out 0.5s;
-      -moz-transition: all 0.5s ease-out 0.5s;
-      -ms-transition: all 0.5s ease-out 0.5s;
-      -o-transition: all 0.5s ease-out 0.5s;
-      transition: all 0.5s ease-out 0.5s;
-      display: inline-block;
-      vertical-align: middle;
-      -webkit-transform: translateZ(0);
-      -moz-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      -o-transform: translateZ(0);
-      transform: translateZ(0);
-      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -moz-osx-font-smoothing: grayscale; }
     .panel-static .static-inner.remove-delay {
       -webkit-transition: 0s all ease-out 0s;
       -moz-transition: 0s all ease-out 0s;
@@ -385,10 +383,10 @@ span.logo {
   stroke-width: 5;
   stroke-linecap: round;
   stroke-miterlimit: 10;
-  stroke-dashoffset: 235;
-  stroke-dasharray: 235;
-  animation: drawCircle 1.5s ease-out forwards;
-  animation-delay: 1s;
+  stroke-dashoffset: 180;
+  stroke-dasharray: 180;
+  animation: drawCircle 1.75s ease-out forwards;
+  animation-delay: 0.75s;
   -webkit-transform: rotateZ(-90deg);
   -moz-transform: rotateZ(-90deg);
   -ms-transform: rotateZ(-90deg);
@@ -409,24 +407,19 @@ span.logo {
   stroke-miterlimit: 10;
   stroke-dashoffset: 0;
   stroke-dasharray: 0;
-  animation: drawLines 0.75s ease-out forwards;
-  animation-delay: 1.25s;
+  animation: drawLines 1s ease-out forwards;
+  animation-delay: 1.5s;
   opacity: 0; }
 
-@keyframes flyin {
-  from {
-    transform: translateX(-100px); }
-  to {
-    transform: translateX(0px); } }
 @-webkit-keyframes drawCircle {
   0% {
-    stroke-dashoffset: 235;
+    stroke-dashoffset: 180;
     stroke: #fff; }
   55% {
     stroke: #fff; }
   80% {
     stroke-dashoffset: 0;
-    stroke: #5ad6ff;
+    stroke: #fff;
     transform: rotateZ(1000deg); }
   100% {
     stroke-dashoffset: 0;
@@ -434,13 +427,13 @@ span.logo {
     transform: rotateZ(1000deg); } }
 @-moz-keyframes drawCircle {
   0% {
-    stroke-dashoffset: 235;
+    stroke-dashoffset: 180;
     stroke: #fff; }
   55% {
     stroke: #fff; }
   80% {
     stroke-dashoffset: 0;
-    stroke: #5ad6ff;
+    stroke: #fff;
     transform: rotateZ(1000deg); }
   100% {
     stroke-dashoffset: 0;
@@ -448,13 +441,13 @@ span.logo {
     transform: rotateZ(1000deg); } }
 @-ms-keyframes drawCircle {
   0% {
-    stroke-dashoffset: 235;
+    stroke-dashoffset: 180;
     stroke: #fff; }
   55% {
     stroke: #fff; }
   80% {
     stroke-dashoffset: 0;
-    stroke: #5ad6ff;
+    stroke: #fff;
     transform: rotateZ(1000deg); }
   100% {
     stroke-dashoffset: 0;
@@ -462,13 +455,13 @@ span.logo {
     transform: rotateZ(1000deg); } }
 @-o-keyframes drawCircle {
   0% {
-    stroke-dashoffset: 235;
+    stroke-dashoffset: 180;
     stroke: #fff; }
   55% {
     stroke: #fff; }
   80% {
     stroke-dashoffset: 0;
-    stroke: #5ad6ff;
+    stroke: #fff;
     transform: rotateZ(1000deg); }
   100% {
     stroke-dashoffset: 0;
@@ -476,13 +469,13 @@ span.logo {
     transform: rotateZ(1000deg); } }
 @keyframes drawCircle {
   0% {
-    stroke-dashoffset: 235;
+    stroke-dashoffset: 180;
     stroke: #fff; }
   55% {
     stroke: #fff; }
   80% {
     stroke-dashoffset: 0;
-    stroke: #5ad6ff;
+    stroke: #fff;
     transform: rotateZ(1000deg); }
   100% {
     stroke-dashoffset: 0;

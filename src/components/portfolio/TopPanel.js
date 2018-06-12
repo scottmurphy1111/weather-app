@@ -10,7 +10,7 @@ class TopPanel extends Component {
                 onTouchMove={this.props.onTouchMove}
                 onTouchEnd={this.props.onTouchEnd}>
             <div className="panel-static">
-                <div className={"static-inner " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>
+                <div className={"static-inner  "  + (this.props.init.removeDelays ? 'remove-delay' : '')}>
                 <h1>
                     <span className={"logo " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
