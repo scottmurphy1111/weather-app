@@ -20,6 +20,8 @@ const store = createStore(
     allReducers,
     {
         init: {
+            loadMainContent: false,
+            removeDelays: false,
             isWheel: false,
             movingPanel: false
         }

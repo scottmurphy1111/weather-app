@@ -10,9 +10,9 @@ class TopPanel extends Component {
                 onTouchMove={this.props.onTouchMove}
                 onTouchEnd={this.props.onTouchEnd}>
             <div className="panel-static">
-                <div className={"static-inner " + (this.props.loadMainContent ? 'show' : '') + ' ' + (this.props.removeDelays ? 'remove-delay' : '')}>
+                <div className={"static-inner " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>
                 <h1>
-                    <span className={"logo " + (this.props.loadMainContent ? 'show' : '') + ' ' + (this.props.removeDelays ? 'remove-delay' : '')}>
+                    <span className={"logo " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             viewBox="-23.9 -16.1 64 64">
                         <circle id="XMLID_27_" className="logo-circle" cx="8.4" cy="15.5" r="28.4"/>
@@ -23,11 +23,11 @@ class TopPanel extends Component {
                         </g>
                         </svg>
                     </span>
-                    <span className={"name " + (this.props.loadMainContent ? 'show' : '') + ' ' + (this.props.removeDelays ? 'remove-delay' : '')}>{this.props.content.name}</span>
-                    <br className="mobile-only" /><span className={"title " + (this.props.loadMainContent ? 'show' : '') + ' ' + (this.props.removeDelays ? 'remove-delay' : '')}>{this.props.content.title}</span>
+                    <span className={"name " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>{this.props.content.name}</span>
+                    <br className="mobile-only" /><span className={"title " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>{this.props.content.title}</span>
                 </h1>
-                <p className={"tagline " + (this.props.loadMainContent ? 'show' : '') + ' ' + (this.props.removeDelays ? 'remove-delay' : '')}>{this.props.content.subHeadingA + ' '}<br className="mobile-only" />{this.props.content.subHeadingB}</p>
-                <div className={"skills " + (this.props.loadMainContent ? 'show' : '') + ' ' + (this.props.removeDelays ? 'remove-delay' : '')}>
+                <p className={"tagline " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>{this.props.content.subHeadingA + ' '}<br className="mobile-only" />{this.props.content.subHeadingB}</p>
+                <div className={"skills " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>
                         <Skills content={this.props.content} />
                     </div>
                 </div>

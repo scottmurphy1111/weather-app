@@ -2,33 +2,35 @@ import React, { Component } from 'react';
 import data from './data/data.json';
 import VertNav from './components/portfolio/VertNav';
 import Portfolio from './components/portfolio/Portfolio';
+import { connect } from 'react-redux';
+import { setLoadMainContent, setRemoveDelays, setIsWheel, setMovingPanel } from './actions/initActions';
 
 class App extends Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-			content: data,
-			loadMainContent: false,
-			removeDelays: false
+			content: data
+			// loadMainContent: false,
+			// removeDelays: false
 		}
 
-		this.onLoadMainContent = this.onLoadMainContent.bind(this);
+		// this.onLoadMainContent = this.onLoadMainContent.bind(this);
 	}
 
-	onLoadMainContent() {
-		setTimeout(() => {
-			this.setState({
-				loadMainContent: true
-			})
-		}, 800);
+	// onLoadMainContent() {
+	// 	setTimeout(() => {
+	// 		this.setState({
+	// 			loadMainContent: true
+	// 		})
+	// 	}, 800);
 		
-		setTimeout(() => {
-			this.setState({
-				removeDelays: true
-			})
-		}, 5000);	
-	}
+	// 	setTimeout(() => {
+	// 		this.setState({
+	// 			removeDelays: true
+	// 		})
+	// 	}, 5000);	
+	// }
 
 	closeModal() {
 		document.querySelector('.modal-window').classList.remove('show');
@@ -39,7 +41,13 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.onLoadMainContent();
+		setTimeout(() => {
+			this.props.setLoadMainContent(true);
+		}, 800);
+
+		setTimeout(() => {
+			this.props.setRemoveDelays(true);
+		}, 5000);
 	}
 
 	render() {
@@ -48,11 +56,11 @@ class App extends Component {
 				<div id="portrait-only"><h2>PLEASE ROTATE YOUR PHONE BACK, PORTRAIT ONLY!</h2></div>
 				<div className="container">
 					<div className="panel">
-						<VertNav loadMainContent={this.state.loadMainContent} removeDelays={this.state.removeDelays}/>
-						<Portfolio content={this.state.content} loadMainContent={this.state.loadMainContent} removeDelays={this.state.removeDelays} />
+						<VertNav {...this.props} />
+						<Portfolio content={this.state.content} {...this.props} />
 					</div>
 					<div className="bg-image load-image"></div>
-					<p className={"enter " + (this.state.loadMainContent ? 'load-icon' : '') + ' ' + (this.state.removeDelays ? 'remove-delay' : '')}>
+					<p className={"enter " + (this.props.init.loadMainContent ? 'load-icon' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>
 						<span className="text" ><span className="mobile-only">SWIPE&nbsp;</span><span className="desktop-only">SCROLL&nbsp;</span>UP / DOWN</span><br />
 						<span className="icon">
 						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -85,5 +93,16 @@ class App extends Component {
 		);
 	}
 }
+
+const mapStateToProps = state => ({
+	init: state.init
+});
+
+const mapActionsToProps = {
+	setLoadMainContent: setLoadMainContent,
+	setRemoveDelays: setRemoveDelays,
+	setIsWheel: setIsWheel,
+	setMovingPanel: setMovingPanel
+};
   
-export default App;
+export default connect(mapStateToProps, mapActionsToProps)(App);

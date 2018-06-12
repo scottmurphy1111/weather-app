@@ -38,7 +38,7 @@ class VertNav extends Component {
 
     render() {
         return (
-            <div className={"vert-nav " + (this.props.loadMainContent ? 'show' : '')}>
+            <div className={"vert-nav " + (this.props.init.loadMainContent ? 'show' : '')}>
                 <ul>
                     <li className="active panel1" data-active="top-panel" onClick={this.handleClick}></li>
                     <li className="panel2" data-active="second-panel" onClick={this.handleClick}></li>

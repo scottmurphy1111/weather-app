@@ -4,8 +4,8 @@ import SecondPanel from './SecondPanel';
 import ThirdPanel from './ThirdPanel';
 import FourthPanel from './FourthPanel';
 import FifthPanel from './FifthPanel';
-import { connect } from 'react-redux';
-import { setIsWheel, setMovingPanel } from '../../actions/initActions';
+// import { connect } from 'react-redux';
+// import { setIsWheel, setMovingPanel } from '../../actions/initActions';
 
 
 class Portfolio extends Component {
@@ -251,12 +251,11 @@ class Portfolio extends Component {
             <div>
                 <TopPanel 
                     content={content} 
-                    loadMainContent={this.props.loadMainContent} 
-                    removeDelays={this.props.removeDelays} 
                     onWheel={e => this.onWheel(e)} 
                     onTouchStart={e => this.onTouchStart(e)}
                     onTouchMove={e => this.onTouchMove(e)}
-                    onTouchEnd={e => this.onTouchEnd(e)} />
+                    onTouchEnd={e => this.onTouchEnd(e)}
+                    {...this.props} />
                 <SecondPanel 
                     content={content} 
                     onWheel={e => this.onWheel(e)} 
@@ -286,13 +285,4 @@ class Portfolio extends Component {
     }
 };
 
-const mapStateToProps = state => ({
-	init: state.init
-});
-
-const mapActionsToProps = {
-	setIsWheel: setIsWheel,
-	setMovingPanel: setMovingPanel
-};
-  
-export default connect(mapStateToProps, mapActionsToProps)(Portfolio);
+export default Portfolio;

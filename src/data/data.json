@@ -4,9 +4,9 @@
   "subHeadingA": "Front-End & User Interface",
   "subHeadingB": "Web Development",
   "skills": [
-    "react/angularjs",
+    "react / angular",
     "javascript",
-    "sass/less",
+    "sass / less",
     "html",
     "svg animation",
     "build tools",
@@ -93,7 +93,7 @@
       "title": "Efficient Coding",
       "description": "I deliver lean, mean and clean front-end code that is ready for use in production environments and custom websites",
       "image": "assets/images/portfolio/prod-code.png",
-      "testimonial": "\"Scott was easy to work with, very open to trying alternate ideas and developing creative code option for, sometimes challenging, UI intent.  His collaboration was very much appreciated.\" ~ Lance Rogers - Creative Manager"
+      "testimonial": "\"Scott was easy to work with, very open to trying alternate ideas and developing creative code options for, sometimes challenging, UI intent.  His collaboration was very much appreciated.\" ~ Lance Rogers - Creative Manager"
     }
   ],
   "about": [
@@ -110,7 +110,7 @@
     {
       "heading": "School",
       "icon": "assets/images/portfolio/education.svg",
-      "description": "I studied Music at Appalachian State"
+      "description": "I studied Music at App State"
     },
     {
       "heading": "Experience",
@@ -130,7 +130,7 @@
     {
       "heading": "Favorite Languages",
       "icon": "assets/images/portfolio/langs.svg",
-      "description": "I love Sass, React and AngularJs"
+      "description": "I love Sass, React and Angular"
     },
     {
       "heading": "Hobbies",
