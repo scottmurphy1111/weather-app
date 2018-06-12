@@ -3,7 +3,7 @@ import Socials from './Socials';
 
 export class FifthPanel extends Component {
     loadContact() {
-        let phone = '336-602-3121',
+        let phone = '804-836-2326',
         phoneDiv = document.querySelector('.insert-phone'),
         user = 'scottmurphy1111',
         domain = 'gmail.com',
