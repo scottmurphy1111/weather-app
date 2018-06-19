@@ -1,35 +1,54 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
-export class Socials extends Component {
+const USER_ID = "5711949";
+
+class Socials extends Component {
+
     state = { 
-        totalSoRep: '',
-        bronzeBadges: '',
-        silverBadges: '',
-        goldBadges: '',
-        totalSoBadges: ''
+        totalSoRep: undefined,
+        bronzeBadges: undefined,
+        silverBadges: undefined,
+        goldBadges: undefined,
+        totalSoBadges: undefined
     };
     
-    getSoData = () => {
-        const url = 'https://api.stackexchange.com/2.2/users/5711949/?site=stackoverflow';
-        axios.get(url)
-            .then(resp => {
-                let allItems = resp.data.items[0],
-                badgeCounts = allItems.badge_counts;
-                this.setState({ 
-                    totalSoRep: allItems.reputation,
-                    bronzeBadges: badgeCounts.bronze,
-                    silverBadges: badgeCounts.silver,
-                    goldBadges: badgeCounts.gold,
-                    totalSoBadges: Object.keys(badgeCounts).length
-                });
-            }
-        );
+    getSoData = async () => {
+        const api_call = await fetch(`https://api.stackexchange.com/2.2/users/${USER_ID}/?site=stackoverflow`);
+        const soData = await api_call.json();
+        console.log(soData.error_id);
+        let allItems = [],
+        badgeCounts = 0;
+        if(!soData.error_id) {
+            allItems = soData.items[0];
+            badgeCounts = allItems.badge_counts;
+        } else {
+            console.error('Couldnt return Stack Overflow User Data');
+            return false;
+        }
+
+        if(allItems) {
+            this.setState({ 
+                totalSoRep: allItems.reputation,
+                bronzeBadges: badgeCounts.bronze,
+                silverBadges: badgeCounts.silver,
+                goldBadges: badgeCounts.gold,
+                totalSoBadges: Object.keys(badgeCounts).length
+            });
+        } else {
+            this.setState({
+                totalSoRep: undefined,
+                bronzeBadges: undefined,
+                silverBadges: undefined,
+                goldBadges: undefined,
+                totalSoBadges: undefined
+            })
+        }
     }
 
     componentDidMount() {
         this.getSoData();
     }
+
     render() {
         const socials = this.props.content.contact[0].socials.map((social, index) => 
             <li key={index}>
@@ -57,8 +76,9 @@ export class Socials extends Component {
                 </a>
             </li>
         )
+
         return (
-           <ul>
+             <ul>
                {socials}
             </ul>
         )

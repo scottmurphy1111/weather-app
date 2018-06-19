@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Skills from './Skills';
 
-class TopPanel extends Component {
-    render() {
-        return (
+const TopPanel = props => 
+    (
             <section className="top-panel sliding-panel fade-in" 
-                onWheel={this.props.onWheel} 
-                onTouchStart={this.props.onTouchStart}
-                onTouchMove={this.props.onTouchMove}
-                onTouchEnd={this.props.onTouchEnd}>
+                onWheel={props.onWheel} 
+                onTouchStart={props.onTouchStart}
+                onTouchMove={props.onTouchMove}
+                onTouchEnd={props.onTouchEnd}>
             <div className="panel-static">
-                <div className={"static-inner  "  + (this.props.init.removeDelays ? 'remove-delay' : '')}>
+                <div className={"static-inner  "  + (props.init.removeDelays ? 'remove-delay' : '')}>
                 <h1>
-                    <span className={"logo " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>
+                    <span className={"logo " + (props.init.loadMainContent ? 'show' : '') + ' ' + (props.init.removeDelays ? 'remove-delay' : '')}>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             viewBox="-23.9 -16.1 64 64">
                         <circle id="XMLID_27_" className="logo-circle" cx="8.4" cy="15.5" r="28.4"/>
@@ -23,18 +22,17 @@ class TopPanel extends Component {
                         </g>
                         </svg>
                     </span>
-                    <span className={"name " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>{this.props.content.name}</span>
-                    <br className="mobile-only" /><span className={"title " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>{this.props.content.title}</span>
+                    <span className={"name " + (props.init.loadMainContent ? 'show' : '') + ' ' + (props.init.removeDelays ? 'remove-delay' : '')}>{props.content.name}</span>
+                    <br className="mobile-only" /><span className={"title " + (props.init.loadMainContent ? 'show' : '') + ' ' + (props.init.removeDelays ? 'remove-delay' : '')}>{props.content.title}</span>
                 </h1>
-                <p className={"tagline " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>{this.props.content.subHeadingA + ' '}<br className="mobile-only" />{this.props.content.subHeadingB}</p>
-                <div className={"skills " + (this.props.init.loadMainContent ? 'show' : '') + ' ' + (this.props.init.removeDelays ? 'remove-delay' : '')}>
-                        <Skills content={this.props.content} />
+                <p className={"tagline " + (props.init.loadMainContent ? 'show' : '') + ' ' + (props.init.removeDelays ? 'remove-delay' : '')}>{props.content.subHeadingA + ' '}<br className="mobile-only" />{props.content.subHeadingB}</p>
+                <div className={"skills " + (props.init.loadMainContent ? 'show' : '') + ' ' + (props.init.removeDelays ? 'remove-delay' : '')}>
+                        <Skills content={props.content} />
                     </div>
                 </div>
             </div>
         </section>
-        )
-    }
-}
+    )
+   
 
 export default TopPanel

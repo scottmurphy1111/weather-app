@@ -6,14 +6,10 @@ import { connect } from 'react-redux';
 import { setLoadMainContent, setRemoveDelays, setIsWheel, setMovingPanel } from './actions/initActions';
 
 class App extends Component {
-	constructor(props) {
-		super(props)
-
-		this.state = {
-			content: data
-		}
+	state = {
+		content: data
 	}
-
+	
 	closeModal() {
 		document.querySelector('.modal-window').classList.remove('show');
 		
@@ -33,7 +29,6 @@ class App extends Component {
 	}
 
 	render() {
-		
 		return (
 			<div>
 				<div id="portrait-only"><h2>PLEASE ROTATE YOUR PHONE BACK, PORTRAIT ONLY!</h2></div>

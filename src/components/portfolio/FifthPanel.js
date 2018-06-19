@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Socials from './Socials';
 
-export class FifthPanel extends Component {
+class FifthPanel extends Component {
     loadContact() {
         let phone = '804-836-2326',
         phoneDiv = document.querySelector('.insert-phone'),

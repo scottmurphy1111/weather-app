@@ -4,9 +4,6 @@ import SecondPanel from './SecondPanel';
 import ThirdPanel from './ThirdPanel';
 import FourthPanel from './FourthPanel';
 import FifthPanel from './FifthPanel';
-// import { connect } from 'react-redux';
-// import { setIsWheel, setMovingPanel } from '../../actions/initActions';
-
 
 class Portfolio extends Component {
     constructor(props) {

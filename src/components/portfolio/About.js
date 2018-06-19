@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class componentName extends Component {
+class componentName extends Component {
     appendExperience() {
         const expBio = document.querySelectorAll('.fourth-panel .snippets li .content')[3];
         let calcDate = new Date().getFullYear() - 2009;

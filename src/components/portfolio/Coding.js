@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Coding extends Component {
+class Coding extends Component {
 
     showContent(index) {
         let codeLinks = document.querySelectorAll('.third-panel .code-link'),
