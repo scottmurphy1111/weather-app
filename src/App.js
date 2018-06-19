@@ -11,26 +11,8 @@ class App extends Component {
 
 		this.state = {
 			content: data
-			// loadMainContent: false,
-			// removeDelays: false
 		}
-
-		// this.onLoadMainContent = this.onLoadMainContent.bind(this);
 	}
-
-	// onLoadMainContent() {
-	// 	setTimeout(() => {
-	// 		this.setState({
-	// 			loadMainContent: true
-	// 		})
-	// 	}, 800);
-		
-	// 	setTimeout(() => {
-	// 		this.setState({
-	// 			removeDelays: true
-	// 		})
-	// 	}, 5000);	
-	// }
 
 	closeModal() {
 		document.querySelector('.modal-window').classList.remove('show');
@@ -51,6 +33,7 @@ class App extends Component {
 	}
 
 	render() {
+		
 		return (
 			<div>
 				<div id="portrait-only"><h2>PLEASE ROTATE YOUR PHONE BACK, PORTRAIT ONLY!</h2></div>

@@ -662,18 +662,12 @@ span.logo {
     -ms-transition: 0.35s all ease-out 0.35s;
     -o-transition: 0.35s all ease-out 0.35s;
     transition: 0.35s all ease-out 0.35s; }
-  .enter.remove-delay {
-    -webkit-transition: 0s all ease-out 0s;
-    -moz-transition: 0s all ease-out 0s;
-    -ms-transition: 0s all ease-out 0s;
-    -o-transition: 0s all ease-out 0s;
-    transition: 0s all ease-out 0s; }
-    .enter.remove-delay span.text {
-      -webkit-transition: 0s all ease-out 0s !important;
-      -moz-transition: 0s all ease-out 0s !important;
-      -ms-transition: 0s all ease-out 0s !important;
-      -o-transition: 0s all ease-out 0s !important;
-      transition: 0s all ease-out 0s !important; }
+  .enter.remove-delay span.text {
+    -webkit-transition: 0s all ease-out 0s !important;
+    -moz-transition: 0s all ease-out 0s !important;
+    -ms-transition: 0s all ease-out 0s !important;
+    -o-transition: 0s all ease-out 0s !important;
+    transition: 0s all ease-out 0s !important; }
   .enter:hover span.text {
     visibility: visible;
     opacity: 1;

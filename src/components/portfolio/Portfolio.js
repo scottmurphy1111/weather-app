@@ -18,7 +18,6 @@ class Portfolio extends Component {
         this.onTouchEnd = this.onTouchEnd.bind(this);
         this.setIsWheel = this.setIsWheel.bind(this);
         this.setMovingPanel = this.setMovingPanel.bind(this);
-        
     }
 
     setIsWheel(val) {

@@ -458,7 +458,7 @@ span.logo {
 	}
 
 	&.remove-delay {
-		@include prefixed(transition, 0s all ease-out 0s);
+		//@include prefixed(transition, 0s all ease-out 0s);
 
 		span.text {
 			@include prefixed(transition, 0s all ease-out 0s !important);
