@@ -12,25 +12,21 @@ class Skills extends Component {
     }
 
     fireSkills = () => {
-        setTimeout(() => {
-            const toReveal = document.querySelectorAll('.skills .to-reveal');
+        const toReveal = document.querySelectorAll('.skills .to-reveal');
 
-            let processAll = (els) => {
-                this.setState({
-                    timer: this.state.timer + 36
-                });
-                
-                setTimeout(() => {
-                    toReveal[els].classList.add('show');
-                }, this.state.timer);
-            };
-
+        this.processAll = (skill) => {
+            this.setState({
+                timer: this.state.timer + 40
+            });
+            
             setTimeout(() => {
-                for(let n = 0; n < toReveal.length; n++) {
-                    processAll(n);
-                }
-            }, 3400);
-        });
+                skill.classList.add('show');
+            }, this.state.timer);
+        };
+
+        setTimeout(() => {
+            toReveal.forEach((skill) => this.processAll(skill));
+        }, 3500);
     }
 
     componentDidMount() {

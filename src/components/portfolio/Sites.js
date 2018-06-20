@@ -28,7 +28,7 @@ class Sites extends Component {
             let modalDisplay = document.querySelector('.modal-display-data'),
             xhr = new XMLHttpRequest();
 
-            xhr.onreadystatechange = function (e) { 
+            xhr.onreadystatechange = () => { 
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     modalDisplay.innerHTML = xhr.responseText;
                 }

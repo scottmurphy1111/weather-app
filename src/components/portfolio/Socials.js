@@ -15,14 +15,13 @@ class Socials extends Component {
     getSoData = async () => {
         const api_call = await fetch(`https://api.stackexchange.com/2.2/users/${USER_ID}/?site=stackoverflow`);
         const soData = await api_call.json();
-        console.log(soData.error_id);
         let allItems = [],
         badgeCounts = 0;
         if(!soData.error_id) {
             allItems = soData.items[0];
             badgeCounts = allItems.badge_counts;
         } else {
-            console.error('Couldnt return Stack Overflow User Data');
+            console.error('Couldnt return Stack Overflow User Data', soData.error_id);
             return false;
         }
 

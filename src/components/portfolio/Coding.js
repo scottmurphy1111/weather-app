@@ -8,20 +8,21 @@ class Coding extends Component {
         contentAll = document.querySelectorAll('.third-panel .content'),
         clickedContent = clicked.nextElementSibling;
 
+        function hideAllContent() {
+            contentAll.forEach(content => content.classList.remove('show'));
+        }
+
+        function closeCodeLinks() {
+            codeLinks.forEach(link => link.classList.remove('is-open'));
+        }
+
         if(clickedContent.classList.contains('show')) {
-            for(let i = 0; i < contentAll.length; i++) {
-                contentAll[i].classList.remove('show');
-                codeLinks[i].classList.remove('is-open');
-            }
-
+            hideAllContent();
+            closeCodeLinks();
             clickedContent.classList.remove('show');
-
         } else {
-            for(let n = 0; n < contentAll.length; n++) {
-                codeLinks[n].classList.remove('is-open');
-                contentAll[n].classList.remove('show');
-            }
-
+            hideAllContent();
+            closeCodeLinks();
             clicked.classList.add('is-open');
             clickedContent.classList.add('show');
         }

@@ -16,23 +16,16 @@ class componentName extends Component {
         let content = e.target.nextSibling,
         allContent = document.querySelectorAll('.fourth-panel .snippets li .content');
         
-        //hide content divs
-        if(content.classList.contains('show')){
-            for(let i = 0; i < allContent.length; i++) {
-                allContent[i].classList.remove('show');
-            }
+        function hideAllContent() {
+            allContent.forEach(content => content.classList.remove('show'));
+        }
 
+        if(content.classList.contains('show')) {           
+            hideAllContent();
         } else {
-
-            //hide all revealed content
-            for(let n = 0; n < allContent.length; n++) {
-                allContent[n].classList.remove('show');
-            }
-
-            //show clicked content
+            hideAllContent();
             content.classList.add('show');
 
-            //reveal letters one at a time
             let contentText = document.querySelector('.fourth-panel .content.show p').textContent,
             updatePlace = document.querySelector('.fourth-panel .content.show p'),
             current = 0,
@@ -55,7 +48,7 @@ class componentName extends Component {
                 <div className="code-link" onClick={this.revealContent}>
                     <span className="bio-icon left"><img src={bio.icon} alt="" /></span>{bio.heading}
                 </div> 
-                <div className="content">
+                <div className={"content " + (index === 0 ? 'show' : '')}>
                     <p>{bio.description}</p>
                 </div>
             </li>
