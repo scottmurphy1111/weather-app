@@ -138,12 +138,14 @@ class Portfolio extends Component {
     
     //inital touch
     onTouchStart = (e) => {
-        let touchobj = e.changedTouches[0];
+        if(this.props.init.removeDelays) {
+            let touchobj = e.changedTouches[0];
 
-        this.dist = 0;
-        this.startX = touchobj.pageX;
-        this.startY = touchobj.pageY;
-        this.startTime = Date.now();    
+            this.dist = 0;
+            this.startX = touchobj.pageX;
+            this.startY = touchobj.pageY;
+            this.startTime = Date.now();
+        }
     };
 
     //prevent swipe end
@@ -153,91 +155,93 @@ class Portfolio extends Component {
 
     //measure touch distance
     onTouchEnd = (e) => {
-        let touchobj = e.changedTouches[0],
-        enterBtn = document.querySelector('.enter'),
-        element = e.currentTarget,
-        nextPanel = element.nextElementSibling,
-        prevPanel = element.previousElementSibling,
-        currentNav = document.querySelector('.vert-nav li.active'),
-        nextNav = document.querySelector('.vert-nav li.active').nextElementSibling,
-        prevNav = document.querySelector('.vert-nav li.active').previousElementSibling;
+        if(this.props.init.removeDelays) {
+            let touchobj = e.changedTouches[0],
+            enterBtn = document.querySelector('.enter'),
+            element = e.currentTarget,
+            nextPanel = element.nextElementSibling,
+            prevPanel = element.previousElementSibling,
+            currentNav = document.querySelector('.vert-nav li.active'),
+            nextNav = document.querySelector('.vert-nav li.active').nextElementSibling,
+            prevNav = document.querySelector('.vert-nav li.active').previousElementSibling;
 
-        this.dist = touchobj.pageY - this.startY;
+            this.dist = touchobj.pageY - this.startY;
 
-        //show/hide panel up
-        if(this.dist < -100 && nextNav) {
-            if(this.props.init.isWheel) {  
-                return false;
-            } else {
-                this.props.setIsWheel(true);
-            }
-
-            let movePanelDown = () => {
-                if(element.className.indexOf('top-panel') > -1) {
-                    enterBtn.classList.remove('load-icon', 'load-icon-instantly');
-                }
-
-                element.classList.remove('load-content', 'fade-in')
-                element.classList.add('fade-out');
-                nextPanel.classList.add('fade-in')
-                nextPanel.classList.remove('fade-out');  
-
-                finishMovingDown();
-            };
-
-            let finishMovingDown = () => {
-                if(this.props.init.movingPanel) {
+            //show/hide panel up
+            if(this.dist < -100 && nextNav) {
+                if(this.props.init.isWheel) {  
                     return false;
                 } else {
-                    nextNav.classList.add('active');
-                    currentNav.classList.remove('active');
-                    
-                    setTimeout(() => {
-                        this.props.setIsWheel(false);
-                        this.props.setMovingPanel(false);
-                    }, 1200);
+                    this.props.setIsWheel(true);
                 }
-            };
 
-            movePanelDown();
-        }
+                let movePanelDown = () => {
+                    if(element.className.indexOf('top-panel') > -1) {
+                        enterBtn.classList.remove('load-icon', 'load-icon-instantly');
+                    }
 
-        //show/hide panel down
-        if(this.dist > 100 && prevNav) {
-            if(this.props.init.isWheel) {  
-                return false;
-            } else {
-                this.props.setIsWheel(true);
+                    element.classList.remove('load-content', 'fade-in')
+                    element.classList.add('fade-out');
+                    nextPanel.classList.add('fade-in')
+                    nextPanel.classList.remove('fade-out');  
+
+                    finishMovingDown();
+                };
+
+                let finishMovingDown = () => {
+                    if(this.props.init.movingPanel) {
+                        return false;
+                    } else {
+                        nextNav.classList.add('active');
+                        currentNav.classList.remove('active');
+                        
+                        setTimeout(() => {
+                            this.props.setIsWheel(false);
+                            this.props.setMovingPanel(false);
+                        }, 1200);
+                    }
+                };
+
+                movePanelDown();
             }
-            
-            let movePanelUp = () => {
-                if(element.className.indexOf('second-panel') > -1) {
-                    enterBtn.classList.add('load-icon-instantly');
-                }
 
-                element.classList.remove('load-content', 'fade-in')
-                element.classList.add('fade-out');  
-                prevPanel.classList.add('fade-in');
-                prevPanel.classList.remove('fade-out');
+            //show/hide panel down
+            if(this.dist > 100 && prevNav) {
+                if(this.props.init.isWheel) {  
+                    return false;
+                } else {
+                    this.props.setIsWheel(true);
+                }
                 
-                finishMovingUp();
-            };
+                let movePanelUp = () => {
+                    if(element.className.indexOf('second-panel') > -1) {
+                        enterBtn.classList.add('load-icon-instantly');
+                    }
 
-            let finishMovingUp = () => {
-                if(this.props.init.movingPanel) {
-                    return false;
-                } else {
-                    prevNav.classList.add('active');
-                    currentNav.classList.remove('active');
+                    element.classList.remove('load-content', 'fade-in')
+                    element.classList.add('fade-out');  
+                    prevPanel.classList.add('fade-in');
+                    prevPanel.classList.remove('fade-out');
                     
-                    setTimeout(() => {
-                        this.props.setIsWheel(false);
-                        this.props.setMovingPanel(false);
-                    }, 1200);
-                }
-            };
+                    finishMovingUp();
+                };
 
-            movePanelUp();
+                let finishMovingUp = () => {
+                    if(this.props.init.movingPanel) {
+                        return false;
+                    } else {
+                        prevNav.classList.add('active');
+                        currentNav.classList.remove('active');
+                        
+                        setTimeout(() => {
+                            this.props.setIsWheel(false);
+                            this.props.setMovingPanel(false);
+                        }, 1200);
+                    }
+                };
+
+                movePanelUp();
+            }
         }
     }
 
