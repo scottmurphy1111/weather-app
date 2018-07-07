@@ -46,9 +46,7 @@
         overflow: hidden;
         -webkit-tap-highlight-color: transparent;
         @include hacks();
-        //font-size: 1rem;
         text-transform: uppercase;
-        float: left;
         @include box-sizing(border-box);
 
         @include mobile {
@@ -86,7 +84,6 @@
             margin: 0px 6px 0 0;
             position: relative;
             top: 0px;
-            float: left;
 
             @include mobile {
               width: 24px;

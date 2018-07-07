@@ -146,14 +146,12 @@
     .to-reveal {
       transform: translateY(35px);
       @include prefixed(transition, all 0.15s ease-out);
-      //@include hacks();
       position: relative;
       opacity: 0;
       color: #fff;
 
       &.pipe {
         transform: translateY(35px);
-        //transform: translateY(0);
       }
 
       &.show {
