@@ -1,51 +1,60 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Skills extends Component {
-    constructor(props) {
-        super(props)
-      
-        this.state = {
-           timer: 0
-        }
+  constructor(props) {
+    super(props);
 
-        this.fireSkills = this.fireSkills.bind(this);
-    }
+    this.state = {
+      timer: 0
+    };
 
-    fireSkills = () => {
-        const toReveal = document.querySelectorAll('.skills .to-reveal');
+    this.fireSkills = this.fireSkills.bind(this);
+  }
 
-        this.processAll = (skill) => {
-            this.setState({
-                timer: this.state.timer + 40
-            });
-            
-            setTimeout(() => {
-                skill.classList.add('show');
-            }, this.state.timer);
-        };
+  fireSkills = () => {
+    const toReveal = document.querySelectorAll(".skills .to-reveal");
 
-        setTimeout(() => {
-            toReveal.forEach((skill) => this.processAll(skill));
-        }, 3500);
-    }
+    this.processAll = skill => {
+      this.setState({
+        timer: this.state.timer + 40
+      });
 
-    componentDidMount() {
-        this.fireSkills();
-    }
+      setTimeout(() => {
+        skill.classList.add("show");
+      }, this.state.timer);
+    };
 
-    render() {
-        const skills = this.props.content.skills.map((skill, index) => 
-            <li key={index}>
-                <span className="to-reveal ">{skill}</span>
-                <span className={"to-reveal pipe " + (index === 1 ? 'desktop-only': '') + ' ' + (index === 4 ? 'desktop-only': '') + ' ' + (index === 3 ? 'hide-tablet': '') + ' ' + (index === 6 ? 'hide': '')}>|</span> 
-            </li>
-        );
-        return (
-            <ul>
-                {skills}
-            </ul>
-        )
-    }
+    setTimeout(() => {
+      toReveal.forEach(skill => this.processAll(skill));
+    }, 3500);
+  };
+
+  componentDidMount() {
+    this.fireSkills();
+  }
+
+  render() {
+    const skills = this.props.content.skills.map((skill, index) => (
+      <li key={index}>
+        <span className="to-reveal ">{skill}</span>
+        <span
+          className={
+            "to-reveal pipe " +
+            (index === 1 ? "desktop-only" : "") +
+            " " +
+            (index === 4 ? "desktop-only" : "") +
+            " " +
+            (index === 3 ? "hide-tablet" : "") +
+            " " +
+            (index === 6 ? "hide" : "")
+          }
+        >
+          |
+        </span>
+      </li>
+    ));
+    return <ul>{skills}</ul>;
+  }
 }
 
-export default Skills
+export default Skills;

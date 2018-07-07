@@ -6,7 +6,8 @@
   padding: 0.2em 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -23,20 +24,22 @@ body {
   -webkit-backface-visibility: hidden;
 
   &:after {
-		position:absolute; 
-		width:0; 
-		height:0; 
-		overflow:hidden; 
-		z-index:-1;
-    	content:url(../../assets/images/portfolio/minus.svg) url(../../assets/images/portfolio/plus.svg) url(../../assets/images/me-trans.png) url(../../assets/images/digi-bg1.png);
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url(../../assets/images/portfolio/minus.svg)
+      url(../../assets/images/portfolio/plus.svg)
+      url(../../assets/images/me-trans.png)
+      url(../../assets/images/digi-bg1.png);
   }
-  
+
   #portrait-only {
     display: none;
   }
 
   @include landscape {
-
     #portrait-only {
       display: inline-block;
       height: 100vh;
@@ -59,14 +62,12 @@ body {
         height: 44px;
         margin: 0;
       }
-      
     }
 
     .container {
       transform: rotate(-90deg);
     }
-
-	}
+  }
 }
 
 a {
@@ -74,7 +75,7 @@ a {
 }
 
 .container {
-	box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -88,16 +89,16 @@ a {
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
-  src: url('../../assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-family: "Source Sans Pro";
+  src: url("../../assets/fonts/SourceSansPro-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro Light';
-  src: url('../../assets/fonts/SourceSansPro-Light.ttf') format('truetype');
+  font-family: "Source Sans Pro Light";
+  src: url("../../assets/fonts/SourceSansPro-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Source Sans Pro ExtraLight';
-  src: url('../../assets/fonts/SourceSansPro-ExtraLight.ttf') format('truetype');
+  font-family: "Source Sans Pro ExtraLight";
+  src: url("../../assets/fonts/SourceSansPro-ExtraLight.ttf") format("truetype");
 }

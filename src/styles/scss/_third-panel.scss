@@ -1,183 +1,177 @@
 .third-panel {
-	color: $primaryColor;
+  color: $primaryColor;
 
-	&:after {
-		position:absolute; 
-		width:0; 
-		height:0; 
-		overflow:hidden; 
-		z-index:-1;
-    	content:url(../../assets/images/portfolio/minus.svg) url(../../assets/images/portfolio/plus.svg);
-	}
+  &:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url(../../assets/images/portfolio/minus.svg)
+      url(../../assets/images/portfolio/plus.svg);
+  }
 
-	.logo-circle {
-		stroke: #fff;
-	}
-	.logo-lines {
-		stroke: #fff;
-	}
+  .logo-circle {
+    stroke: #fff;
+  }
+  .logo-lines {
+    stroke: #fff;
+  }
 
+  h2 {
+    .logo {
+      left: 0;
+    }
+  }
 
-	h2 {
+  .inner-wrap {
+    ul {
+      margin: 0 auto 0px;
+      padding: 0;
+      display: inline-block;
+      width: 100%;
 
-		.logo {
-			left: 0;
-		}
-	}
+      li {
+        display: inline-block;
+        opacity: 1;
+        visibility: visible;
+        transition: 0.1s all ease-out 0s;
+        width: 100%;
+        margin: 0 auto 8px;
+        color: $blueThin;
+        font-weight: bold;
+        padding: 0px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+        @include hacks();
+        //font-size: 1rem;
+        text-transform: uppercase;
+        float: left;
+        @include box-sizing(border-box);
 
-	.inner-wrap {
+        @include mobile {
+          width: 100%;
+          transition: all 0s ease-out 0s;
+          text-align: left;
+        }
 
-		ul {
-			margin: 0 auto 0px;
-			padding: 0;
-			display: inline-block;
-			width: 100%;
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+          padding-left: 38px;
 
-			li {
-				display: inline-block;
-				opacity: 1;
-				visibility: visible;
-				transition: 0.1s all ease-out 0s;
-				width: 100%;
-    			margin: 0 auto 8px;
-				color: $blueThin;
-				font-weight: bold;
-				padding: 0px;
-				vertical-align: middle;
-				position: relative;
-				overflow: hidden;
-				-webkit-tap-highlight-color: transparent;
-				@include hacks();
-				//font-size: 1rem;
-				text-transform: uppercase;
-				float: left;
-				@include box-sizing(border-box);
+          @include mobile {
+            padding-left: 29px;
+          }
+        }
 
-				@include mobile {
-					width: 100%;
-					transition: all 0s ease-out 0s;
-					text-align: left;
-				}
+        .code-link {
+          cursor: pointer;
 
-				&:nth-child(3), &:nth-child(4), &:nth-child(5) {
-					padding-left: 38px;
+          &.is-open {
+            &:before {
+              background: url(../../assets/images/portfolio/minus.svg);
+            }
+          }
 
-					@include mobile {
-						padding-left: 29px;
-					}
-				}
+          &:before {
+            content: "";
+            background: url(../../assets/images/portfolio/plus.svg);
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            background-size: 100%;
+            margin: 0px 6px 0 0;
+            position: relative;
+            top: 0px;
+            float: left;
 
-				.code-link {
-					cursor: pointer;
+            @include mobile {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
 
-					&.is-open {
-						&:before {
-							background: url(../../assets/images/portfolio/minus.svg);
-						}
-					}
+        .content {
+          width: 100%;
+          height: 0px;
+          margin: 0 auto;
+          padding: 0px 0 0 12px;
+          @include box-sizing(border-box);
+          cursor: default;
+          transition: 0.15s all linear;
+          left: 28px;
+          position: relative;
+          top: 0px;
 
-					&:before {
-						content: '';
-				    	background: url(../../assets/images/portfolio/plus.svg);
-					    width: 32px;
-					    height: 32px;
-					    display: inline-block;
-					    background-size: 100%;
-					    margin: 0px 6px 0 0;
-					    position: relative;
-					    top: 0px;
-					    float: left;
+          @include mobile {
+            margin-left: 0px;
+            left: 21px;
+            padding-right: 40px;
+          }
 
-					    @include mobile {
-					    	width: 24px;
-					    	height: 24px;
-					    }
-					}
-				}
+          p {
+            color: #fff;
+            margin: 12px 12px 12px 0px;
+            transition: 0.15s all linear 0s;
+            padding-left: 0;
+            opacity: 0;
+            visibility: hidden;
 
-				.content {
-					width: 100%;
-				    height: 0px;
-				    margin: 0 auto;
-				    padding: 0px 0 0 12px;
-				    @include box-sizing(border-box);
-				    cursor: default;
-				    transition: 0.15s all linear;
-				    left: 28px;
-				    position: relative;
-					top: 0px;
+            @include mobile {
+              transition: 0.1s all linear 0.18s;
+              margin: 12px 0;
+            }
+          }
 
-				    @include mobile {
-				    	margin-left: 0px;
-						left: 21px;
-						padding-right: 40px;
-				    }
+          img {
+            transform: translateX(-30px);
+            transition: 0.2s all 0s ease-in;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 10px;
+            display: block;
+            position: relative;
+            top: 0px;
+            opacity: 0;
+            visibility: hidden;
+          }
 
-				    p {
-				    	color: #fff;
-				    	margin: 12px 12px 12px 0px;
-				    	transition: 0.15s all linear 0s;
-				    	padding-left: 0;
-				    	opacity: 0;
-				    	visibility: hidden;
-				    	
+          &.show {
+            height: 550px;
+            top: 0;
 
-				    	@include mobile {
-							transition: 0.1s all linear 0.18s;
-							margin: 12px 0;
-				    	}
-				    }
+            @include mobile {
+              height: 500px;
+            }
 
-				    img {
-						transform: translateX(-30px);
-				    	transition: 0.2s all 0s ease-in;
-				    	width: 100%;
-						max-width: 600px;
-						margin-bottom: 10px;
-					    display: block;
-					    position: relative;
-					    top: 0px;
-						opacity: 0;
-						visibility: hidden;
-				    }
+            p {
+              transition: 0.4s all linear 0s;
+              opacity: 1;
+              visibility: visible;
+            }
 
-				    &.show {
-				    	height: 550px;
-				    	top: 0;
+            img {
+              transform: translateX(0);
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
 
-				    	@include mobile {
-				    		height: 500px;
-				    	}
+    p {
+      padding-left: 38px;
+      margin: 0 0 12px;
+      text-transform: uppercase;
 
-				    	p {				    		
-				    		transition: 0.4s all linear 0s;
-				    		opacity: 1;
-				    		visibility: visible;
-				    	}
-
-				    	img {
-						    transform: translateX(0);
-						    opacity: 1;
-						    visibility: visible;
-						}
-				    }
-
-				    
-					}
-
-					
-				}
-			}
-
-			p {
-				padding-left: 38px;
-				margin: 0 0 12px;
-				text-transform: uppercase;
-
-				@include mobile {
-		    	padding-left: 29px;
-		    }
-
-		}
-	}
+      @include mobile {
+        padding-left: 29px;
+      }
+    }
+  }
 }

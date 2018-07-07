@@ -1,288 +1,291 @@
-import React, { Component } from 'react';
-import TopPanel from './TopPanel';
-import SecondPanel from './SecondPanel';
-import ThirdPanel from './ThirdPanel';
-import FourthPanel from './FourthPanel';
-import FifthPanel from './FifthPanel';
+import React, { Component } from "react";
+import TopPanel from "./TopPanel";
+import SecondPanel from "./SecondPanel";
+import ThirdPanel from "./ThirdPanel";
+import FourthPanel from "./FourthPanel";
+import FifthPanel from "./FifthPanel";
 
 class Portfolio extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.onWheel = this.onWheel.bind(this);
-        this.onTouchStart = this.onTouchStart.bind(this);
-        this.onTouchMove = this.onTouchMove.bind(this);
-        this.onTouchEnd = this.onTouchEnd.bind(this);
-        this.setIsWheel = this.setIsWheel.bind(this);
-        this.setMovingPanel = this.setMovingPanel.bind(this);
-    }
+    this.onWheel = this.onWheel.bind(this);
+    this.onTouchStart = this.onTouchStart.bind(this);
+    this.onTouchMove = this.onTouchMove.bind(this);
+    this.onTouchEnd = this.onTouchEnd.bind(this);
+    this.setIsWheel = this.setIsWheel.bind(this);
+    this.setMovingPanel = this.setMovingPanel.bind(this);
+  }
 
-    setIsWheel(val) {
-		this.props.setIsWheel(val);
-    }
-    
-    setMovingPanel(val) {
-        this.props.setMovingPanel(val);
-    }
-    
-    onWheel = (e) => {
-        if(this.props.init.removeDelays) {
-            let enterBtn = document.querySelector('.enter'),
-            element = e.currentTarget,
-            nextPanel = element.nextElementSibling,
-            prevPanel = element.previousElementSibling,
-            currentNav = document.querySelector('.vert-nav li.active'),                
-            nextNav = document.querySelector('.vert-nav li.active').nextElementSibling,
-            prevNav = document.querySelector('.vert-nav li.active').previousElementSibling,
-            movement = 0; 
-        
-            //measure mousewheel/swipe distance
-            movement = e.deltaY;
-        
-            //firefox needs a little help to get correct distance
-            if(e.deltaMode === 1) {
-                movement = movement * 8;
-            }
-                            
-            //swap panels down     
-            if(movement > 100 && nextNav) {
-                                
-                if(this.props.init.isWheel) {
-                    return false;
-                } else {
-                    this.props.setIsWheel(true);
-                }
+  setIsWheel(val) {
+    this.props.setIsWheel(val);
+  }
 
-                //mousewheel/swipe down
-                let movePanelDown = () => {
+  setMovingPanel(val) {
+    this.props.setMovingPanel(val);
+  }
 
-                    //hide swipe icon
-                    if(element.className.indexOf('top-panel') > -1) {
-                        enterBtn.classList.remove('load-icon', 'load-icon-instantly');
-                    }
+  onWheel = e => {
+    if (this.props.init.removeDelays) {
+      let enterBtn = document.querySelector(".enter"),
+        element = e.currentTarget,
+        nextPanel = element.nextElementSibling,
+        prevPanel = element.previousElementSibling,
+        currentNav = document.querySelector(".vert-nav li.active"),
+        nextNav = document.querySelector(".vert-nav li.active").nextElementSibling,
+        prevNav = document.querySelector(".vert-nav li.active").previousElementSibling,
+        movement = 0;
 
-                    //show next panel/hide current panel
-                    element.classList.remove('load-content', 'fade-in')
-                    element.classList.add('fade-out');
-                    nextPanel.classList.add('fade-in')
-                    nextPanel.classList.remove('fade-out');  
+      //measure mousewheel/swipe distance
+      movement = e.deltaY;
 
-                    finishMovingDown();
-                };
+      //firefox needs a little help to get correct distance
+      if (e.deltaMode === 1) {
+        movement = movement * 8;
+      }
 
-                //callback to prevent rapid animation
-                let finishMovingDown = () => {
-                    if(this.props.init.movingPanel) {
-                        return false;
-                    } else {
-                        this.props.setMovingPanel(true);
-                        nextNav.classList.add('active');
-                        currentNav.classList.remove('active');
-                        
-                        setTimeout(() => {
-                            this.props.setIsWheel(false);
-                            this.props.setMovingPanel(false);
-                        }, 1200);
-                    }
-                };
-
-                movePanelDown();
-            }
-
-            //swap panels up
-            if(movement < -100 && prevNav) {
-                if(this.props.init.isWheel) {  
-                    return false;
-                }  else {
-                    this.props.setIsWheel(true);
-                }
-
-                let movePanelUp = () => {
-                    if(element.className.indexOf('second-panel') > -1) {
-                        enterBtn.classList.add('load-icon-instantly');
-                    }
-
-                    element.classList.remove('load-content',  'fade-in')
-                    element.classList.add('fade-out');  
-                    prevPanel.classList.add('fade-in');
-                    prevPanel.classList.remove('fade-out');
-                    
-                    finishMovingUp();
-                };
-
-                let finishMovingUp = () => {
-                    if(this.props.init.movingPanel) {
-                        return false;
-                    } else {
-                        this.props.setMovingPanel(true);
-                        prevNav.classList.add('active');
-                        currentNav.classList.remove('active');
-                        
-                        setTimeout(() => {
-                            this.props.setIsWheel(false);
-                            this.props.setMovingPanel(false);
-                        },1200);
-                    }
-                };
-
-                movePanelUp();
-            }
+      //swap panels down
+      if (movement > 100 && nextNav) {
+        if (this.props.wheel.isWheel) {
+          return false;
+        } else {
+          this.props.setIsWheel(true);
         }
-    }
 
-    //mobile swiping swap panels
-    startX = 0;
-    startY = 0;
-    dist = 0;
-    startTime = 0;
-    
-    //inital touch
-    onTouchStart = (e) => {
-        if(this.props.init.removeDelays) {
-            let touchobj = e.changedTouches[0];
+        //mousewheel/swipe down
+        let movePanelDown = () => {
+          //hide swipe icon
+          if (element.className.indexOf("top-panel") > -1) {
+            enterBtn.classList.remove("load-icon", "load-icon-instantly");
+          }
 
-            this.dist = 0;
-            this.startX = touchobj.pageX;
-            this.startY = touchobj.pageY;
-            this.startTime = Date.now();
+          //show next panel/hide current panel
+          element.classList.remove("load-content", "fade-in");
+          element.classList.add("fade-out");
+          nextPanel.classList.add("fade-in");
+          nextPanel.classList.remove("fade-out");
+
+          finishMovingDown();
+        };
+
+        //callback to prevent rapid animation
+        let finishMovingDown = () => {
+          if (this.props.wheel.movingPanel) {
+            return false;
+          } else {
+            this.props.setMovingPanel(true);
+            nextNav.classList.add("active");
+            currentNav.classList.remove("active");
+
+            setTimeout(() => {
+              this.props.setIsWheel(false);
+              this.props.setMovingPanel(false);
+            }, 1000);
+          }
+        };
+
+        movePanelDown();
+      }
+
+      //swap panels up
+      if (movement < -100 && prevNav) {
+        if (this.props.wheel.isWheel) {
+          return false;
+        } else {
+          this.props.setIsWheel(true);
         }
-    };
 
-    //prevent swipe end
-    onTouchMove = (e) => {
-        e.preventDefault();
-    };
+        let movePanelUp = () => {
+          if (element.className.indexOf("second-panel") > -1) {
+            enterBtn.classList.add("load-icon-instantly");
+          }
 
-    //measure touch distance
-    onTouchEnd = (e) => {
-        if(this.props.init.removeDelays) {
-            let touchobj = e.changedTouches[0],
-            enterBtn = document.querySelector('.enter'),
-            element = e.currentTarget,
-            nextPanel = element.nextElementSibling,
-            prevPanel = element.previousElementSibling,
-            currentNav = document.querySelector('.vert-nav li.active'),
-            nextNav = document.querySelector('.vert-nav li.active').nextElementSibling,
-            prevNav = document.querySelector('.vert-nav li.active').previousElementSibling;
+          element.classList.remove("load-content", "fade-in");
+          element.classList.add("fade-out");
+          prevPanel.classList.add("fade-in");
+          prevPanel.classList.remove("fade-out");
 
-            this.dist = touchobj.pageY - this.startY;
+          finishMovingUp();
+        };
 
-            //show/hide panel up
-            if(this.dist < -100 && nextNav) {
-                if(this.props.init.isWheel) {  
-                    return false;
-                } else {
-                    this.props.setIsWheel(true);
-                }
+        let finishMovingUp = () => {
+          if (this.props.wheel.movingPanel) {
+            return false;
+          } else {
+            this.props.setMovingPanel(true);
+            prevNav.classList.add("active");
+            currentNav.classList.remove("active");
 
-                let movePanelDown = () => {
-                    if(element.className.indexOf('top-panel') > -1) {
-                        enterBtn.classList.remove('load-icon', 'load-icon-instantly');
-                    }
+            setTimeout(() => {
+              this.props.setIsWheel(false);
+              this.props.setMovingPanel(false);
+            }, 1000);
+          }
+        };
 
-                    element.classList.remove('load-content', 'fade-in')
-                    element.classList.add('fade-out');
-                    nextPanel.classList.add('fade-in')
-                    nextPanel.classList.remove('fade-out');  
+        movePanelUp();
+      }
+    }
+  };
 
-                    finishMovingDown();
-                };
+  //mobile swiping swap panels
+  startX = 0;
+  startY = 0;
+  dist = 0;
+  startTime = 0;
 
-                let finishMovingDown = () => {
-                    if(this.props.init.movingPanel) {
-                        return false;
-                    } else {
-                        nextNav.classList.add('active');
-                        currentNav.classList.remove('active');
-                        
-                        setTimeout(() => {
-                            this.props.setIsWheel(false);
-                            this.props.setMovingPanel(false);
-                        }, 1200);
-                    }
-                };
+  //inital touch
+  onTouchStart = e => {
+    if (this.props.init.removeDelays) {
+      let touchobj = e.changedTouches[0];
 
-                movePanelDown();
-            }
+      this.dist = 0;
+      this.startX = touchobj.pageX;
+      this.startY = touchobj.pageY;
+      this.startTime = Date.now();
+    }
+  };
 
-            //show/hide panel down
-            if(this.dist > 100 && prevNav) {
-                if(this.props.init.isWheel) {  
-                    return false;
-                } else {
-                    this.props.setIsWheel(true);
-                }
-                
-                let movePanelUp = () => {
-                    if(element.className.indexOf('second-panel') > -1) {
-                        enterBtn.classList.add('load-icon-instantly');
-                    }
+  //prevent swipe end
+  onTouchMove = e => {
+    e.preventDefault();
+  };
 
-                    element.classList.remove('load-content', 'fade-in')
-                    element.classList.add('fade-out');  
-                    prevPanel.classList.add('fade-in');
-                    prevPanel.classList.remove('fade-out');
-                    
-                    finishMovingUp();
-                };
+  //measure touch distance
+  onTouchEnd = e => {
+    if (this.props.init.removeDelays) {
+      let touchobj = e.changedTouches[0],
+        enterBtn = document.querySelector(".enter"),
+        element = e.currentTarget,
+        nextPanel = element.nextElementSibling,
+        prevPanel = element.previousElementSibling,
+        currentNav = document.querySelector(".vert-nav li.active"),
+        nextNav = document.querySelector(".vert-nav li.active").nextElementSibling,
+        prevNav = document.querySelector(".vert-nav li.active").previousElementSibling;
 
-                let finishMovingUp = () => {
-                    if(this.props.init.movingPanel) {
-                        return false;
-                    } else {
-                        prevNav.classList.add('active');
-                        currentNav.classList.remove('active');
-                        
-                        setTimeout(() => {
-                            this.props.setIsWheel(false);
-                            this.props.setMovingPanel(false);
-                        }, 1200);
-                    }
-                };
+      this.dist = touchobj.pageY - this.startY;
 
-                movePanelUp();
-            }
+      //show/hide panel up
+      if (this.dist < -100 && nextNav) {
+        if (this.props.wheel.isWheel) {
+          return false;
+        } else {
+          this.props.setIsWheel(true);
         }
-    }
 
-    render() {
-        const content = this.props.content;
-        return (
-            <div>
-                <TopPanel 
-                    content={content} 
-                    onWheel={e => this.onWheel(e)} 
-                    onTouchStart={e => this.onTouchStart(e)}
-                    onTouchMove={e => this.onTouchMove(e)}
-                    onTouchEnd={e => this.onTouchEnd(e)}
-                    {...this.props} />
-                <SecondPanel 
-                    content={content} 
-                    onWheel={e => this.onWheel(e)} 
-                    onTouchStart={e => this.onTouchStart(e)}
-                    onTouchMove={e => this.onTouchMove(e)}
-                    onTouchEnd={e => this.onTouchEnd(e)} />
-                <ThirdPanel 
-                    content={content} 
-                    onWheel={e => this.onWheel(e)} 
-                    onTouchStart={e => this.onTouchStart(e)}
-                    onTouchMove={e => this.onTouchMove(e)}
-                    onTouchEnd={e => this.onTouchEnd(e)} />
-                <FourthPanel 
-                    content={content} 
-                    onWheel={e => this.onWheel(e)} 
-                    onTouchStart={e => this.onTouchStart(e)}
-                    onTouchMove={e => this.onTouchMove(e)}
-                    onTouchEnd={e => this.onTouchEnd(e)} />
-                <FifthPanel 
-                    content={content} 
-                    onWheel={e => this.onWheel(e)} 
-                    onTouchStart={e => this.onTouchStart(e)}
-                    onTouchMove={e => this.onTouchMove(e)}
-                    onTouchEnd={e => this.onTouchEnd(e)} />
-            </div>
-        );
+        let movePanelDown = () => {
+          if (element.className.indexOf("top-panel") > -1) {
+            enterBtn.classList.remove("load-icon", "load-icon-instantly");
+          }
+
+          element.classList.remove("load-content", "fade-in");
+          element.classList.add("fade-out");
+          nextPanel.classList.add("fade-in");
+          nextPanel.classList.remove("fade-out");
+
+          finishMovingDown();
+        };
+
+        let finishMovingDown = () => {
+          if (this.props.wheel.movingPanel) {
+            return false;
+          } else {
+            nextNav.classList.add("active");
+            currentNav.classList.remove("active");
+
+            setTimeout(() => {
+              this.props.setIsWheel(false);
+              this.props.setMovingPanel(false);
+            }, 1000);
+          }
+        };
+
+        movePanelDown();
+      }
+
+      //show/hide panel down
+      if (this.dist > 100 && prevNav) {
+        if (this.props.wheel.isWheel) {
+          return false;
+        } else {
+          this.props.setIsWheel(true);
+        }
+
+        let movePanelUp = () => {
+          if (element.className.indexOf("second-panel") > -1) {
+            enterBtn.classList.add("load-icon-instantly");
+          }
+
+          element.classList.remove("load-content", "fade-in");
+          element.classList.add("fade-out");
+          prevPanel.classList.add("fade-in");
+          prevPanel.classList.remove("fade-out");
+
+          finishMovingUp();
+        };
+
+        let finishMovingUp = () => {
+          if (this.props.wheel.movingPanel) {
+            return false;
+          } else {
+            prevNav.classList.add("active");
+            currentNav.classList.remove("active");
+
+            setTimeout(() => {
+              this.props.setIsWheel(false);
+              this.props.setMovingPanel(false);
+            }, 1000);
+          }
+        };
+
+        movePanelUp();
+      }
     }
-};
+  };
+
+  render() {
+    const content = this.props.content;
+    return (
+      <div>
+        <TopPanel
+          content={content}
+          onWheel={e => this.onWheel(e)}
+          onTouchStart={e => this.onTouchStart(e)}
+          onTouchMove={e => this.onTouchMove(e)}
+          onTouchEnd={e => this.onTouchEnd(e)}
+          {...this.props}
+        />
+        <SecondPanel
+          content={content}
+          onWheel={e => this.onWheel(e)}
+          onTouchStart={e => this.onTouchStart(e)}
+          onTouchMove={e => this.onTouchMove(e)}
+          onTouchEnd={e => this.onTouchEnd(e)}
+        />
+        <ThirdPanel
+          content={content}
+          onWheel={e => this.onWheel(e)}
+          onTouchStart={e => this.onTouchStart(e)}
+          onTouchMove={e => this.onTouchMove(e)}
+          onTouchEnd={e => this.onTouchEnd(e)}
+        />
+        <FourthPanel
+          content={content}
+          onWheel={e => this.onWheel(e)}
+          onTouchStart={e => this.onTouchStart(e)}
+          onTouchMove={e => this.onTouchMove(e)}
+          onTouchEnd={e => this.onTouchEnd(e)}
+        />
+        <FifthPanel
+          content={content}
+          onWheel={e => this.onWheel(e)}
+          onTouchStart={e => this.onTouchStart(e)}
+          onTouchMove={e => this.onTouchMove(e)}
+          onTouchEnd={e => this.onTouchEnd(e)}
+        />
+      </div>
+    );
+  }
+}
 
 export default Portfolio;

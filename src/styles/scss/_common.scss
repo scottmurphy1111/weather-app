@@ -1,623 +1,608 @@
 .hide {
-	display: none;
+  display: none;
 }
 
 .panel {
-	z-index: 2;
-	height: 100vh;
-	width: 100%;
-	overflow: hidden;
-	display: inline-block;
-	position: relative;
-	@include hacks();
-	-webkit-font-smoothing: antialiased;
-	font-weight: bold;
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  @include hacks();
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
 
-	&.dim {
-		opacity: 0.25;
-	}
+  &.dim {
+    opacity: 0.25;
+  }
 }
 
 .vert-nav {
-	position: absolute;
-	z-index: 3;
-	right: -10px;
-	top: 0;
-	height: 100vh;
-	width: 10px;
-	@include prefixed(transition, all 0.35s ease-out 3.75s);
-	@include hacks();
+  position: absolute;
+  z-index: 3;
+  right: -10px;
+  top: 0;
+  height: 100vh;
+  width: 10px;
+  @include prefixed(transition, all 0.35s ease-out 3.75s);
+  @include hacks();
 
-	&.show {
-		right: 0;
-	}
+  &.show {
+    right: 0;
+  }
 
-	ul {
-		padding: 0;
-		margin: 0;
-		display: block;
-		height: 100vh;
-		position: relative;
+  ul {
+    padding: 0;
+    margin: 0;
+    display: block;
+    height: 100vh;
+    position: relative;
 
-		li {
-			width: 10px;
-		    height: 20vh;
-		    height:unquote("calc( 20vh - 2px )");
-		    display: inline-block;
-		    padding: 0px;
-		    margin: 0px 0 4px;
-			position: absolute;
-			background: $secondaryColor;
-			opacity: 0.15;
-			cursor: pointer;
-			-webkit-tap-highlight-color: transparent;
-			@include prefixed(transition, 0.25s all ease-out);
-			@include hacks();
-			
-			&:hover {
-		    	@include desktop {
-		    		opacity: 0.25;
-		    	}
-		    	
-			}
-			
-			&:nth-child(2) {
-				top: 20vh;
-			}
+    li {
+      width: 10px;
+      height: 20vh;
+      height: unquote("calc( 20vh - 2px )");
+      display: inline-block;
+      padding: 0px;
+      margin: 0px 0 4px;
+      position: absolute;
+      background: $secondaryColor;
+      opacity: 0.15;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      @include prefixed(transition, 0.25s all ease-out);
+      @include hacks();
 
-			&:nth-child(3) {
-				top: 40vh;
-			}
+      &:hover {
+        @include desktop {
+          opacity: 0.25;
+        }
+      }
 
-			&:nth-child(4) {
-				top: 60vh;
-			}
+      &:nth-child(2) {
+        top: 20vh;
+      }
 
-		    &:last-child {
-				top: 80vh;
-		    	margin: 0;
-		    }
+      &:nth-child(3) {
+        top: 40vh;
+      }
 
-			// span {
-	    	// width: 10px;
-		    // height: 100%;
-		    // margin: 0px 0px;
-		    // background: $secondaryColor;
-		    // opacity: 0.15;
-		    // display: inline-block;
-		    // position: absolute;
-		    // right: 0;
-		    // padding: 0;
-		    // @include prefixed(transition, 0.25s all ease-out);
-		    // @include hacks();
-		    // cursor: pointer;
-		    // -webkit-tap-highlight-color: transparent;
+      &:nth-child(4) {
+        top: 60vh;
+      }
 
-		    // &:hover {
-		    // 	@include desktop {
-		    // 		opacity: 0.25;
-		    // 	}
-		    	
-		    // }
-	    
+      &:last-child {
+        top: 80vh;
+        margin: 0;
+      }
 
-	    	&.active {
+      // span {
+      // width: 10px;
+      // height: 100%;
+      // margin: 0px 0px;
+      // background: $secondaryColor;
+      // opacity: 0.15;
+      // display: inline-block;
+      // position: absolute;
+      // right: 0;
+      // padding: 0;
+      // @include prefixed(transition, 0.25s all ease-out);
+      // @include hacks();
+      // cursor: pointer;
+      // -webkit-tap-highlight-color: transparent;
 
-				// span {
-				// 	@include prefixed(transition, 0.4s all ease-out 0.15s);
-					background: $blueThin;
-					opacity: 1;
+      // &:hover {
+      // 	@include desktop {
+      // 		opacity: 0.25;
+      // 	}
 
-				// }
-			}
-	  	}
-	}
+      // }
+
+      &.active {
+        // span {
+        // 	@include prefixed(transition, 0.4s all ease-out 0.15s);
+        background: $blueThin;
+        opacity: 1;
+
+        // }
+      }
+    }
+  }
 }
 
 .sliding-panel {
-	height: 100vh;
-	width: 100%;
-	position: absolute;
-	color: #fff;
-	z-index: 1;
-	@include prefixed(transition, all 0.25s ease-out 0s);
-	@include hacks();
-	left: 0;
-	right: 0;
-	padding: 0 12px;
-	overflow: hidden;
-	display: inline-block;
-	@include box-sizing(border-box);
-	touch-action: none;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  @include prefixed(transition, all 0.25s ease-out 0s);
+  @include hacks();
+  left: 0;
+  right: 0;
+  padding: 0 12px;
+  overflow: hidden;
+  display: inline-block;
+  @include box-sizing(border-box);
+  touch-action: none;
 
-	&.start-scroll {
-		overflow-y: scroll;
-	}
+  &.start-scroll {
+    overflow-y: scroll;
+  }
 
-	&.fade-in {
-		opacity: 1 !important;
-		visibility: visible;
-		@include prefixed(transition, 0.25s all ease-out 0.4s);
-		@include hacks();
-		z-index: 2 !important;
-	}
+  &.fade-in {
+    opacity: 1 !important;
+    visibility: visible;
+    @include prefixed(transition, 0.25s all ease-out 0.4s);
+    @include hacks();
+    z-index: 2 !important;
+  }
 
-	&.fade-out {
-		opacity: 0;
-		visibility: hidden;
-		@include prefixed(transition, 0.25s all ease-out 0s);
-		@include hacks();
-		z-index: 1;
-	}
+  &.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    @include prefixed(transition, 0.25s all ease-out 0s);
+    @include hacks();
+    z-index: 1;
+  }
 }
 
 .panel-static {
-	width: 100%;
-	height: auto;
-	max-width: 1140px;
-	display: inline-block;
-	position: absolute;
-	top: 35vh;
-	left: 0;
-	right: 0;
-	text-align: center;
-	margin: 0 auto;
-	overflow: hidden;
-	padding-top: 0px;
-	visibility: visible;
-	@include hacks();
+  width: 100%;
+  height: auto;
+  max-width: 1140px;
+  display: inline-block;
+  position: absolute;
+  top: 35vh;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 0px;
+  visibility: visible;
+  @include hacks();
 
-	@include mobile {
-		top: 20vh;
-	}
+  @include mobile {
+    top: 20vh;
+  }
 
-	@include landscape {
-		top: 12px;
-	}
+  @include landscape {
+    top: 12px;
+  }
 
-	.static-inner {
-		position: relative;
-		transform: scale(1,1);
-		font-size: 1.5rem;
-		@include prefixed(transition, all 0.5s ease-out 0.5s);
-			@include hacks();
+  .static-inner {
+    position: relative;
+    transform: scale(1, 1);
+    font-size: 1.5rem;
+    @include prefixed(transition, all 0.5s ease-out 0.5s);
+    @include hacks();
 
-		@include mobile {
-			font-size: 1.125rem;
-		}
+    @include mobile {
+      font-size: 1.125rem;
+    }
 
-		&.remove-delay {
-			@include prefixed(transition, 0s all ease-out 0s);
-		}
-	}
+    &.remove-delay {
+      @include prefixed(transition, 0s all ease-out 0s);
+    }
+  }
 }
 
 .panel-wrapper {
-	position: relative;
+  position: relative;
   overflow: hidden;
   display: inline-block;
   width: 100%;
   height: 100vh;
   visibility: visible;
 
-	@include mobile {
-		height: auto;
-	}
-
+  @include mobile {
+    height: auto;
+  }
 }
 
 .inner-wrap {
-	width: 1024px;
-	display: block;
-	text-align: left;
-	margin: 0 auto;
-	padding: 0 12px;
-	font-size: 1.5rem;
-	color: #fff;
-	@include box-sizing(border-box);
+  width: 1024px;
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 12px;
+  font-size: 1.5rem;
+  color: #fff;
+  @include box-sizing(border-box);
 
-	@include tablet {
-		width: 100%;
-		padding: 0;
-	}
-
-	@include mobile {
-		font-size: 1.125rem;
-		width: 100%;
-		padding: 0;
-	}
-}
-
-span.logo {
-	display: inline-block;
-	width: 48px;
-	height: 48px;
-	position: absolute;
-	top: 12px;
-	left: 50%;
-	transform: translateX(-50%);
-
-
-  &.show {
-	  	@include prefixed(transition, 0.4s all ease-out 2s);
-		  transform: translateX(-60%);
-		  left:5%;
-  }
-
-  &.remove-delay {
-	@include prefixed(transition, 0s all ease-out 0s);
+  @include tablet {
+    width: 100%;
+    padding: 0;
   }
 
   @include mobile {
-  	top: 0px;
-	width: 29px;
-	height: 29px;
+    font-size: 1.125rem;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+span.logo {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &.show {
+    @include prefixed(transition, 0.4s all ease-out 2s);
+    transform: translateX(-60%);
+    left: 5%;
+  }
+
+  &.remove-delay {
+    @include prefixed(transition, 0s all ease-out 0s);
+  }
+
+  @include mobile {
+    top: 0px;
+    width: 29px;
+    height: 29px;
   }
 }
 
 .logo-circle {
-	fill:none;
-	stroke: #fff;
-	stroke-width: 5;
-	stroke-linecap: round;
-	stroke-miterlimit: 10;
-	stroke-dashoffset: 180;
-	stroke-dasharray: 180;
-	animation: drawCircle 1.75s ease-out forwards;
-	animation-delay: 0.75s;
-	@include prefixed(transform, rotateZ(-90deg));
-	@include prefixed(transform-origin, 8.4px 15.5px);
-
-
+  fill: none;
+  stroke: #fff;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-dashoffset: 180;
+  stroke-dasharray: 180;
+  animation: drawCircle 1.75s ease-out forwards;
+  animation-delay: 0.75s;
+  @include prefixed(transform, rotateZ(-90deg));
+  @include prefixed(transform-origin, 8.4px 15.5px);
 }
 
 .logo-lines {
-	fill:none;
-	stroke:#fff;
-	stroke-width:4;
-	stroke-linecap:round;
-	stroke-linejoin:round;
-	stroke-miterlimit:10;
-	stroke-dashoffset: 0;
-	stroke-dasharray: 0;
-	animation: drawLines 1s ease-out forwards;
-	animation-delay: 1.5s;
-	opacity: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 0;
+  animation: drawLines 1s ease-out forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
 }
 
 @include keyframes(drawCircle) {
-	0% {
-		stroke-dashoffset: 180;
-		stroke: #fff;
-	}
+  0% {
+    stroke-dashoffset: 180;
+    stroke: #fff;
+  }
 
-	55% {
-		stroke: #fff;
-	}
+  55% {
+    stroke: #fff;
+  }
 
-	80% {
-		stroke-dashoffset: 0;
-		stroke:#fff;
-		transform: rotateZ(1000deg);
-	}
+  80% {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    transform: rotateZ(1000deg);
+  }
 
-	100% {
-		stroke-dashoffset: 0;
-		stroke:$blueThin;
-		transform: rotateZ(1000deg);
-	}
+  100% {
+    stroke-dashoffset: 0;
+    stroke: $blueThin;
+    transform: rotateZ(1000deg);
+  }
 }
 
 @include keyframes(drawLines) {
-	from {
-		opacity: 0;
-	}
+  from {
+    opacity: 0;
+  }
 
-	to {
-		opacity: 1;
-	}
-}	
+  to {
+    opacity: 1;
+  }
+}
 
 .category-title {
-	color: #fff;
-	padding: 0;
-	line-height: 10vh !important;
-	margin: 0 auto;
-	height: 10vh;
-	font-size: 1.75rem;
-	font-family: $font-extralight;
-	text-align: left;
-	font-weight: bold;
-	text-transform: uppercase;
-	visibility: visible;
+  color: #fff;
+  padding: 0;
+  line-height: 10vh !important;
+  margin: 0 auto;
+  height: 10vh;
+  font-size: 1.75rem;
+  font-family: $font-extralight;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  visibility: visible;
 
-	@include mobile {
-		font-size: 1.5rem;
-	}
-	
-	span.logo {
-		width: 25px;
-		height: 25px;
-    	top: 5px;	
-	}
+  @include mobile {
+    font-size: 1.5rem;
+  }
+
+  span.logo {
+    width: 25px;
+    height: 25px;
+    top: 5px;
+  }
 }
 
 .finger-swipe {
-	opacity: 0;
-	visibility: hidden;
-    position: absolute;
-    z-index: 5;
-    text-align: center;
-    top: 33vh;
-    right: 0px;
-    left: 0px;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 5;
+  text-align: center;
+  top: 33vh;
+  right: 0px;
+  left: 0px;
+  margin: 0 auto;
+  transform: scale(0.5, 0.5);
+  @include prefixed(transition, all 0.3s ease-out);
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1, 1);
+  }
+
+  p {
+    font: 1.25rem $font-light;
+    text-transform: uppercase;
+  }
+
+  .finger-swipe-icon {
+    background: url(../../assets/images/finger-swipe.svg) 50% 50% no-repeat
+      transparent;
+    background-size: 70%;
+    width: 114px;
+    height: 75px;
     margin: 0 auto;
-    transform: scale(0.5, 0.5);
-    @include prefixed(transition, all 0.3s ease-out);
 
-    &.show {
-    	opacity: 1;
-    	visibility: visible;
-    	transform: scale(1, 1);
+    @include mobile {
+      width: 80px;
+      background-size: 100%;
+      margin: 0 auto;
     }
-
-    p {
-    	font: 1.25rem $font-light;
-    	text-transform: uppercase;
-    }
-
-	.finger-swipe-icon {
-		background: url(../../assets/images/finger-swipe.svg) 50% 50% no-repeat transparent;
-		background-size: 70%;
-	    width: 114px;
-	    height: 75px;
-	    margin: 0 auto;
-
-	    @include mobile {
-			width: 80px;
-			background-size: 100%;
-			margin: 0 auto;
-		}
-
-
-	}
-
-	
+  }
 }
 
-
 .bg-image {
-	@include hacks();
-	height: 100vh;
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	position: absolute;
-	z-index: 1;
-	overflow: hidden;
-	top: 100vh;
-	left: 0;
-	right:0;
-	margin: 0 auto;
-	@include prefixed(transition, transform 0.3s ease-out);
-	@include prefixed(transition, top .3s ease-out .05s);
-	transform: scale(0,0);
-	background: url(../../assets/images/me-trans.png) no-repeat center center;
-	background-size: cover;
+  @include hacks();
+  height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  top: 100vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  @include prefixed(transition, transform 0.3s ease-out);
+  @include prefixed(transition, top 0.3s ease-out 0.05s);
+  transform: scale(0, 0);
+  background: url(../../assets/images/me-trans.png) no-repeat center center;
+  background-size: cover;
 
-	&.load-image {
-		transform: scale(1,1);
-		top: 0;
-	}
+  &.load-image {
+    transform: scale(1, 1);
+    top: 0;
+  }
 
-	@include mobile {
-		background-size: cover;
-	}
+  @include mobile {
+    background-size: cover;
+  }
 
-	@include landscape {
-		background-size: cover;
-	}
+  @include landscape {
+    background-size: cover;
+  }
 }
 
 .enter {
-	width: 100%;
-	position: absolute;
-	z-index: 1;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	bottom: -20px;
-	text-align: center;
-	visibility: hidden;
-	opacity: 0;
-	overflow: hidden;
-	@include prefixed(transition, 0.5s all ease-out);
-	font: 1.25rem $font-light;
-	@include hacks();
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -20px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+  @include prefixed(transition, 0.5s all ease-out);
+  font: 1.25rem $font-light;
+  @include hacks();
 
-	&.load-icon {
-		visibility: visible;
-		opacity: 1;
-		bottom: 20px;
-		@include prefixed(transition, 0.35s all ease-out 3.4s);
+  &.load-icon {
+    visibility: visible;
+    opacity: 1;
+    bottom: 20px;
+    @include prefixed(transition, 0.35s all ease-out 3.4s);
 
-		&.mobile {
-			visibility: visible;
-			opacity: 1;
-			@include prefixed(transition, 0.35s all ease-out 0s);
-		}
+    &.mobile {
+      visibility: visible;
+      opacity: 1;
+      @include prefixed(transition, 0.35s all ease-out 0s);
+    }
+  }
 
-		
-	}
+  &.load-icon-instantly {
+    visibility: visible;
+    opacity: 1;
+    bottom: 20px;
+    @include prefixed(transition, 0.35s all ease-out 0.35s);
+  }
 
-	&.load-icon-instantly {
-		visibility: visible;
-		opacity: 1;
-		bottom: 20px;
-		@include prefixed(transition, 0.35s all ease-out 0.35s);
-	}
+  &.remove-delay {
+    //@include prefixed(transition, 0s all ease-out 0s);
 
-	&.remove-delay {
-		//@include prefixed(transition, 0s all ease-out 0s);
+    span.text {
+      @include prefixed(transition, 0s all ease-out 0s !important);
+    }
+  }
 
-		span.text {
-			@include prefixed(transition, 0s all ease-out 0s !important);
-		}
-	}
+  &:hover {
+    span.text {
+      visibility: visible;
+      opacity: 1;
+      top: 0;
+      transform: scale(1, 1);
+    }
 
-	&:hover {
+    span.icon {
+      animation: none;
+    }
+  }
 
-		span.text {
-			visibility: visible;
-			opacity: 1;
-			top: 0;
-			transform: scale(1,1);
-		}
+  span.text {
+    color: #fff;
+    text-align: center;
+    @include prefixed(transition, all 0.4s ease-out !important);
+    @include hacks();
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    transform: scale(1, 1);
+    font-weight: bold;
 
-		span.icon {
-			animation: none;
-		}
-	}
+    .white {
+      color: #fff;
+    }
+  }
 
-	span.text {
-		color: #fff;
-		text-align: center;
-		@include prefixed(transition, all .4s ease-out !important);
-		@include hacks();
-		visibility: visible;
-		opacity: 1;
-		position: relative;
-		top: 0px;
-		transform: scale(1,1);
-		font-weight: bold;
+  span.icon {
+    width: 69px;
+    height: 50px;
+    display: inline-block;
+    margin-top: 20px;
 
-		.white {
-			color: #fff;
-		}
-	}	
+    @include mobile {
+      width: 56px;
+      height: 41px;
+    }
 
-	span.icon {
-		width: 69px;
-		height: 50px;
-		display: inline-block;
-		margin-top: 20px;
+    svg {
+      overflow: visible;
+    }
 
-		@include mobile {
-			width: 56px;
-			height: 41px;
-		}
+    .fingers {
+      animation: bounce 3s infinite 0.5s;
+      @include hacks();
+    }
+  }
 
-		svg {
-			overflow: visible;
-		}
+  @include mobile {
+    font: 1rem $font-light;
+    &.show {
+      bottom: 20px;
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1, 1);
+    }
 
-		.fingers {
-			animation: bounce 3s infinite 0.5s;
-			@include hacks();
-		}
-	}
-
-	@include mobile {
-		font: 1rem $font-light;
-		&.show {
-			bottom: 20px;
-			visibility: visible;
-			opacity: 1;
-			transform: scale(1,1);
-		}
-		
-		span.text {
-			transform: scale(1,1);
-			opacity: 1;
-			visibility: visible;
-			top: 0;
-		}
-			
-	}
+    span.text {
+      transform: scale(1, 1);
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+    }
+  }
 }
 
 .modal-overlay {
-	opacity: 0;
-	visibility: hidden;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(20,20,20,0.75);
-	position: absolute;
-	z-index: 4;
-	@include prefixed(transition, all 0.25s ease-in-out); 
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.75);
+  position: absolute;
+  z-index: 4;
+  @include prefixed(transition, all 0.25s ease-in-out);
 
-	&.show {
-		opacity: 1;
-		visibility: visible;
-	}
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .modal-window {
-	color: $blueThin;
-	opacity: 0;
-	border-radius: 4px;
-	border: 3px solid $blueThin;
-	visibility: hidden;
-	top: unquote("calc( 50vh - 45% )");
-	right: unquote("calc( 50vw - 45% )");
-	overflow: hidden;
-	width:70%;
-	height:90%;
-	background:#fff;
-	position: absolute;
-	z-index: 5;
-	@include prefixed(transition, all 0.25s ease-in-out); 
+  color: $blueThin;
+  opacity: 0;
+  border-radius: 4px;
+  border: 3px solid $blueThin;
+  visibility: hidden;
+  top: unquote("calc( 50vh - 45% )");
+  right: unquote("calc( 50vw - 45% )");
+  overflow: hidden;
+  width: 70%;
+  height: 90%;
+  background: #fff;
+  position: absolute;
+  z-index: 5;
+  @include prefixed(transition, all 0.25s ease-in-out);
 
-	&.show {
-		opacity: 1;
-		visibility: visible;
-	}
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
 
-	@include mobile {
-		width: 80%;
-	}
+  @include mobile {
+    width: 80%;
+  }
 
-	.modal-inner {
-		width: 100%;
-		height: 100%;
-		overflow-y: scroll;
-		display: block;
-		padding: 16px;
-		@include box-sizing(border-box);
+  .modal-inner {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: block;
+    padding: 16px;
+    @include box-sizing(border-box);
 
-		h2 {
-			color: black;
-		}
+    h2 {
+      color: black;
+    }
 
-		iframe {
-			margin: 0 0 24px;
-			display: inline-block;
-		}
+    iframe {
+      margin: 0 0 24px;
+      display: inline-block;
+    }
 
-		p {
-			color: rgba(40,40,40,0.25);
-			margin: 0;
-			position: absolute;
-	    right: 20px;
-	    top: 5px;
-	    text-align: right;
-		}
-	}
+    p {
+      color: rgba(40, 40, 40, 0.25);
+      margin: 0;
+      position: absolute;
+      right: 20px;
+      top: 5px;
+      text-align: right;
+    }
+  }
 }
 
 .pipe {
-	color: #fff;
-	top: -1px;
-	position: relative;
-	font-family: $font-regular;
-	padding: 0 8px;
+  color: #fff;
+  top: -1px;
+  position: relative;
+  font-family: $font-regular;
+  padding: 0 8px;
 
-	@include desktop {
-		padding: 0 8px;
-	}
+  @include desktop {
+    padding: 0 8px;
+  }
 }
 
 .mobile-only {
@@ -629,15 +614,15 @@ span.logo {
 }
 
 .tablet-only {
-	display: inline-block !important;
+  display: inline-block !important;
 
-	@include mobile {
-		display: none !important;
-	}
+  @include mobile {
+    display: none !important;
+  }
 
-	@include desktop {
-		display: none !important;
-	}
+  @include desktop {
+    display: none !important;
+  }
 }
 
 .desktop-only {
@@ -649,115 +634,111 @@ span.logo {
 }
 
 .code-link {
-	cursor: pointer;
-	color: $blueThin;
-	font-weight: bold;
+  cursor: pointer;
+  color: $blueThin;
+  font-weight: bold;
 
-	&.bio {
-		&:before {
-			background: url(../../assets/images/portfolio/location.svg);
-		}
-	}
+  &.bio {
+    &:before {
+      background: url(../../assets/images/portfolio/location.svg);
+    }
+  }
 
-	&:before {
-		content: '';
-		width: 0px;
-		height: 0px;
-		display: block;
-		background-size: 100%;
-		margin: 0px 6px 0 0;
-		position: relative;
-		top: 0px;
-		float: left;
+  &:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    display: block;
+    background-size: 100%;
+    margin: 0px 6px 0 0;
+    position: relative;
+    top: 0px;
+    float: left;
 
-		@include mobile {
-			width: 0px;
-			height: 0px;
-		}
-	}
+    @include mobile {
+      width: 0px;
+      height: 0px;
+    }
+  }
 }
 
 .content {
-	width: 100%;
-	height: 0px;
-	margin: 0 auto;
-	padding: 0px 0 0 12px;
-	@include box-sizing(border-box);
-	cursor: default;
-	transition: 0.15s all linear;
-	left: 28px;
-	position: relative;
-	top: 0px;
-	opacity: 0;
-	visibility: hidden;
-	@include prefixed(transition, all 0.2s ease-out 0s);
+  width: 100%;
+  height: 0px;
+  margin: 0 auto;
+  padding: 0px 0 0 12px;
+  @include box-sizing(border-box);
+  cursor: default;
+  transition: 0.15s all linear;
+  left: 28px;
+  position: relative;
+  top: 0px;
+  opacity: 0;
+  visibility: hidden;
+  @include prefixed(transition, all 0.2s ease-out 0s);
 
-	@include mobile {
-		margin-left: 0px;
-		left: 21px;
-	}
+  @include mobile {
+    margin-left: 0px;
+    left: 21px;
+  }
 
-	p {
-		color: #fff;
-		margin: 12px 0px 12px 0px;
-		transition: 0.15s all linear 0s;
-		padding-left: 0;
-		opacity: 0;
-		visibility: hidden;
-		
+  p {
+    color: #fff;
+    margin: 12px 0px 12px 0px;
+    transition: 0.15s all linear 0s;
+    padding-left: 0;
+    opacity: 0;
+    visibility: hidden;
 
-		@include mobile {
-			transition: 0.1s all linear 0.18s;
-		}
-	}
+    @include mobile {
+      transition: 0.1s all linear 0.18s;
+    }
+  }
 
-	img {
-		transition: 0.4s all linear 0.2s;
-		width: 100%;
-		max-width: 600px;
-		margin-bottom: 10px;
-	    display: block;
-	    position: relative;
-	    top: 70px;
-		opacity: 0;
-		visibility: hidden;
-	}
+  img {
+    transition: 0.4s all linear 0.2s;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 10px;
+    display: block;
+    position: relative;
+    top: 70px;
+    opacity: 0;
+    visibility: hidden;
+  }
 
-	&.show {
-		height: 43px;
-		top: 0;
-		opacity: 1;
-		visibility: visible;
+  &.show {
+    height: 43px;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
 
-		@include mobile {
-			height: 32px;
-		}
+    @include mobile {
+      height: 32px;
+    }
 
-		p {
-			
-			transition: 0.4s all linear 0s;
-			opacity: 1;
-			visibility: visible;
-		}
+    p {
+      transition: 0.4s all linear 0s;
+      opacity: 1;
+      visibility: visible;
+    }
 
-		img {
-		    top: 0;
-		    opacity: 1;
-		    visibility: visible;
-		}
-	}
+    img {
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
 @include keyframes(bounce) {
-	67% {
-		transform:translateY(0px);
-	}
-	92% {
-		transform:translateY(-16px);
-	}
-	100% {
-		transform:translateY(0px);
-	}
-	
-  
+  67% {
+    transform: translateY(0px);
+  }
+  92% {
+    transform: translateY(-16px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

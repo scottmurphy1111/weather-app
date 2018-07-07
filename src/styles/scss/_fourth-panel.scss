@@ -1,145 +1,141 @@
 .fourth-panel {
-  
-	h2 {
+  h2 {
+    .logo {
+      left: 0;
+    }
+  }
 
-		.logo {
-			left: 0;
-		}
-	}
+  .inner-wrap {
+    ul {
+      margin: 0px auto 0;
+      padding: 0;
+      display: inline-block;
+      width: 100%;
 
-	.inner-wrap {
+      @include mobile {
+        margin: 0px auto 0;
+      }
 
-		ul {
-			margin: 0px auto 0;
-			padding: 0;
-			display: inline-block;
-			width: 100%;
+      &:last-child {
+        li {
+          &:first-child {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 10px;
 
-			@include mobile {
-				margin: 0px auto 0;
-			}
+            @include mobile {
+              border-radius: 0;
+            }
+          }
 
-			&:last-child {
+          &:last-child {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 10px;
 
-				li {
-					&:first-child {
-						border-top-left-radius: 0px;
-						border-bottom-left-radius: 10px;
+            @include mobile {
+              border-radius: 0;
+            }
+          }
+        }
+      }
 
-						@include mobile {
-							border-radius: 0;
-						}
-					}
+      li {
+        @include box-sizing(border-box);
+        display: inline-block;
+        opacity: 1;
+        transition: 0.1s all ease-out 0s;
+        width: 100%;
+        margin: 0 0px 8px 0;
+        color: #fff;
+        padding: 0 0px 0px;
+        vertical-align: middle;
+        position: relative;
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+        @include hacks();
+        text-transform: uppercase;
+        text-align: left;
 
-					&:last-child {
-						border-top-right-radius: 0px;
-						border-bottom-right-radius: 10px;
+        @include mobile {
+        }
 
-						@include mobile {
-							border-radius: 0;
-						}
-					}
-				}
-			}
+        .code-link {
+          cursor: pointer;
+          color: $blueThin;
 
-			li {
-				@include box-sizing(border-box);
-				display: inline-block;
-				opacity: 1;
-				transition: 0.1s all ease-out 0s;
-				width: 100%;
-			    margin: 0 0px 8px 0;
-			    color: #fff;
-			    padding: 0 0px 0px;
-				vertical-align: middle;
-				position: relative;
-				overflow: hidden;
-				-webkit-tap-highlight-color: transparent;
-				@include hacks();
-				text-transform: uppercase;
-				text-align: left;
+          .bio-icon-inner {
+            fill: #fff;
+          }
 
-				@include mobile {
-				}
+          .bio-icon-circle {
+            fill: #51d4ff;
+          }
+        }
 
-				.code-link {
-					cursor: pointer;
-					color: $blueThin;				
+        .bio-icon {
+          display: block;
+          width: 32px;
+          height: 32px;
+          position: relative;
+          top: 0px;
+          float: left;
 
-					.bio-icon-inner {
-					    fill: #fff;
-					}
+          @include mobile {
+            width: 24px;
+            height: 24px;
+          }
 
-					.bio-icon-circle {
-					    fill: #51d4ff;
-					}
-				}			
+          .bio-icon-inner {
+            fill: #fff;
+          }
 
-				.bio-icon {
-					display: block;
-				    width: 32px;
-				    height: 32px;
-				    position: relative;
-				    top: 0px;
-				    float: left;
+          .bio-icon-circle {
+            fill: $highlightColor;
+          }
 
-				    @include mobile {
-				    	width: 24px;
-				    	height: 24px;
-				    }
+          &.left {
+            margin-right: 10px;
+          }
 
-				    .bio-icon-inner {
-							fill: #fff;
-						}
+          &.right {
+            margin-left: 6px;
+          }
 
-				    .bio-icon-circle {
-							fill: $highlightColor;
-						}
+          .bio-icon-svg {
+            fill: #fff;
+          }
+        }
 
-						&.left {
-							margin-right: 10px;
-						}
+        &.show-li {
+          opacity: 1;
+          top: 0;
+          transition: 0.41s all ease-out 0s;
+        }
 
-						&.right {
-							margin-left: 6px;
-						}
+        @include mobile {
+          transition: all 0s ease-out 0s;
+        }
 
-						.bio-icon-svg {
-							fill: #fff;
-						}
-					}
+        .reveal {
+          color: $blueThin;
+          font-weight: bold;
+        }
 
-				&.show-li {
-					opacity: 1;
-					top: 0;
-					transition: 0.41s all ease-out 0s;
-				}
+        &:first-child {
+          border-top-left-radius: 10px;
 
-				@include mobile {
-					transition: all 0s ease-out 0s;
-				}
+          @include mobile {
+            border-radius: 0;
+          }
+        }
 
-				.reveal {
-					color: $blueThin;
-					font-weight: bold;
-				}
+        &:last-child {
+          border-top-right-radius: 10px;
 
-				&:first-child {
-					border-top-left-radius: 10px;
-
-					@include mobile {
-						border-radius: 0;
-					}
-				}
-
-				&:last-child {
-					border-top-right-radius: 10px;
-
-					@include mobile {
-						border-radius: 0;
-					}
-				}
-			}
-		}
-	}
+          @include mobile {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
 }

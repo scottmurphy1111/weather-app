@@ -1,7 +1,7 @@
 {
   "homepage": "https://scottmurphy1111.github.io/sm-port-react/",
   "name": "sm-port-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^16.4.0",
@@ -18,15 +18,9 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
     "gh-pages": "^1.2.0",
-    "gulp": "^3.9.1",
-    "jquery": "^3.3.1",
     "node-sass": "^4.9.0",
     "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0",
-    "reselect": "^3.0.1"
+    "redux": "^4.0.0"
   }
 }
