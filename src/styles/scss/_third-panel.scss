@@ -55,15 +55,15 @@
           text-align: left;
         }
 
-        &:nth-child(3),
-        &:nth-child(4),
-        &:nth-child(5) {
-          padding-left: 38px;
+        // &:nth-child(3),
+        // &:nth-child(4),
+        // &:nth-child(5) {
+        //   padding-left: 38px;
 
-          @include mobile {
-            padding-left: 29px;
-          }
-        }
+        //   @include mobile {
+        //     padding-left: 29px;
+        //   }
+        // }
 
         .code-link {
           cursor: pointer;
@@ -138,11 +138,12 @@
           }
 
           &.show {
-            height: 550px;
-            top: 0;
+            //height: 550px;
+						top: 0;
+						margin-bottom: 1rem;
 
             @include mobile {
-              height: 500px;
+              //height: 470px;
             }
 
             p {

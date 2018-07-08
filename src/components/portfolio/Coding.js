@@ -5,10 +5,17 @@ class Coding extends Component {
     let codeLinks = document.querySelectorAll(".third-panel .code-link"),
       clicked = codeLinks[index],
       contentAll = document.querySelectorAll(".third-panel .content"),
-      clickedContent = clicked.nextElementSibling;
+      contentWrappers = document.querySelectorAll(".third-panel .content .content-wrapper"),
+      clickedContent = clicked.nextElementSibling,
+      clickedContentWrapper = contentWrappers[index],
+      clickedContentHeight = 0;
 
     function hideAllContent() {
-      contentAll.forEach(content => content.classList.remove("show"));
+      contentAll.forEach(content => {
+        content.classList.remove("show")
+        content.setAttribute("style", "height: 0px");
+      });
+        
     }
 
     function closeCodeLinks() {
@@ -18,10 +25,14 @@ class Coding extends Component {
     if (clickedContent.classList.contains("show")) {
       hideAllContent();
       closeCodeLinks();
+      clickedContentHeight = 0;
+      clickedContent.setAttribute("style", "height:" + clickedContentHeight + "px");
       clickedContent.classList.remove("show");
     } else {
       hideAllContent();
       closeCodeLinks();
+      clickedContentHeight = clickedContentWrapper.clientHeight;
+      clickedContent.setAttribute("style", "height:" + clickedContentHeight + "px");
       clicked.classList.add("is-open");
       clickedContent.classList.add("show");
     }
@@ -34,9 +45,11 @@ class Coding extends Component {
           {code.title}
         </div>
         <div className="content">
+        <div className="content-wrapper">
           <p>{code.description}</p>
           <img src={code.image} alt={code.title} />
           <p className="testimonial-copy">{code.testimonial}</p>
+          </div>
         </div>
       </li>
     ));
