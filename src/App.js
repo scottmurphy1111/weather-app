@@ -10,7 +10,7 @@ import BgImage from "./components/portfolio/BgImage";
 import Enter from "./components/portfolio/Enter";
 import Modal from "./components/portfolio/Modal";
 
-class App extends Component {
+export class App extends Component {
   state = {
     content: data
   };
