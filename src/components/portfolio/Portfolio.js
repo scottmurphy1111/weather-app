@@ -38,11 +38,16 @@ class Portfolio extends Component {
 
       //measure mousewheel/swipe distance
       movement = e.deltaY;
+      
+      console.log('mode', e.deltaMode)
+      
 
       //firefox needs a little help to get correct distance
       if (e.deltaMode === 1) {
-        movement = movement * 8;
+        movement = movement * 12;
       }
+
+      console.log(movement);
 
       //swap panels down
       if (movement > 100 && nextNav) {
