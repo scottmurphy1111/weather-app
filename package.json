@@ -2,16 +2,25 @@
   "homepage": "https://scottmurphy1111.github.io/sm-port-react/",
   "name": "sm-port-react",
   "version": "1.0.0",
+  "description": "Scott Murphy Front End and UI Development",
+  "author": "Scott Murphy",
   "private": true,
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },
+  "jest": {
+    "verbose": true,
+    "testUrl": "http://localhost",
+    "testEnvironment": "node"
+  },
   "scripts": {
     "start": "NODE_PATH=src react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "testOLD": "react-scripts test --env=jsdom",
+    "test": "jest --watch",
+    "verify-tests": "jest --coverage",
     "eject": "react-scripts eject",
     "sass": "sass --watch src/styles/scss:src/styles/css",
     "predeploy": "npm run build",

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import TopPanel from "./TopPanel";
-import SecondPanel from "./SecondPanel";
-import ThirdPanel from "./ThirdPanel";
-import FourthPanel from "./FourthPanel";
-import FifthPanel from "./FifthPanel";
+import React, { Component } from 'react';
+import TopPanel from './TopPanel';
+import SecondPanel from './SecondPanel';
+import ThirdPanel from './ThirdPanel';
+import FourthPanel from './FourthPanel';
+import FifthPanel from './FifthPanel';
 
 class Portfolio extends Component {
   constructor(props) {
@@ -27,27 +27,22 @@ class Portfolio extends Component {
 
   onWheel = e => {
     if (this.props.init.removeDelays) {
-      let enterBtn = document.querySelector(".enter"),
+      let enterBtn = document.querySelector('.enter'),
         element = e.currentTarget,
         nextPanel = element.nextElementSibling,
         prevPanel = element.previousElementSibling,
-        currentNav = document.querySelector(".vert-nav li.active"),
-        nextNav = document.querySelector(".vert-nav li.active").nextElementSibling,
-        prevNav = document.querySelector(".vert-nav li.active").previousElementSibling,
+        currentNav = document.querySelector('.vert-nav li.active'),
+        nextNav = document.querySelector('.vert-nav li.active').nextElementSibling,
+        prevNav = document.querySelector('.vert-nav li.active').previousElementSibling,
         movement = 0;
 
       //measure mousewheel/swipe distance
       movement = e.deltaY;
       
-      console.log('mode', e.deltaMode)
-      
-
       //firefox needs a little help to get correct distance
       if (e.deltaMode === 1) {
         movement = movement * 12;
       }
-
-      console.log(movement);
 
       //swap panels down
       if (movement > 100 && nextNav) {
@@ -60,15 +55,15 @@ class Portfolio extends Component {
         //mousewheel/swipe down
         let movePanelDown = () => {
           //hide swipe icon
-          if (element.className.indexOf("top-panel") > -1) {
-            enterBtn.classList.remove("load-icon", "load-icon-instantly");
+          if (element.className.indexOf('top-panel') > -1) {
+            enterBtn.classList.remove('load-icon', 'load-icon-instantly');
           }
 
           //show next panel/hide current panel
-          element.classList.remove("load-content", "fade-in");
-          element.classList.add("fade-out");
-          nextPanel.classList.add("fade-in");
-          nextPanel.classList.remove("fade-out");
+          element.classList.remove('load-content', 'fade-in');
+          element.classList.add('fade-out');
+          nextPanel.classList.add('fade-in');
+          nextPanel.classList.remove('fade-out');
 
           finishMovingDown();
         };
@@ -79,8 +74,8 @@ class Portfolio extends Component {
             return false;
           } else {
             this.props.setMovingPanel(true);
-            nextNav.classList.add("active");
-            currentNav.classList.remove("active");
+            nextNav.classList.add('active');
+            currentNav.classList.remove('active');
 
             setTimeout(() => {
               this.props.setIsWheel(false);
@@ -101,14 +96,14 @@ class Portfolio extends Component {
         }
 
         let movePanelUp = () => {
-          if (element.className.indexOf("second-panel") > -1) {
-            enterBtn.classList.add("load-icon-instantly");
+          if (element.className.indexOf('second-panel') > -1) {
+            enterBtn.classList.add('load-icon-instantly');
           }
 
-          element.classList.remove("load-content", "fade-in");
-          element.classList.add("fade-out");
-          prevPanel.classList.add("fade-in");
-          prevPanel.classList.remove("fade-out");
+          element.classList.remove('load-content', 'fade-in');
+          element.classList.add('fade-out');
+          prevPanel.classList.add('fade-in');
+          prevPanel.classList.remove('fade-out');
 
           finishMovingUp();
         };
@@ -118,8 +113,8 @@ class Portfolio extends Component {
             return false;
           } else {
             this.props.setMovingPanel(true);
-            prevNav.classList.add("active");
-            currentNav.classList.remove("active");
+            prevNav.classList.add('active');
+            currentNav.classList.remove('active');
 
             setTimeout(() => {
               this.props.setIsWheel(false);
@@ -160,13 +155,13 @@ class Portfolio extends Component {
   onTouchEnd = e => {
     if (this.props.init.removeDelays) {
       let touchobj = e.changedTouches[0],
-        enterBtn = document.querySelector(".enter"),
+        enterBtn = document.querySelector('.enter'),
         element = e.currentTarget,
         nextPanel = element.nextElementSibling,
         prevPanel = element.previousElementSibling,
-        currentNav = document.querySelector(".vert-nav li.active"),
-        nextNav = document.querySelector(".vert-nav li.active").nextElementSibling,
-        prevNav = document.querySelector(".vert-nav li.active").previousElementSibling;
+        currentNav = document.querySelector('.vert-nav li.active'),
+        nextNav = document.querySelector('.vert-nav li.active').nextElementSibling,
+        prevNav = document.querySelector('.vert-nav li.active').previousElementSibling;
 
       this.dist = touchobj.pageY - this.startY;
 
@@ -179,14 +174,14 @@ class Portfolio extends Component {
         }
 
         let movePanelDown = () => {
-          if (element.className.indexOf("top-panel") > -1) {
-            enterBtn.classList.remove("load-icon", "load-icon-instantly");
+          if (element.className.indexOf('top-panel') > -1) {
+            enterBtn.classList.remove('load-icon', 'load-icon-instantly');
           }
 
-          element.classList.remove("load-content", "fade-in");
-          element.classList.add("fade-out");
-          nextPanel.classList.add("fade-in");
-          nextPanel.classList.remove("fade-out");
+          element.classList.remove('load-content', 'fade-in');
+          element.classList.add('fade-out');
+          nextPanel.classList.add('fade-in');
+          nextPanel.classList.remove('fade-out');
 
           finishMovingDown();
         };
@@ -195,8 +190,8 @@ class Portfolio extends Component {
           if (this.props.wheel.movingPanel) {
             return false;
           } else {
-            nextNav.classList.add("active");
-            currentNav.classList.remove("active");
+            nextNav.classList.add('active');
+            currentNav.classList.remove('active');
 
             setTimeout(() => {
               this.props.setIsWheel(false);
@@ -217,14 +212,14 @@ class Portfolio extends Component {
         }
 
         let movePanelUp = () => {
-          if (element.className.indexOf("second-panel") > -1) {
-            enterBtn.classList.add("load-icon-instantly");
+          if (element.className.indexOf('second-panel') > -1) {
+            enterBtn.classList.add('load-icon-instantly');
           }
 
-          element.classList.remove("load-content", "fade-in");
-          element.classList.add("fade-out");
-          prevPanel.classList.add("fade-in");
-          prevPanel.classList.remove("fade-out");
+          element.classList.remove('load-content', 'fade-in');
+          element.classList.add('fade-out');
+          prevPanel.classList.add('fade-in');
+          prevPanel.classList.remove('fade-out');
 
           finishMovingUp();
         };
@@ -233,8 +228,8 @@ class Portfolio extends Component {
           if (this.props.wheel.movingPanel) {
             return false;
           } else {
-            prevNav.classList.add("active");
-            currentNav.classList.remove("active");
+            prevNav.classList.add('active');
+            currentNav.classList.remove('active');
 
             setTimeout(() => {
               this.props.setIsWheel(false);

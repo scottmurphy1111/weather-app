@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Skills extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Skills extends Component {
   }
 
   fireSkills = () => {
-    const toReveal = document.querySelectorAll(".skills .to-reveal");
+    const toReveal = document.querySelectorAll('.skills .to-reveal');
 
     this.processAll = skill => {
       this.setState({
@@ -20,7 +20,7 @@ class Skills extends Component {
       });
 
       setTimeout(() => {
-        skill.classList.add("show");
+        skill.classList.add('show');
       }, this.state.timer);
     };
 
@@ -36,17 +36,17 @@ class Skills extends Component {
   render() {
     const skills = this.props.content.skills.map((skill, index) => (
       <li key={index}>
-        <span className="to-reveal ">{skill}</span>
+        <span className='to-reveal '>{skill}</span>
         <span
           className={
-            "to-reveal pipe " +
-            (index === 1 ? "desktop-only" : "") +
-            " " +
-            (index === 4 ? "desktop-only" : "") +
-            " " +
-            (index === 3 ? "hide-tablet" : "") +
-            " " +
-            (index === 6 ? "hide" : "")
+            'to-reveal pipe ' +
+            (index === 1 ? 'desktop-only' : '') +
+            ' ' +
+            (index === 4 ? 'desktop-only' : '') +
+            ' ' +
+            (index === 3 ? 'hide-tablet' : '') +
+            ' ' +
+            (index === 6 ? 'hide' : '')
           }
         >
           |

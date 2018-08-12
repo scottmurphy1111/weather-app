@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import data from "./data/data.json";
-import PortraitOnly from "./components/portfolio/PortraitOnly";
-import VertNav from "./components/portfolio/VertNav";
-import Portfolio from "./components/portfolio/Portfolio";
-import { connect } from "react-redux";
-import { setLoadMainContent, setRemoveDelays } from "./actions/initActions";
-import { setIsWheel, setMovingPanel } from "./actions/wheelActions";
-import BgImage from "./components/portfolio/BgImage";
-import Enter from "./components/portfolio/Enter";
-import Modal from "./components/portfolio/Modal";
+import React, { Component } from 'react';
+import data from './data/data.json';
+import PortraitOnly from './components/portfolio/PortraitOnly';
+import VertNav from './components/portfolio/VertNav';
+import Portfolio from './components/portfolio/Portfolio';
+import { connect } from 'react-redux';
+import { setLoadMainContent, setRemoveDelays } from './actions/initActions';
+import { setIsWheel, setMovingPanel } from './actions/wheelActions';
+import BgImage from './components/portfolio/BgImage';
+import Enter from './components/portfolio/Enter';
+import Modal from './components/portfolio/Modal';
 
 export class App extends Component {
   state = {
@@ -29,13 +29,13 @@ export class App extends Component {
     return (
       <div>
         <PortraitOnly />
-        <div className="container">
-          <div className="panel">
+        <div className='container'>
+          <div className='panel'>
             <VertNav {...this.props} />
             <Portfolio content={this.state.content} {...this.props} />
           </div>
           <BgImage />
-					<Enter {...this.props} />          
+          <Enter {...this.props} />          
           <Modal />
         </div>
       </div>

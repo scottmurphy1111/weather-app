@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-const USER_ID = "5711949";
+const USER_ID = '5711949';
 
 class Socials extends Component {
   state = {
@@ -22,7 +22,7 @@ class Socials extends Component {
       allItems = soData.items[0];
       badgeCounts = allItems.badge_counts;
     } else {
-      console.error("Couldnt return Stack Overflow User Data", soData.error_id);
+      console.error('Couldnt return Stack Overflow User Data', soData.error_id);
       return false;
     }
 
@@ -53,11 +53,11 @@ class Socials extends Component {
     const socials = this.props.content.contact[0].socials.map(
       (social, index) => (
         <li key={index}>
-          <a title={social.title} target="_blank" href={social.link}>
-            <div className="so-info-wrap">
-              {social.title === "Stack Overflow" ? (
+          <a title={social.title} target='_blank' href={social.link}>
+            <div className='so-info-wrap'>
+              {social.title === 'Stack Overflow' ? (
                 <div>
-                  <div className="so-tooltip">
+                  <div className='so-tooltip'>
                     <p>Reputation: {this.state.totalSoRep}</p>
                     <hr />
                     <p>Badges:</p>
@@ -67,8 +67,8 @@ class Socials extends Component {
                       <li>Gold: {this.state.goldBadges}</li>
                     </ul>
                   </div>
-                  <div className="so-info rep">{this.state.totalSoRep}</div>
-                  <div className="so-info badges">
+                  <div className='so-info rep'>{this.state.totalSoRep}</div>
+                  <div className='so-info badges'>
                     {this.state.totalSoBadges}
                   </div>
                 </div>
