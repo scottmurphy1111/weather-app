@@ -48,7 +48,7 @@ class componentName extends Component {
       <li key={index}>
         <div className='code-link' onClick={this.revealContent}>
           <span className='bio-icon left'>
-            <img src={bio.icon} alt='' />
+            <img src={`${process.env.PUBLIC_URL}${bio.icon}`} alt='' />
           </span>
           {bio.heading}
         </div>

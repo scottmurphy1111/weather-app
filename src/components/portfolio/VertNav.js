@@ -13,10 +13,10 @@ class VertNav extends Component {
     activatePanel = document.querySelector('.' + clickedLiVal);
 
     //loop through nav li's
-    for (let i = 0; i < allPanels.length; i++) {
-      allPanels[i].classList.add('fade-out');
-      allPanels[i].classList.remove('fade-in');
-    }
+    allPanels.forEach(nav => {
+      nav.classList.add('fade-out');
+      nav.classList.remove('fade-in');
+    });
 
     //update active li
     currentActiveLi.classList.remove('active');

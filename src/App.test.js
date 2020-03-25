@@ -1,21 +1,23 @@
-import React from 'react';
-import { shallow, configure } from 'enzyme';
-import { shallowToJson } from 'enzyme-to-json';
-import Adapter from 'enzyme-adapter-react-16';
+// import React from 'react';
+// import App from './App';
+// //import data from './data/data.json';
 
-import { Provider } from "react-redux";
-import renderer from 'react-test-renderer';
+// import { shallow, configure } from 'enzyme';
+// //import { shallowToJson } from 'enzyme-to-json';
+// import Adapter from 'enzyme-adapter-react-16';
 
-import App from './App';
+// import { Provider } from 'react-redux';
 
-configure({adapter: new Adapter()});
-describe('App', () => {
-  it('should render correctly', () => {
-    const output = shallow(
-      <Provider store="mockStore">
-        <App />
-      </Provider>
-    );
-    expect(shallowToJson(output)).toMatchSnapshot();
-  });
-});
+
+// configure({adapter: new Adapter()});
+
+// describe('App', () => {
+//   it('should render correctly', () => {
+//     const output = shallow(
+//       <Provider store="mockStore">
+//         <App />
+//       </Provider>
+//     );
+//     expect(output).toMatchSnapshot();
+//   });
+// });

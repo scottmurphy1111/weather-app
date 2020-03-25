@@ -53,7 +53,7 @@ class Socials extends Component {
     const socials = this.props.content.contact[0].socials.map(
       (social, index) => (
         <li key={index}>
-          <a title={social.title} target='_blank' href={social.link}>
+          <a title={social.title} target='_blank' rel="noopener noreferrer" href={social.link}>
             <div className='so-info-wrap'>
               {social.title === 'Stack Overflow' ? (
                 <div>
@@ -74,7 +74,7 @@ class Socials extends Component {
                 </div>
               ) : null}
             </div>
-            <img src={social.icon} alt={social.title} />
+            <img src={`${process.env.PUBLIC_URL}${social.icon}`} alt={social.title} />
           </a>
         </li>
       )

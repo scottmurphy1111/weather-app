@@ -47,7 +47,7 @@ class Coding extends Component {
         <div className='content'>
           <div className='content-wrapper'>
             <p>{code.description}</p>
-            <img src={code.image} alt={code.title} />
+            <img src={`${process.env.PUBLIC_URL}${code.image}`} alt={code.title} />
             <p className='testimonial-copy'>{code.testimonial}</p>
           </div>
         </div>

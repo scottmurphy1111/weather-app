@@ -9,17 +9,17 @@ class Sites extends Component {
     }, 200);
 
     if (modal === 'Personal Loans') {
-      link = 'assets/modal-templates/personal-loans.html';
+      link = `${process.env.PUBLIC_URL}/assets/modal-templates/personal-loans.html`;
       appendModal(link);
     }
 
     if (modal === 'Creditwise') {
-      link = 'assets/modal-templates/creditwise.html';
+      link = `${process.env.PUBLIC_URL}/assets/modal-templates/creditwise.html`;
       appendModal(link);
     }
 
     if (modal === 'Income Calculator') {
-      link = 'assets/modal-templates/income-calc.html';
+      link = `${process.env.PUBLIC_URL}/assets/modal-templates/income-calc.html`;
       appendModal(link);
     }
 
@@ -46,7 +46,7 @@ class Sites extends Component {
         <a
           className='proj-link'
           style={{ cursor: 'pointer' }}
-          href={site.modal ? null : site.link}
+          href={`${process.env.PUBLIC_URL}${site.modal} ? null : ${site.link}`}
           target={site.modal ? '_self' : '_blank'}
           onClick={site.modal ? () => this.getModal(site.name) : null}
         >

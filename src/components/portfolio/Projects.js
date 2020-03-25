@@ -7,7 +7,7 @@ class Projects extends Component {
       <li key={index}>
         <p>
           <span className='icon'>
-            <img src={project.icon} alt={project.companyName} />
+            <img src={`${process.env.PUBLIC_URL}${project.icon}`} alt={project.companyName} />
           </span>
           {project.companyName} - {project.role}
         </p>

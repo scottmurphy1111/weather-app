@@ -74,12 +74,15 @@ a {
 @font-face {
   font-family: "Source Sans Pro";
   src: url("../../assets/fonts/SourceSansPro-Regular.ttf") format("truetype"); }
+
 @font-face {
   font-family: "Source Sans Pro Light";
   src: url("../../assets/fonts/SourceSansPro-Light.ttf") format("truetype"); }
+
 @font-face {
   font-family: "Source Sans Pro ExtraLight";
   src: url("../../assets/fonts/SourceSansPro-ExtraLight.ttf") format("truetype"); }
+
 .hide {
   display: none; }
 
@@ -329,7 +332,8 @@ a {
       height: auto; } }
 
 .inner-wrap {
-  width: 1024px;
+  width: 100%;
+  max-width: 1120px;
   display: block;
   text-align: left;
   margin: 0 auto;
@@ -426,6 +430,7 @@ span.logo {
     stroke-dashoffset: 0;
     stroke: #5ad6ff;
     transform: rotateZ(1000deg); } }
+
 @-moz-keyframes drawCircle {
   0% {
     stroke-dashoffset: 180;
@@ -440,6 +445,7 @@ span.logo {
     stroke-dashoffset: 0;
     stroke: #5ad6ff;
     transform: rotateZ(1000deg); } }
+
 @-ms-keyframes drawCircle {
   0% {
     stroke-dashoffset: 180;
@@ -454,6 +460,7 @@ span.logo {
     stroke-dashoffset: 0;
     stroke: #5ad6ff;
     transform: rotateZ(1000deg); } }
+
 @-o-keyframes drawCircle {
   0% {
     stroke-dashoffset: 180;
@@ -468,6 +475,7 @@ span.logo {
     stroke-dashoffset: 0;
     stroke: #5ad6ff;
     transform: rotateZ(1000deg); } }
+
 @keyframes drawCircle {
   0% {
     stroke-dashoffset: 180;
@@ -482,31 +490,37 @@ span.logo {
     stroke-dashoffset: 0;
     stroke: #5ad6ff;
     transform: rotateZ(1000deg); } }
+
 @-webkit-keyframes drawLines {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
 @-moz-keyframes drawLines {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
 @-ms-keyframes drawLines {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
 @-o-keyframes drawLines {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
 @keyframes drawLines {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
 .category-title {
   color: #fff;
   padding: 0;
@@ -930,6 +944,7 @@ span.logo {
     transform: translateY(-16px); }
   100% {
     transform: translateY(0px); } }
+
 @-moz-keyframes bounce {
   67% {
     transform: translateY(0px); }
@@ -937,6 +952,7 @@ span.logo {
     transform: translateY(-16px); }
   100% {
     transform: translateY(0px); } }
+
 @-ms-keyframes bounce {
   67% {
     transform: translateY(0px); }
@@ -944,6 +960,7 @@ span.logo {
     transform: translateY(-16px); }
   100% {
     transform: translateY(0px); } }
+
 @-o-keyframes bounce {
   67% {
     transform: translateY(0px); }
@@ -951,6 +968,7 @@ span.logo {
     transform: translateY(-16px); }
   100% {
     transform: translateY(0px); } }
+
 @keyframes bounce {
   67% {
     transform: translateY(0px); }
@@ -958,6 +976,7 @@ span.logo {
     transform: translateY(-16px); }
   100% {
     transform: translateY(0px); } }
+
 .top-panel h1 {
   font-family: "Source Sans Pro Light", sans-serif;
   font-size: 2em;
@@ -970,6 +989,7 @@ span.logo {
       line-height: 24px;
       padding: 0px 0px 5px;
       width: 280px; } }
+
 .top-panel .name {
   text-transform: uppercase;
   opacity: 0;
@@ -1010,6 +1030,7 @@ span.logo {
       transition: all 0.25s ease-out 2.25s; }
       .top-panel .name.show {
         left: 10px; } }
+
 .top-panel .title {
   text-transform: uppercase;
   font: 0.75em "Source Sans Pro ExtraLight", sans-serif;
@@ -1054,6 +1075,7 @@ span.logo {
       -ms-transition: all 0.35s ease-out 2.4s;
       -o-transition: all 0.35s ease-out 2.4s;
       transition: all 0.35s ease-out 2.4s; } }
+
 .top-panel .tagline {
   font: 1em "Source Sans Pro Light", sans-serif;
   font-weight: bold;
@@ -1094,6 +1116,7 @@ span.logo {
   @media only screen and (min-width: 0px) and (max-width: 767px) {
     .top-panel .tagline {
       margin: 0.5em auto; } }
+
 .top-panel .skills {
   font-family: "Source Sans Pro Light", sans-serif;
   text-transform: uppercase;
@@ -1180,26 +1203,31 @@ span.logo {
     width: 100%; }
   100% {
     width: 0%; } }
+
 @-moz-keyframes showHide {
   0% {
     width: 100%; }
   100% {
     width: 0%; } }
+
 @-ms-keyframes showHide {
   0% {
     width: 100%; }
   100% {
     width: 0%; } }
+
 @-o-keyframes showHide {
   0% {
     width: 100%; }
   100% {
     width: 0%; } }
+
 @keyframes showHide {
   0% {
     width: 100%; }
   100% {
     width: 0%; } }
+
 .second-panel {
   color: #141416; }
   .second-panel .logo-circle {
@@ -1386,21 +1414,21 @@ span.logo {
         width: 100%;
         height: 0px;
         margin: 0 auto;
-        padding: 0px 0 0 12px;
+        padding: 0px 0 0 40px;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
         box-sizing: border-box;
         cursor: default;
         transition: 0.15s all linear;
-        left: 28px;
+        left: 0;
         position: relative;
         top: 0px; }
         @media only screen and (min-width: 0px) and (max-width: 767px) {
           .third-panel .inner-wrap ul li .content {
             margin-left: 0px;
-            left: 21px;
-            padding-right: 40px; } }
+            left: 0px;
+            padding: 0 0 0 8px; } }
         .third-panel .inner-wrap ul li .content p {
           color: #fff;
           margin: 12px 12px 12px 0px;
@@ -1444,6 +1472,7 @@ span.logo {
 
 .fourth-panel h2 .logo {
   left: 0; }
+
 .fourth-panel .inner-wrap ul {
   margin: 0px auto 0;
   padding: 0;
@@ -1544,6 +1573,7 @@ span.logo {
 
 .fifth-panel h2 .logo {
   left: 0; }
+
 .fifth-panel h3 {
   color: #fff;
   font-size: 1.25rem;
@@ -1552,6 +1582,7 @@ span.logo {
   @media only screen and (min-width: 0px) and (max-width: 767px) {
     .fifth-panel h3 {
       margin-top: 0; } }
+
 .fifth-panel .block {
   display: inline-block;
   -webkit-box-sizing: border-box;
@@ -1687,6 +1718,7 @@ span.logo {
         .fifth-panel .block .social li a .so-info.badges {
           border-radius: 0 3px 3px 0;
           left: 0px; }
+
 .fifth-panel .special-note {
   display: inline-block;
   padding-bottom: 24px; }
@@ -1699,6 +1731,7 @@ span.logo {
       .fifth-panel .special-note p {
         font-size: 1rem;
         line-height: 24px; } }
+
 .fifth-panel .info-block {
   display: inline-block;
   width: 100%;
@@ -1711,6 +1744,7 @@ span.logo {
     @media only screen and (min-width: 0px) and (max-width: 767px) {
       .fifth-panel .info-block p {
         font-size: 0.8125rem; } }
+
 .fifth-panel p {
   padding: 0px 0px 0px;
   font: 1em "Source Sans Pro Light", sans-serif;
@@ -1729,6 +1763,7 @@ span.logo {
   .fifth-panel p.clickable {
     color: #fff;
     padding: 0 0 10px; }
+
 .fifth-panel .align-right {
   text-align: left;
   padding: 0px 0px 10px;
@@ -1737,5 +1772,3 @@ span.logo {
   color: #fff; }
   .fifth-panel .align-right p {
     text-align: left; }
-
-/*# sourceMappingURL=index.css.map */

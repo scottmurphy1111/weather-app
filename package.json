@@ -7,8 +7,8 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4"
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   },
   "jest": {
     "verbose": true,
@@ -22,7 +22,7 @@
     "test": "jest --watch",
     "verify-tests": "jest --coverage",
     "eject": "react-scripts eject",
-    "sass": "sass --watch src/styles/scss:src/styles/css",
+    "sass": "node-sass -w src/styles/scss -o src/styles/css",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -31,9 +31,21 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "gh-pages": "^1.2.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "react-redux": "^5.0.7",
     "react-test-renderer": "^16.4.1",
     "redux": "^4.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
