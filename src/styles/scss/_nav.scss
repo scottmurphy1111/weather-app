@@ -1,0 +1,137 @@
+.vert-nav {
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #141414;
+  // @include prefixed(transition, all 0.35s ease-out 3.75s);
+  @include hacks();
+  display: flex;
+  justify-content: space-between;
+
+  &.show {
+    right: 0;
+  }
+
+  .vert-nav-wrapper {
+    padding: 0;
+    margin: 0;
+    // height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .nav-item {
+      width: 10px;
+      // height: 20vh;
+      // height: unquote("calc( 20vh - 2px )");
+      display: inline-block;
+      padding: 0px;
+      margin: 0px 0 4px;
+      background: $secondaryColor;
+      opacity: 0.15;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      @include prefixed(transition, 0.25s all ease-out);
+      @include hacks();
+
+      &:hover {
+        @include desktop {
+          opacity: 0.25;
+        }
+      }
+
+      &:nth-child(2) {
+        top: 20vh;
+      }
+
+      &:nth-child(3) {
+        top: 40vh;
+      }
+
+      &:nth-child(4) {
+        top: 60vh;
+      }
+
+      &:last-child {
+        top: 80vh;
+        margin: 0;
+      }
+
+      &.active {
+        background: $blueThin;
+        opacity: 1;
+      }
+    }
+  }
+
+  .logo {
+    display: flex;
+    width: 80px;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      width: 100%;
+      pointer-events: none;
+    }
+
+    &.show {
+      @include prefixed(transition, 0.4s all ease-out 2s);
+      // transform: translateX(-60%);
+      // left: 5%;
+    }
+
+    &.remove-delay {
+      @include prefixed(transition, 0s all ease-out 0s);
+    }
+
+    // @include mobile {
+    //   top: 0px;
+    //   width: 29px;
+    //   height: 29px;
+    // }
+  }
+
+  ul {
+    padding: 0;
+    display: flex;
+    width: calc(100% - 100px);
+    list-style: none;
+    justify-content: space-between;
+
+    li {
+      text-align: center;
+      position: relative;
+      padding-bottom: 8px;
+      cursor: pointer;
+
+      &:after {
+        content: "";
+        width: 0;
+        height: 2px;
+        border-bottom: 3px solid $blueThin;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .fly-out {
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+  }
+}

@@ -2,7 +2,7 @@
   h1 {
     font-family: $font-light;
     font-size: 2em;
-    margin: 0 auto 4px;
+    margin: 0 auto 2.4rem;
     color: $blueThin;
     width: 768px;
     position: relative;
@@ -18,8 +18,8 @@
     text-transform: uppercase;
     opacity: 0;
     visibility: hidden;
-    @include prefixed(transition, all 0.25s ease-out 2.25s);
-    margin-right: 6px;
+    // @include prefixed(transition, all 0.25s ease-out 2.25s);
+    margin-right: 1.2rem;
     position: relative;
     @include hacks();
 
@@ -29,11 +29,11 @@
     }
 
     &.remove-delay {
-      @include prefixed(transition, 0s all ease-out 0s);
+      // @include prefixed(transition, 0s all ease-out 0s);
     }
 
     @include mobile {
-      @include prefixed(transition, all 0.25s ease-out 2.25s);
+      // @include prefixed(transition, all 0.25s ease-out 2.25s);
 
       &.show {
         left: 10px;
@@ -43,14 +43,14 @@
 
   .title {
     text-transform: uppercase;
-    font: 0.75em $font-extralight;
+    font: 1.6rem $font-extralight;
     margin: 0;
     opacity: 0;
     visibility: hidden;
-    @include prefixed(transition, all 0.35s ease-out 2.4s);
+    // @include prefixed(transition, all 0.35s ease-out 2.4s);
     @include hacks();
     right: -30px;
-    top: 4px;
+    top: 0px;
     position: relative;
     color: $blueThin;
     font-weight: bold;
@@ -62,11 +62,11 @@
     }
 
     &.remove-delay {
-      @include prefixed(transition, 0s all ease-out 0s);
+      // @include prefixed(transition, 0s all ease-out 0s);
     }
 
     @include mobile {
-      @include prefixed(transition, all 0.35s ease-out 2.4s);
+      // @include prefixed(transition, all 0.35s ease-out 2.4s);
     }
   }
 
@@ -77,7 +77,7 @@
     text-transform: uppercase;
     opacity: 0;
     visibility: hidden;
-    @include prefixed(transition, all 0.35s linear 2.6s);
+    // @include prefixed(transition, all 0.35s linear 2.6s);
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -91,7 +91,7 @@
     }
 
     &.remove-delay {
-      @include prefixed(transition, 0s all ease-out 0s);
+      // @include prefixed(transition, 0s all ease-out 0s);
     }
 
     @include mobile {
@@ -106,7 +106,7 @@
     margin: 0 auto;
     display: block;
     opacity: 0;
-    @include prefixed(transition, all 0.25s linear 0s);
+    // @include prefixed(transition, all 0.25s linear 0s);
     position: relative;
     overflow: hidden;
     @include hacks();
@@ -117,10 +117,10 @@
     }
 
     &.remove-delay {
-      @include prefixed(transition, 0s all ease-out 0s);
+      // @include prefixed(transition, 0s all ease-out 0s);
 
       .to-reveal {
-        @include prefixed(transition, 0s all ease-out 0s);
+        // @include prefixed(transition, 0s all ease-out 0s);
       }
     }
 
@@ -145,7 +145,7 @@
 
     .to-reveal {
       transform: translateY(35px);
-      @include prefixed(transition, all 0.15s ease-out);
+      // @include prefixed(transition, all 0.15s ease-out);
       position: relative;
       opacity: 0;
       color: #fff;
