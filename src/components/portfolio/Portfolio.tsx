@@ -4,33 +4,59 @@ import SecondPanel from './SecondPanel';
 import ThirdPanel from './ThirdPanel';
 import FourthPanel from './FourthPanel';
 import FifthPanel from './FifthPanel';
-import { BehaviorSubject, fromEvent, of } from 'rxjs';
+import { BehaviorSubject, fromEvent } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-const getPanelOffset = ((panel: any) => {
-  const panelOffset = document.querySelector(panel).getBoundingClientRect().height - 350;
-  return panelOffset;
-});
+// const getPanelOffset = ((panel: any) => {
+//   const panelOffset = document.querySelector(panel).getBoundingClientRect().height - 350;
+//   return panelOffset;
+// });
 
 
 
 export default function Portfolio() {
-  // const [scrollOffsetY, setScrollOffsetY] = useState(0);
+  const [topPanelOffset, setTopPanelOffset] = useState(0);
+  const [secondPanelOffset, setSecondPanelOffset] = useState(0);
+  const [thirdPanelOffset, setThirdPanelOffset] = useState(0);
+  const [fourthPanelOffset, setFourthPanelOffset] = useState(0);
+  const [fifthPanelOffset, setFifthPanelOffset] = useState(0);
+
+  const getCurrentOffset = (pageOffset: any) => {
+    console.log('offset', pageOffset, 
+    'top', topPanelOffset,
+    'sec', secondPanelOffset,
+    'thi', thirdPanelOffset,
+    'fou', fourthPanelOffset,
+    'fif', fifthPanelOffset);
+    if (topPanelOffset < pageOffset && secondPanelOffset > pageOffset) {
+      bgOverlay$.value.style.backgroundColor = 'rgba(25, 128, 229, 1';
+    } else if (secondPanelOffset < pageOffset && thirdPanelOffset > pageOffset) {
+      bgOverlay$.value.style.backgroundColor = 'rgba(229, 128, 25, 1';
+    } else if (thirdPanelOffset < pageOffset && fourthPanelOffset > pageOffset) {
+      bgOverlay$.value.style.backgroundColor = 'rgba(128, 25, 229, 1';
+    } else if (fourthPanelOffset < pageOffset && fifthPanelOffset > pageOffset) {
+      bgOverlay$.value.style.backgroundColor = 'rgba(25, 229, 128, 1';
+    } else {
+      bgOverlay$.value.style.backgroundColor = 'rgba(229, 25, 128, 1';
+    }
+  };
+
   const bgOverlay$ = new BehaviorSubject<any>(null);
   
   const monitorScrolling$ = () => fromEvent(window, 'scroll').pipe(
-    map(() => window.pageYOffset > getPanelOffset('.second-panel')),
+    map(() => window.pageYOffset),
     tap(value => {
       console.log('value', value);
       bgOverlay$.next(document.querySelector('.bg-overlay'));
-      value ? bgOverlay$.value.style.backgroundColor = 'rgba(244,59,34,0.05)' : bgOverlay$.value.style.backgroundColor = 'rgba(34,163,244,0.05)';
+      // getCurrentOffset(value);
+      //value ? bgOverlay$.value.style.backgroundColor = 'rgba(5,159,134,0.05)' : bgOverlay$.value.style.backgroundColor = 'rgba(34,163,244,0.05)';
     })
   );
 
   useEffect(() => {
    const subscription = monitorScrolling$().subscribe(subVal => console.log('subVal', subVal));
    const bgOverlay = document.querySelector('.bg-overlay');
-   console.log('bg overlay', bgOverlay);
+   console.log('spo', secondPanelOffset);
    return () => subscription.unsubscribe();
   })
 
@@ -277,46 +303,49 @@ export default function Portfolio() {
   //   const content = this.props.content;
   }
   return (
-    <div className='wrap container-fluid'>
-      <div className='row'>
-        <TopPanel
-        // content={content}
-        // onWheel={e => this.onWheel(e)}
-        // onTouchStart={e => this.onTouchStart(e)}
-        // onTouchMove={e => this.onTouchMove(e)}
-        // onTouchEnd={e => this.onTouchEnd(e)}
-        // {...this.props}
-        />
-        <SecondPanel
-        // content={content}
-        // onWheel={e => this.onWheel(e)}
-        // onTouchStart={e => this.onTouchStart(e)}
-        // onTouchMove={e => this.onTouchMove(e)}
-        // onTouchEnd={e => this.onTouchEnd(e)}
-        />
-        <ThirdPanel
-        // content={content}
-        // onWheel={e => this.onWheel(e)}
-        // onTouchStart={e => this.onTouchStart(e)}
-        // onTouchMove={e => this.onTouchMove(e)}
-        // onTouchEnd={e => this.onTouchEnd(e)}
-        />
-        <FourthPanel
-        // content={content}
-        // onWheel={e => this.onWheel(e)}
-        // onTouchStart={e => this.onTouchStart(e)}
-        // onTouchMove={e => this.onTouchMove(e)}
-        // onTouchEnd={e => this.onTouchEnd(e)}
-        />
-        <FifthPanel
-        // content={content}
-        // onWheel={e => this.onWheel(e)}
-        // onTouchStart={e => this.onTouchStart(e)}
-        // onTouchMove={e => this.onTouchMove(e)}
-        // onTouchEnd={e => this.onTouchEnd(e)}
-        />
-      </div>
-    </div>
+    <>
+      <TopPanel
+        setTopPanelOffset={setTopPanelOffset}
+      // content={content}
+      // onWheel={e => this.onWheel(e)}
+      // onTouchStart={e => this.onTouchStart(e)}
+      // onTouchMove={e => this.onTouchMove(e)}
+      // onTouchEnd={e => this.onTouchEnd(e)}
+      // {...this.props}
+      />
+      <SecondPanel
+        setSecondPanelOffset={setSecondPanelOffset}
+      // content={content}
+      // onWheel={e => this.onWheel(e)}
+      // onTouchStart={e => this.onTouchStart(e)}
+      // onTouchMove={e => this.onTouchMove(e)}
+      // onTouchEnd={e => this.onTouchEnd(e)}
+      />
+      <ThirdPanel
+        setThirdPanelOffset={setThirdPanelOffset}
+      // content={content}
+      // onWheel={e => this.onWheel(e)}
+      // onTouchStart={e => this.onTouchStart(e)}
+      // onTouchMove={e => this.onTouchMove(e)}
+      // onTouchEnd={e => this.onTouchEnd(e)}
+      />
+      <FourthPanel
+        setFourthPanelOffset={setFourthPanelOffset}
+      // content={content}
+      // onWheel={e => this.onWheel(e)}
+      // onTouchStart={e => this.onTouchStart(e)}
+      // onTouchMove={e => this.onTouchMove(e)}
+      // onTouchEnd={e => this.onTouchEnd(e)}
+      />
+      <FifthPanel
+        setFifthPanelOffset={setFifthPanelOffset}
+      // content={content}
+      // onWheel={e => this.onWheel(e)}
+      // onTouchStart={e => this.onTouchStart(e)}
+      // onTouchMove={e => this.onTouchMove(e)}
+      // onTouchEnd={e => this.onTouchEnd(e)}
+      />
+    </>
   );
 }
 // }

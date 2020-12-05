@@ -1,29 +1,34 @@
 import { AppContext } from '../../App';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { getPanelOffset } from './getPanelOffset';
 // import Coding from './Coding';
 
-export default function ThirdPanel() {
+const ThirdPanel = (params: any) => {
   const { thirdPanel } = useContext<any>(AppContext);
   const { title, skills } = thirdPanel;
+
+  useEffect(() => {
+    params.setThirdPanelOffset(getPanelOffset('.third-panel'))
+  })
   return (
-  <section
-    className='third-panel sliding-panel fade-out'
-    data-section='skills'
-    // onWheel={props.onWheel}
-    // onTouchStart={props.onTouchStart}
-    // onTouchMove={props.onTouchMove}
-    // onTouchEnd={props.onTouchEnd}
-  >
-    <div className='panel-wrapper'>
-      <div className='inner-wrap snippets'>
-        <h2 className='category-title'>{title}</h2>
-        {/* <Coding content={props.content} /> */}
-         <div className='skills show'>
-            {skills.map((skill: any, id: number) => <li key={id + 1}>{skill}</li>)}
+    <section
+      className='third-panel sliding-panel wrap container-fluid'
+      data-section='skills'
+    >
+      <div className='row'>
+        <div className='col-xs-12'>
+          <div className='panel-wrapper'>
+            <h2 className='category-title'>{title}</h2>
+            {/* <Coding content={props.content} /> */}
+            <ul className='skills show'>
+              {skills.map((skill: any, id: number) => <li key={id + 1}>{skill}</li>)}
+            </ul>
           </div>
+        </div>
       </div>
-    </div>
-  </section>
-);
-  }
+    </section>
+  );
+}
+
+export default ThirdPanel;
 

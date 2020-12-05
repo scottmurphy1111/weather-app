@@ -14,129 +14,127 @@
     }
   }
 
-  .inner-wrap {
-    ul {
-      margin: 0px auto 10px;
-      padding: 0;
-      display: inline-block;
-      width: 100%;
+  ul {
+    margin: 0px auto 10px;
+    padding: 0;
+    display: inline-block;
+    width: 100%;
 
-      &:last-child {
-        li {
-          &:first-child {
-            border-top-left-radius: 0px;
-            border-bottom-left-radius: 10px;
+    &:last-child {
+      li {
+        &:first-child {
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 10px;
 
-            @include mobile {
-              border-radius: 0;
-            }
+          @include mobile {
+            border-radius: 0;
           }
+        }
 
-          &:last-child {
-            border-top-right-radius: 0px;
-            border-bottom-right-radius: 10px;
+        &:last-child {
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 10px;
 
-            @include mobile {
-              border-radius: 0;
-            }
+          @include mobile {
+            border-radius: 0;
           }
         }
       }
+    }
 
-      > li {
-        display: block;
+    > li {
+      display: block;
+      width: 100%;
+      opacity: 1;
+      visibility: visible;
+      float: left;
+      color: $blueThin;
+      padding: 0px;
+      margin: 0 0px;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: left;
+      @include box-sizing(border-box);
+
+      @include mobile {
         width: 100%;
-        opacity: 1;
-        visibility: visible;
-        float: left;
-        color: $blueThin;
-        padding: 0px;
-        margin: 0 0px;
-        text-transform: uppercase;
-        font-weight: bold;
         text-align: left;
-        @include box-sizing(border-box);
+      }
+
+      p {
+        margin: 0 0 0.25rem;
+      }
+
+      .icon {
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        background-size: 100%;
+        margin: 0px 10px 0 0;
+        position: relative;
+        top: 0px;
+        vertical-align: top;
 
         @include mobile {
-          width: 100%;
-          text-align: left;
-        }
-
-        p {
-          margin: 0 0 0.25rem;
-        }
-
-        .icon {
-          width: 32px;
-          height: 32px;
-          display: inline-block;
-          background-size: 100%;
-          margin: 0px 10px 0 0;
-          position: relative;
           top: 0px;
-          vertical-align: top;
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+        }
+      }
 
-          @include mobile {
-            top: 0px;
-            width: 24px;
-            height: 24px;
-            margin-right: 5px;
-          }
+      .icon-circle {
+        fill: $highlightColor;
+      }
+
+      .icon-logo {
+        fill: #fff;
+      }
+
+      > ul {
+        display: inline-block;
+        margin-top: 0px;
+        margin-left: 0;
+
+        @include mobile {
+          margin-top: 2px;
         }
 
-        .icon-circle {
-          fill: $highlightColor;
-        }
-
-        .icon-logo {
-          fill: #fff;
-        }
-
-        > ul {
+        > li {
           display: inline-block;
-          margin-top: 0px;
-          margin-left: 0;
+          color: #fff;
+          padding: 0;
+          text-transform: inherit;
+          width: 100%;
+          transition: 0.15s all ease-in;
+          margin: 3px 0 3px 19px;
 
           @include mobile {
-            margin-top: 2px;
+            margin-left: 8px;
           }
 
-          > li {
-            display: inline-block;
+          a,
+          a:hover,
+          a:focus,
+          a:visited {
             color: #fff;
-            padding: 0;
-            text-transform: inherit;
-            width: 100%;
-            transition: 0.15s all ease-in;
-            margin: 3px 0 3px 19px;
+            position: relative;
+            left: 23px;
+            display: inline-block;
+            font-family: $font-light;
 
-            @include mobile {
-              margin-left: 8px;
+            &:after {
+              content: "";
+              display: block;
+              width: 0;
+              height: 2px;
+              background: $blueThin;
+              transition: width 0.15s linear 0.05s;
             }
 
-            a,
-            a:hover,
-            a:focus,
-            a:visited {
-              color: #fff;
-              position: relative;
-              left: 23px;
-              display: inline-block;
-              font-family: $font-light;
-
+            &:hover {
               &:after {
-                content: "";
-                display: block;
-                width: 0;
-                height: 2px;
-                background: $blueThin;
-                transition: width 0.15s linear 0.05s;
-              }
-
-              &:hover {
-                &:after {
-                  width: 100%;
-                }
+                width: 100%;
               }
             }
           }

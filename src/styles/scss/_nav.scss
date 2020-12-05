@@ -4,7 +4,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  background: #141414;
+  // background: #141414;
   // @include prefixed(transition, all 0.35s ease-out 3.75s);
   @include hacks();
   display: flex;
@@ -105,25 +105,29 @@
     li {
       text-align: center;
       position: relative;
-      padding-bottom: 8px;
+      line-height: 36px;
       cursor: pointer;
+      opacity: 0.5;
+      transition: all 0.25s ease-out;
+      text-transform: uppercase;
 
-      &:after {
-        content: "";
-        width: 0;
-        height: 2px;
-        border-bottom: 3px solid $blueThin;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        transition: all 0.2s ease-in-out;
-      }
+      // &:after {
+      //   content: "";
+      //   width: 0;
+      //   height: 2px;
+      //   border-bottom: 3px solid $blueThin;
+      //   position: absolute;
+      //   left: 50%;
+      //   transform: translateX(-50%);
+      //   bottom: 0;
+      //   transition: all 0.2s ease-in-out;
+      // }
 
       &:hover {
-        &:after {
-          width: 100%;
-        }
+        opacity: 1;
+        // &:after {
+        //   width: 100%;
+        // }
       }
     }
   }

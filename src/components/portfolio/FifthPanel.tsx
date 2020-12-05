@@ -1,8 +1,9 @@
 import { AppContext } from '../../App';
 import React, { useContext, useEffect } from 'react';
+import { getPanelOffset } from './getPanelOffset';
 // import Socials from './Socials';
 
-export default function FifthPanel() {
+const FifthPanel = (params: any) => {
   const { fifthPanel } = useContext<any>(AppContext);
   const { title, contactTitle, socialTitle, contact } = fifthPanel;
 
@@ -21,44 +22,46 @@ export default function FifthPanel() {
     loadContact();
   });
 
+  useEffect(() => {
+    params.setFifthPanelOffset(getPanelOffset('.fifth-panel'))
+  })
+
   return (
-    
+
 
     // componentDidMount() {
     //   this.loadContact();
     // }
 
     <section
-      className='fifth-panel sliding-panel fade-out'
+      className='fifth-panel sliding-panel wrap container-fluid'
       data-section='contact'
-      // onWheel={this.props.onWheel}
-      // onTouchStart={this.props.onTouchStart}
-      // onTouchMove={this.props.onTouchMove}
-      // onTouchEnd={this.props.onTouchEnd}
     >
-      <div className='panel-wrapper'>
-        <div className='inner-wrap'>
-          <div className='special-note'>
-            <h2 className='category-title'>{title}</h2>
-            <p>{contact.specialNote}</p>
-          </div>
-          <div className='block'>
-            <h2 className='category-title'>
-              {contactTitle}
-            </h2>
-            <div className='contact'>
-              <ul>
-                <li className='insert-phone' />
-                <li className='insert-email' />
-              </ul>
+      <div className='row'>
+        <div className='col-xs-12'>
+          <div className='panel-wrapper'>
+            <div className='special-note'>
+              <h2 className='category-title'>{title}</h2>
+              <p>{contact.specialNote}</p>
             </div>
-          </div>
-          <div className='block'>
-            <h2 className='category-title'>
-              {socialTitle}
-            </h2>
-            <div className='social'>
-              {/* <Socials content={this.props.content} /> */}
+            <div className='block'>
+              <h2 className='category-title'>
+                {contactTitle}
+              </h2>
+              <div className='contact'>
+                <ul>
+                  <li className='insert-phone' />
+                  <li className='insert-email' />
+                </ul>
+              </div>
+            </div>
+            <div className='block'>
+              <h2 className='category-title'>
+                {socialTitle}
+              </h2>
+              <div className='social'>
+                {/* <Socials content={this.props.content} /> */}
+              </div>
             </div>
           </div>
         </div>
@@ -66,3 +69,5 @@ export default function FifthPanel() {
     </section>
   );
 }
+
+export default FifthPanel;

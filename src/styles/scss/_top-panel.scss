@@ -2,7 +2,7 @@
   h1 {
     font-family: $font-light;
     font-size: 2em;
-    margin: 0 auto 2.4rem;
+    margin: 0 auto 0.8rem;
     color: $blueThin;
     width: 768px;
     position: relative;
@@ -67,6 +67,115 @@
 
     @include mobile {
       // @include prefixed(transition, all 0.35s ease-out 2.4s);
+    }
+  }
+
+  .gear-icon {
+    width: 250px;
+    opacity: 1;
+    transition: opacity 1s ease-out 0s;
+
+      &.hide {
+        opacity: 0;
+      }
+
+    .gear {
+      animation: spin 5s forwards linear;
+      transform-origin: center center;
+      opacity: 0.125;
+      transition: opacity 1s ease-in 0s;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+
+    .left-bracket {
+      // transform-origin: bottom center;
+      // animation: spring 1s ease-out 0s;
+      opacity: 0;
+      transition: opacity 1s ease-in 0s;
+
+      &.show {
+        opacity: 1;
+        transition: opacity 1.5s ease-in-out 0.25s;
+      }
+    }
+
+    .ess {
+      transform-origin: bottom center;
+      // animation: spring 1.5s ease-out 1.25s;
+      opacity: 0;
+      transition: opacity 1s ease-in 0s;
+
+      &.show {
+        opacity: 1;
+        transition: opacity 1.5s ease-in-out 0.25s;
+      }
+    }
+
+    .emm {
+      transform-origin: bottom center;
+      // animation: spring 1.5s ease-out 1.5s;
+      opacity: 0;
+      transition: opacity 1s ease-in 0s;
+
+      &.show {
+        opacity: 1;
+        transition: opacity 1.5s ease-in-out 0.25s;
+      }
+    }
+
+    .right-bracket {
+      // transform-origin: bottom center;
+      // animation: spring 1s ease-out 0.75s;
+      opacity: 0;
+      transition: opacity 1s ease-in 0s;
+
+      &.show {
+        opacity: 1;
+        transition: opacity 1.5s ease-in-out 0.25s;
+      }
+    }
+  }
+
+  @include keyframes(spin) {
+    0% {
+      transform: rotateZ(0deg)
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  @include keyframes(bounce) {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spring { 
+    0% {
+      transform: scale(1) translateY(0); 
+    }
+    10% {
+      transform: scale(1.1, 0.9); 
+    }
+    30% { 
+      transform: scale(0.9, 1.0) translateY(-10px); 
+    }
+    50% { 
+      transform: scale(1) translateY(0); 
+    }
+    100% { 
+      transform: translateY(0); 
     }
   }
 
@@ -171,9 +280,9 @@
         }
       }
 
-      &.hide {
-        display: none;
-      }
+      // &.hide {
+      //   display: none;
+      // }
     }
 
     &.show {
