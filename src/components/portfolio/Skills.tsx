@@ -3,16 +3,16 @@ import React, { useContext, useEffect } from 'react';
 import { getPanelOffset } from './getPanelOffset';
 // import Coding from './Coding';
 
-const ThirdPanel = (params: any) => {
-  const { thirdPanel } = useContext<any>(AppContext);
-  const { title, skills } = thirdPanel;
+const Skills = (params: any) => {
+  const { skills } = useContext<any>(AppContext);
+  const { title, skillset } = skills;
 
   useEffect(() => {
-    params.setThirdPanelOffset(getPanelOffset('.third-panel'))
+    params.setSkillsOffset(getPanelOffset('.skills'))
   })
   return (
     <section
-      className='third-panel sliding-panel wrap container-fluid'
+      className='skills sliding-panel wrap container-fluid'
       data-section='skills'
     >
       <div className='row'>
@@ -21,7 +21,7 @@ const ThirdPanel = (params: any) => {
             <h2 className='category-title'>{title}</h2>
             {/* <Coding content={props.content} /> */}
             <ul className='skills show'>
-              {skills.map((skill: any, id: number) => <li key={id + 1}>{skill}</li>)}
+              {skillset.map((skill: any, id: number) => <li key={id + 1}>{skill}</li>)}
             </ul>
           </div>
         </div>
@@ -30,5 +30,5 @@ const ThirdPanel = (params: any) => {
   );
 }
 
-export default ThirdPanel;
+export default Skills;
 

@@ -4,22 +4,22 @@ import { AppContext } from '../../App';
 import { getPanelOffset } from './getPanelOffset';
 import { Gear } from '../../assets/svgs';
 
-const TopPanel = (params: any) => {
-  const { topPanel } = useContext<any>(AppContext);
-  const { name, position, subHeadingA, subHeadingB } = topPanel;
+const Home = (params: any) => {
+  const { home } = useContext<any>(AppContext);
+  const { name, subHeadingA, subHeadingB } = home;
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    params.setTopPanelOffset(getPanelOffset('.top-panel'));
+    params.setHomeOffset(getPanelOffset('.home'));
 
     setTimeout(() => {
       setShow(true)
-    }, 4500);
+    }, 4750);
   })
 
   return (
     <section
-      className='top-panel sliding-panel wrap container-fluid'
+      className='home sliding-panel wrap container-fluid'
       data-section='home'
     >
       <div className='row'>
@@ -47,4 +47,4 @@ const TopPanel = (params: any) => {
   );
 }
 
-export default TopPanel;
+export default Home;

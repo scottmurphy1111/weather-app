@@ -1,4 +1,4 @@
-.third-panel {
+.skills {
   color: $primaryColor;
 
   &:after {
@@ -36,7 +36,7 @@
       transition: 0.1s all ease-out 0s;
       width: 100%;
       margin: 0 auto 8px;
-      color: $blueThin;
+      color: $primaryBlue;
       font-weight: bold;
       padding: 0px;
       vertical-align: middle;
@@ -46,6 +46,7 @@
       @include hacks();
       text-transform: uppercase;
       @include box-sizing(border-box);
+      font-size: 2.4rem;
 
       @include mobile {
         width: 100%;

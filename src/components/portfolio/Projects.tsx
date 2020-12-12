@@ -3,17 +3,17 @@ import React, { useContext, useEffect } from 'react';
 // import Projects from './Projects';
 import { getPanelOffset } from './getPanelOffset';
 
-const SecondPanel = (params: any) => {
-  const { secondPanel } = useContext<any>(AppContext);
-  const { title } = secondPanel;
+const Projects = (params: any) => {
+  const { projects } = useContext<any>(AppContext);
+  const { title } = projects;
 
   useEffect(() => {
-    params.setSecondPanelOffset(getPanelOffset('.second-panel'))
+    params.setProjectsOffset(getPanelOffset('.projects'))
   })
 
   return (
     <section
-      className='second-panel sliding-panel wrap container-fluid'
+      className='projects sliding-panel wrap container-fluid'
       data-section='projects'
     >
       <div className='row'>
@@ -27,4 +27,4 @@ const SecondPanel = (params: any) => {
   );
 }
 
-export default SecondPanel;
+export default Projects;

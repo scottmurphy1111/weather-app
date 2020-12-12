@@ -1,20 +1,20 @@
 import { AppContext } from '../../App';
 import React, { useContext, useEffect } from 'react';
 import { getPanelOffset } from './getPanelOffset';
-// import Socials from './Socials';
+import Socials from './Socials';
 
-const FifthPanel = (params: any) => {
-  const { fifthPanel } = useContext<any>(AppContext);
-  const { title, contactTitle, socialTitle, contact } = fifthPanel;
+const Contact = (params: any) => {
+  const { contact } = useContext<any>(AppContext);
+  const { title, contactTitle, socialTitle, contactContent, socials } = contact;
 
   const loadContact = () => {
-    const phone = '804-836-2326';
+    const phone = '804.836.2326';
     const phoneDiv = document.querySelector('.insert-phone');
     const user = 'scottmurphy1111';
     const domain = 'gmail.com';
     const emailDiv = document.querySelector('.insert-email');
 
-    phoneDiv!.innerHTML = `<a href="tel:${phone}">${phone}</a>`;
+    phoneDiv!.innerHTML = `<a href="tel:${phone}">${phone || '804.836.2326'}</a>`;
     emailDiv!.innerHTML = '<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>';
   }
 
@@ -23,7 +23,7 @@ const FifthPanel = (params: any) => {
   });
 
   useEffect(() => {
-    params.setFifthPanelOffset(getPanelOffset('.fifth-panel'))
+    params.setContactOffset(getPanelOffset('.contact'))
   })
 
   return (
@@ -34,7 +34,7 @@ const FifthPanel = (params: any) => {
     // }
 
     <section
-      className='fifth-panel sliding-panel wrap container-fluid'
+      className='contact sliding-panel wrap container-fluid'
       data-section='contact'
     >
       <div className='row'>
@@ -42,7 +42,7 @@ const FifthPanel = (params: any) => {
           <div className='panel-wrapper'>
             <div className='special-note'>
               <h2 className='category-title'>{title}</h2>
-              <p>{contact.specialNote}</p>
+              <p>{contactContent.specialNote}</p>
             </div>
             <div className='block'>
               <h2 className='category-title'>
@@ -60,7 +60,7 @@ const FifthPanel = (params: any) => {
                 {socialTitle}
               </h2>
               <div className='social'>
-                {/* <Socials content={this.props.content} /> */}
+                <Socials data={socials}/>
               </div>
             </div>
           </div>
@@ -70,4 +70,4 @@ const FifthPanel = (params: any) => {
   );
 }
 
-export default FifthPanel;
+export default Contact;

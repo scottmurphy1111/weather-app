@@ -1,17 +1,19 @@
-.vert-nav {
+.nav {
   position: fixed;
   z-index: 4;
   left: 0;
   top: 0;
   width: 100%;
-  // background: #141414;
+  background: #141414;
   // @include prefixed(transition, all 0.35s ease-out 3.75s);
   @include hacks();
   display: flex;
   justify-content: space-between;
+  transform: translateY(-60px);
+  transition: all 0.5s ease-out;
 
   &.show {
-    right: 0;
+    transform: translateY(0px);
   }
 
   .vert-nav-wrapper {
@@ -60,7 +62,7 @@
       }
 
       &.active {
-        background: $blueThin;
+        background: $primaryBlue;
         opacity: 1;
       }
     }
@@ -68,7 +70,7 @@
 
   .logo {
     display: flex;
-    width: 80px;
+    width: 96px;
     height: 100%;
     align-items: center;
     cursor: pointer;
@@ -110,12 +112,34 @@
       opacity: 0.5;
       transition: all 0.25s ease-out;
       text-transform: uppercase;
+      font-size: 1.8rem;
+      font-weight: 600;
+
+      // &:after {
+      //   content: "";
+      //   width: 0%;
+      //   height: 2px;
+      //   border-bottom: 3px solid $primaryBlue;
+      //   position: absolute;
+      //   left: 50%;
+      //   transform: translateX(-50%);
+      //   bottom: 0;
+      //   transition: all 0.2s ease-in-out;
+      // }
+
+      &[data-active='true'] {
+        opacity: 1;
+
+        // &:after {
+        //   width: 100%;
+        // }
+      }
 
       // &:after {
       //   content: "";
       //   width: 0;
       //   height: 2px;
-      //   border-bottom: 3px solid $blueThin;
+      //   border-bottom: 3px solid $primaryBlue;
       //   position: absolute;
       //   left: 50%;
       //   transform: translateX(-50%);

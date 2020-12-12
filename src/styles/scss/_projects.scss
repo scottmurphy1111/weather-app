@@ -1,4 +1,4 @@
-.second-panel {
+.projects {
   color: $primaryColor;
 
   .logo-circle {
@@ -48,7 +48,7 @@
       opacity: 1;
       visibility: visible;
       float: left;
-      color: $blueThin;
+      color: $primaryBlue;
       padding: 0px;
       margin: 0 0px;
       text-transform: uppercase;
@@ -128,7 +128,7 @@
               display: block;
               width: 0;
               height: 2px;
-              background: $blueThin;
+              background: $primaryBlue;
               transition: width 0.15s linear 0.05s;
             }
 

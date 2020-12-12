@@ -31,7 +31,7 @@
   @include hacks();
   left: 0;
   right: 0;
-  padding-top: 5.5rem;
+  padding-top: 10rem;
   overflow: hidden;
   @include box-sizing(border-box);
   touch-action: none;
@@ -100,32 +100,6 @@
   }
 }
 
-// span.logo {
-//   display: inline-block;
-//   width: 100px;
-//   height: 56px;
-//   position: absolute;
-//   top: 4px;
-//   left: 50%;
-//   transform: translateX(-50%);
-
-//   &.show {
-    // @include prefixed(transition, 0.4s all ease-out 2s);
-//     transform: translateX(-60%);
-//     left: 5%;
-//   }
-
-//   &.remove-delay {
-    // @include prefixed(transition, 0s all ease-out 0s);
-//   }
-
-//   @include mobile {
-//     top: 0px;
-//     width: 29px;
-//     height: 29px;
-//   }
-// }
-
 .logo-circle {
   fill: none;
   stroke: #fff;
@@ -172,7 +146,7 @@
 
   100% {
     stroke-dashoffset: 0;
-    stroke: $blueThin;
+    stroke: $primaryBlue;
     transform: rotateZ(1000deg);
   }
 }
@@ -190,10 +164,8 @@
 .category-title {
   color: #fff;
   padding: 0;
-  line-height: 10vh !important;
-  margin: 0 auto;
-  height: 10vh;
-  font-size: 2.8rem;
+  margin: 0 auto 3.2rem;
+  font-size: 3.2rem;
   font-family: $font-extralight;
   text-align: left;
   font-weight: bold;
@@ -344,12 +316,6 @@
     // @include prefixed(transition, 0.35s all ease-out 0.35s);
   }
 
-  &.remove-delay {
-    span.text {
-      // @include prefixed(transition, 0s all ease-out 0s !important);
-    }
-  }
-
   &:hover {
     span.text {
       visibility: visible;
@@ -439,10 +405,10 @@
 }
 
 .modal-window {
-  color: $blueThin;
+  color: $primaryBlue;
   opacity: 0;
   border-radius: 4px;
-  border: 3px solid $blueThin;
+  border: 3px solid $primaryBlue;
   visibility: hidden;
   top: unquote("calc( 50vh - 45% )");
   right: unquote("calc( 50vw - 45% )");
@@ -533,7 +499,7 @@
 
 .code-link {
   cursor: pointer;
-  color: $blueThin;
+  color: $primaryBlue;
   font-weight: bold;
 
   &.bio {

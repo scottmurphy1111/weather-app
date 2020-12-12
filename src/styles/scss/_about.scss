@@ -1,4 +1,4 @@
-.fourth-panel {
+.about {
   h2 {
     .logo {
       left: 0;
@@ -42,7 +42,7 @@
       opacity: 1;
       transition: 0.1s all ease-out 0s;
       width: 100%;
-      margin: 0 0px 8px 0;
+      margin: 0 0px 1.6rem 0;
       color: #fff;
       padding: 0 0px 0px;
       vertical-align: middle;
@@ -53,16 +53,18 @@
       text-transform: uppercase;
       text-align: left;
       cursor: pointer;
+      font-size: 2.4rem;
+      font-weight: bold;
 
       img {
-        width: 4.8rem;
-        height: 4.8rem;
+        width: 5.6rem;
+        height: 5.6rem;
         margin-right: 1.6rem;
       }
 
       .about-link {
         pointer-events: none;
-        color: $blueThin;
+        color: $primaryBlue;
         display: flex;
         align-items: center;
 
@@ -72,13 +74,14 @@
       }
 
       .about-description {
-        padding-left: 6.4rem;
-        transition: all 0.2s ease-out 0s;
+        padding-left: 7.2rem;
+        transition: all 0.1s ease-out 0s;
         opacity: 0;
         height: 0;
 
         p {
           margin: 0;
+          height: 28px;
         }
 
         &.show {

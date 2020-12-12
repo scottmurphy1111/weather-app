@@ -1,9 +1,11 @@
-.top-panel {
+.home {
+  padding-top: 0;
+
   h1 {
     font-family: $font-light;
-    font-size: 2em;
+    font-size: 4.8rem;
     margin: 0 auto 0.8rem;
-    color: $blueThin;
+    color: $primaryBlue;
     width: 768px;
     position: relative;
 
@@ -28,10 +30,6 @@
       visibility: visible;
     }
 
-    &.remove-delay {
-      // @include prefixed(transition, 0s all ease-out 0s);
-    }
-
     @include mobile {
       // @include prefixed(transition, all 0.25s ease-out 2.25s);
 
@@ -52,21 +50,13 @@
     right: -30px;
     top: 0px;
     position: relative;
-    color: $blueThin;
+    color: $primaryBlue;
     font-weight: bold;
 
     &.show {
       opacity: 1;
       visibility: visible;
       right: 0px;
-    }
-
-    &.remove-delay {
-      // @include prefixed(transition, 0s all ease-out 0s);
-    }
-
-    @include mobile {
-      // @include prefixed(transition, all 0.35s ease-out 2.4s);
     }
   }
 
@@ -86,7 +76,7 @@
       transition: opacity 1s ease-in 0s;
 
       &.show {
-        opacity: 1;
+        opacity: 0.9;
       }
     }
 
@@ -180,7 +170,7 @@
   }
 
   .tagline {
-    font: 1em $font-light;
+    font-size: 2.4rem;
     font-weight: bold;
     margin: 0em auto;
     text-transform: uppercase;
@@ -197,10 +187,6 @@
       opacity: 1;
       visibility: visible;
       left: 0;
-    }
-
-    &.remove-delay {
-      // @include prefixed(transition, 0s all ease-out 0s);
     }
 
     @include mobile {
@@ -223,14 +209,6 @@
 
     @include mobile {
       padding: 40px 0 0;
-    }
-
-    &.remove-delay {
-      // @include prefixed(transition, 0s all ease-out 0s);
-
-      .to-reveal {
-        // @include prefixed(transition, 0s all ease-out 0s);
-      }
     }
 
     ul {

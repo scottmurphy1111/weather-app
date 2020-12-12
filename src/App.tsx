@@ -5,11 +5,11 @@ import Portfolio from './components/portfolio/Portfolio';
 import BgImage from './components/portfolio/BgImage';
 
 export const appData = {
-  topPanel: data.panels.topPanel,
-  secondPanel: data.panels.secondPanel,
-  thirdPanel: data.panels.thirdPanel,
-  fourthPanel: data.panels.fourthPanel,
-  fifthPanel: data.panels.fifthPanel
+  home: data.panels.home,
+  about: data.panels.about,
+  skills: data.panels.skills,
+  projects: data.panels.projects,
+  contact: data.panels.contact
 }
 
 export const AppContext = createContext(appData);
