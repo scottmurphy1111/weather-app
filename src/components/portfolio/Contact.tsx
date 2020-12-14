@@ -24,7 +24,7 @@ const Contact = (params: any) => {
 
   useEffect(() => {
     params.setContactOffset(getPanelOffset('.contact'))
-  })
+  }, [])
 
   return (
 

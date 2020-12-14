@@ -13,8 +13,12 @@ const Socials = (({ data }: any) => {
     );
     const soData = await api_call.json();
     console.log('so data', soData);
-    setStackOverflowData(soData.items[0]);
-    console.log('b data', stackOverflowData);
+    if (!soData.error_id) {
+      setStackOverflowData(soData.items[0]);
+    } else {
+      console.error('Couldnt return Stack Overflow User Data', soData.error_id);
+      return false;
+    }
   };
 
   useEffect(() => {

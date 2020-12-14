@@ -1,5 +1,5 @@
 import { AppContext } from '../../App';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 // import About from './About';
 import { getPanelOffset } from './getPanelOffset';
 
@@ -86,7 +86,7 @@ const About = (params: any) => {
     params.setAboutOffset(getPanelOffset('.about'));
     appendExperience();
     // setTextMap(getContent());
-  }, [])
+  })
 
 
   return (
@@ -103,7 +103,7 @@ const About = (params: any) => {
                 return (
                   <li key={id} onClick={(e) => revealContent(e, id)}>
                     <div className="about-link" >
-                      <img src={`${process.env.PUBLIC_URL}${item.icon}`} alt={`${item.heading} image`} />
+                      <img src={`${process.env.PUBLIC_URL}${item.icon}`} alt={`${item.heading}`} />
                       <h3>{item.heading}</h3>
                     </div>
                     <div className="about-description">
