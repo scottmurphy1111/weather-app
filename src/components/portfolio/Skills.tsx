@@ -13,9 +13,8 @@ const Skills = (params: any) => {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  const shuffleSkills = () => {
-    
-    randomizeSkills(skillset);
+  const shuffleSkills = (skillsShuffle: any) => {
+    randomizeSkills(skillsShuffle);
   
     setTimeout(() => {
       applyColors();
@@ -24,7 +23,7 @@ const Skills = (params: any) => {
   };
 
   const randomizeSkills = (allSkills: any) => {
-    // applyColors();
+    console.log('all skills', allSkills);
     let newArray = [];
     while (allSkills.length !== 0) {
       let randomIndex = Math.floor(Math.random() * allSkills.length);
@@ -36,14 +35,6 @@ const Skills = (params: any) => {
     
   }
 
-  // const getColors = () => {
-  //   const red = getRandomColor();
-  //   const green = getRandomColor();
-  //   const blue = getRandomColor();
-
-  //   return `rgb(${red}, ${green}, ${blue})`;
-  // }
-
   const applyColors = () => {
     const skillsBlocks = Array.from(document.querySelectorAll('.skillset li'));
     console.log('blocks', skillsBlocks);
@@ -54,9 +45,10 @@ const Skills = (params: any) => {
   }
 
   useEffect(() => {
+    console.log('skillset effect', skillset);
     params.setSkillsOffset(getPanelOffset('.skills'));
-    shuffleSkills();
-  }, [])
+    shuffleSkills(skillset);
+  }, [skillset])
 
   return (
     <section
@@ -70,6 +62,7 @@ const Skills = (params: any) => {
             <ul className='skillset'>
               {displayedSkillset.map((skill: any, id: number) => <li key={id + 1}>{skill}</li>)}
             </ul>
+            <button onClick={() => shuffleSkills(displayedSkillset)}>Shuffle Skills</button>
             <ul className='testimonials'>
               {testimonials.map((testimonial: any, id: number) => (
                 <li key={id + 1}>

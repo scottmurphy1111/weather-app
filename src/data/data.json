@@ -8,7 +8,27 @@
     },
     "projects": {
       "title": "Projects",
-      "projects": [
+      "projectsView": [
+        {
+          "projectName": "PGA Tour Information",
+          "link": "https://scottmurphy1111.github.io/pga/players",
+          "tech": "Angular, RxJS",
+          "capabilities": "API, Search, Page Limit, Pagination, Custom Design"
+        },
+        {
+          "projectName": "PGA Tour Information",
+          "link": "https://scottmurphy1111.github.io/pga/players",
+          "tech": "Angular, RxJS",
+          "capabilities": "API, Search, Page Limit, Pagination, Custom Design"
+        },
+        {
+          "projectName": "PGA Tour Information",
+          "link": "https://scottmurphy1111.github.io/pga/players",
+          "tech": "Angular, RxJS",
+          "capabilities": "API, Search, Page Limit, Pagination, Custom Design"
+        }
+      ],
+      "projectsOLD": [
         {
           "companyName": "Capital One",
           "icon": "/assets/images/portfolio/c1.svg",

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Logo } from '../../assets/svgs';
-import { getPanelOffset } from './getPanelOffset';
 
 export default function VertNav() {
   const [show, setShow] = useState(false);
@@ -16,17 +15,17 @@ export default function VertNav() {
       active: true
     },
     {
+      value: 'projects',
+      active: false
+    },
+    {
       value: 'about',
       active: false
     },
     {
       value: 'skills',
       active: false
-    },
-    {
-      value: 'projects',
-      active: false
-    },
+    },    
     {
       value: 'contact',
       active: false

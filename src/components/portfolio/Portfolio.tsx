@@ -89,15 +89,15 @@ export default function Portfolio() {
       <Home
         setHomeOffset={setHomeOffset}
       />
+      <Projects
+        setProjectsOffset={setProjectsOffset}
+      />
        <About
         setAboutOffset={setAboutOffset}      
       />
       <Skills
         setSkillsOffset={setSkillsOffset}
-      />
-      <Projects
-        setProjectsOffset={setProjectsOffset}
-      />
+      />      
       <Contact
         setContactOffset={setContactOffset}
       />
