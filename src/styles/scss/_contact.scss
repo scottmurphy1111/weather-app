@@ -1,4 +1,7 @@
 .contact {
+  height: 100vh;
+  justify-content: flex-start;
+
   h2 {
     .logo {
       left: 0;
@@ -32,11 +35,15 @@
     width: 100%;
     margin-bottom: 4.8rem;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     @include mobile {
       width: 100%;
     }
 
-    .contact {
+    .contact-info {
       width: 100%;
       display: block;
 

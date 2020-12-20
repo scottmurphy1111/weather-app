@@ -26,22 +26,22 @@ const addText = ((content: any, text: string) => {
       addText(content, text.slice(1))
     }, 12)
   }
- 
+
 });
 
-const removeText =((content: any) => {
-  console.log('remove called', );
+const removeText = ((content: any) => {
+  console.log('remove called',);
   content.innerHTML = '';
 })
 
 const About = (params: any) => {
   const { about } = useContext<any>(AppContext);
   const { title, aboutSnippets } = about;
-  
+
   const getContent: any = () => {
     const els = Array.from(document.querySelectorAll('.about-description p'));
     const text = els.map(el => el.textContent);
-    
+
     return text;
   };
 
@@ -70,7 +70,7 @@ const About = (params: any) => {
       description.classList.add('show');
 
       let showDiv = document.querySelector('.about-description.show p');
-    
+
       if (showDiv !== null) {
         let height = showDiv.clientHeight;
         (description as HTMLElement).style.height = height + 'px';
@@ -91,12 +91,12 @@ const About = (params: any) => {
 
   return (
     <section
-      className='about sliding-panel wrap container-fluid'
+      className='about sliding-panel container-fluid'
       data-section='about'
     >
-      <div className='row'>
-        <div className='col-xs-12'>
-          <div className='panel-wrapper'>
+      <div className="wrap">
+        <div className='row'>
+          <div className='col-xs-12'>
             <h2 className='category-title'>{title}</h2>
             <ul className='about-snippets'>
               {aboutSnippets.map((item: AboutItem, id: number) => {

@@ -13,7 +13,7 @@
           "projectName": "PGA Tour Information",
           "link": "https://scottmurphy1111.github.io/pga/players",
           "tech": "Angular, RxJS",
-          "capabilities": "API, Search, Page Limit, Pagination, Custom Design"
+          "capabilities": "API, Search, Page Limit, Pagination, Jest Unit Testing, Custom Design"
         },
         {
           "projectName": "PGA Tour Information",
@@ -94,7 +94,28 @@
     },
     "skills": {
       "title": "Skills & Tools",
-      "testimonials": [
+      "skillset": [
+        {
+          "image": "/assets/images/portfolio/developer-100.png",
+          "skillsArray": ["Angular", "ReactJS", "RxJS", "Typescript"]
+        },
+        {
+          "image": "/assets/images/portfolio/laptop-100.png",
+          "skillsArray": ["Mac", "VS Code", "Content Systems", "Design Tools"]
+        },
+        {
+          "image": "/assets/images/portfolio/merge-git-100.png",
+          "skillsArray": ["Git", "Jest", "Mentorship", "Code Reviews"]
+        },
+        {
+          "image": "/assets/images/portfolio/web-100.png",
+          "skillsArray": ["Javascript", "SASS", "HTML", "UI Animations"]
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "testimonialsArray": [
         {
           "title": "Design Execution & UI Specialist",
           "description": "I utilize modern coding practices to implement smooth animations and optimized visual elements into web user interfaces",
@@ -116,24 +137,6 @@
           "testimonial": "Scott consistently takes on challenging work that pushes the boundaries, raise concerns when/where needed, communicates up appropriately when there are constraints and is the first to jump in to help teammates when needed. Awesome work - keep it up!",
           "reporter": "Geoff Laux - Product Owner"
         }
-      ],
-      "skillset": [
-        "Angular",
-        "ReactJS",
-        "Javascript",
-        "Typescript",
-        "RxJS",
-        "SASS",
-        "HTML",
-        "Git",
-        "Protractor",
-        "Jest",
-        "Mac",
-        "VS Code",
-        "UI Animation",
-        "Content Systems",
-        "Figma",
-        "Adobe Design Tools"
       ]
     },
     "about": {
@@ -218,5 +221,5 @@
         }
       ]
     }
-  }  
+  }
 }

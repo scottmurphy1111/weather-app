@@ -34,12 +34,12 @@ const Contact = (params: any) => {
     // }
 
     <section
-      className='contact sliding-panel wrap container-fluid'
+      className='contact sliding-panel container-fluid'
       data-section='contact'
     >
-      <div className='row'>
-        <div className='col-xs-12'>
-          <div className='panel-wrapper'>
+      <div className="wrap">
+        <div className='row'>
+          <div className='col-xs-12'>
             <div className='special-note'>
               <h2 className='category-title'>{title}</h2>
               <p>{contactContent.specialNote}</p>
@@ -48,7 +48,7 @@ const Contact = (params: any) => {
               <h2 className='category-title'>
                 {contactTitle}
               </h2>
-              <div className='contact'>
+              <div className='contact-info'>
                 <ul>
                   <li className='insert-phone' />
                   <li className='insert-email' />
@@ -60,7 +60,7 @@ const Contact = (params: any) => {
                 {socialTitle}
               </h2>
               <div className='social'>
-                <Socials data={socials}/>
+                <Socials data={socials} />
               </div>
             </div>
           </div>

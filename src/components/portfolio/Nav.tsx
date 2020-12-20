@@ -15,6 +15,10 @@ export default function VertNav() {
       active: true
     },
     {
+      value: 'skills',
+      active: false
+    },
+    {
       value: 'projects',
       active: false
     },
@@ -23,18 +27,14 @@ export default function VertNav() {
       active: false
     },
     {
-      value: 'skills',
-      active: false
-    },    
-    {
       value: 'contact',
       active: false
     }
   ]
 
-  
+
   const handleClick = ((e: any) => {
-    console.log('clicked', );
+    console.log('clicked',);
 
     const selectedNav = e.target.dataset.nav;
     console.log('selectedNav', selectedNav);
@@ -42,32 +42,35 @@ export default function VertNav() {
     const section: HTMLElement | null = document.querySelector(`[data-section=${selectedNav}`);
     const scrollPosition = section?.offsetTop;
 
-    window.scrollTo({top:scrollPosition, behavior: 'smooth'});
+    window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
   })
 
   return (
     <div className={`nav ${show ? 'show' : ''}`}>
-      <div className='wrap container-fluid'>
-        <div className='row'>
-          <div className='col-xs-3'>
-            <span className='logo' data-nav='home' onClick={handleClick}>
-              <Logo />
-            </span>
-          </div>
-          <div className='col-xs-5 col-xs-offset-4'>
-            <ul>
-              {
-                navItems.map((item: any, index: number) => {
-                  if (index !== 0) {
-                    return <li key={index} data-nav={item.value} onClick={handleClick}>{item.value}</li>
-                  }
-                })
-              }
-              {/* <li data-nav='projects' onClick={handleClick}>Projects</li>
+      <div className='container-fluid'>
+        <div className="wrap">
+
+          <div className='row'>
+            <div className='col-xs-3'>
+              <span className='logo' data-nav='home' onClick={handleClick}>
+                <Logo />
+              </span>
+            </div>
+            <div className='col-xs-5 col-xs-offset-4'>
+              <ul>
+                {
+                  navItems.map((item: any, index: number) => {
+                    if (index !== 0) {
+                      return <li key={index} data-nav={item.value} onClick={handleClick}>{item.value}</li>
+                    }
+                  })
+                }
+                {/* <li data-nav='projects' onClick={handleClick}>Projects</li>
               <li data-nav='skills' onClick={handleClick}>Skills</li>
               <li data-nav='about' onClick={handleClick}>About</li>
-              <li data-nav='contact' onClick={handleClick}>Contact</li> */}
-            </ul>
+            <li data-nav='contact' onClick={handleClick}>Contact</li> */}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

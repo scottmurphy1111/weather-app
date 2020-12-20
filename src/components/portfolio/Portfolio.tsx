@@ -6,12 +6,13 @@ import About from './About';
 import Contact from './Contact';
 import { BehaviorSubject, fromEvent } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import Testimonials from './Testimonials';
 
-export default function Portfolio() {
+const Portfolio = () => {
   const [homeOffset, setHomeOffset] = useState(0);
-  const [aboutOffset, setAboutOffset] = useState(0);
   const [skillsOffset, setSkillsOffset] = useState(0);
   const [projectsOffset, setProjectsOffset] = useState(0);
+  const [aboutOffset, setAboutOffset] = useState(0);
   const [contactOffset, setContactOffset] = useState(0);
 
   const navElements = Array.from(document.querySelectorAll('[data-nav]'));
@@ -44,18 +45,18 @@ export default function Portfolio() {
     // 'fou', projectsOffset,
     // 'fif', contactOffset);
 
-    if (homeOffset < pageOffset && aboutOffset > pageOffset) {
+    if (homeOffset < pageOffset && skillsOffset > pageOffset) {
       navItems.active = 'home';
       // bgOverlay$.value.style.backgroundColor = 'rgba(25, 128, 229, 1';
-    } else if (aboutOffset < pageOffset && skillsOffset > pageOffset) {
-      navItems.active = 'about';
-      // bgOverlay$.value.style.backgroundColor = 'rgba(229, 128, 25, 1';
     } else if (skillsOffset < pageOffset && projectsOffset > pageOffset) {
       navItems.active = 'skills';
-      // bgOverlay$.value.style.backgroundColor = 'rgba(128, 25, 229, 1';
-    } else if (projectsOffset < pageOffset && contactOffset > pageOffset) {
-      navItems.active = 'projects';
       // bgOverlay$.value.style.backgroundColor = 'rgba(25, 229, 128, 1';
+    } else if (projectsOffset < pageOffset && aboutOffset > pageOffset) {
+      navItems.active = 'projects';
+      // bgOverlay$.value.style.backgroundColor = 'rgba(229, 128, 25, 1';
+    } else if (aboutOffset < pageOffset && contactOffset > pageOffset) {
+      navItems.active = 'about';
+      // bgOverlay$.value.style.backgroundColor = 'rgba(128, 25, 229, 1';
     } else {
       navItems.active = 'contact';
       // bgOverlay$.value.style.backgroundColor = 'rgba(229, 25, 128, 1';
@@ -89,15 +90,16 @@ export default function Portfolio() {
       <Home
         setHomeOffset={setHomeOffset}
       />
+      <Skills
+        setSkillsOffset={setSkillsOffset}
+      />
       <Projects
         setProjectsOffset={setProjectsOffset}
       />
-       <About
-        setAboutOffset={setAboutOffset}      
+      <About
+        setAboutOffset={setAboutOffset}
       />
-      <Skills
-        setSkillsOffset={setSkillsOffset}
-      />      
+      <Testimonials />
       <Contact
         setContactOffset={setContactOffset}
       />
@@ -106,4 +108,4 @@ export default function Portfolio() {
 }
 // }
 
-// export default Portfolio;
+export default Portfolio;

@@ -1,87 +1,66 @@
 .skills {
-  color: $primaryColor;
-
-  &:after {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    z-index: -1;
-    content: url(../../assets/images/portfolio/minus.svg)
-      url(../../assets/images/portfolio/plus.svg);
-  }
-
-  .logo-circle {
-    stroke: #fff;
-  }
-  .logo-lines {
-    stroke: #fff;
-  }
-
+  
   h2 {
-    .logo {
-      left: 0;
-    }
+    color: #fff;
   }
 }
 
 .skillset {
   display: flex;
   margin: 0;
-  padding: 0 0 18rem;
+  padding: 0 0;
   width: 100%;
   list-style-type: none;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
 
-  li {
-    margin: 0 0.8rem 0.8rem 0;
-    background: #fff;
+  > li {
+    margin: 0 1.6rem 0.8rem 0;
     border-radius: 4px;
-    color: #141414;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
     font-weight: bold;
-    padding: 1.6rem;
     box-sizing: border-box;
     font-size: 2.4rem;
-  }
-}
+    width: 25%;
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: stretch;
 
-p {
-  // padding-left: 38px;
-  // margin: 0 0 12px;
-  text-transform: uppercase;
-
-  @include mobile {
-    // padding-left: 29px;
-  }
-}
-
-// .skillset {
-//   display: flex;
-// }
-
-.testimonials {
-  margin: 0;
-  padding: 4.8rem 0;
-
-  li {
-    margin-bottom: 4.8rem;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  h3 {
-    color: $primaryBlue;
-    font-size: 2.4rem;
-    text-transform: uppercase;
+  .image-container {
+    width: 80px;
+    height: 80px;
+    margin: 3.2rem auto;
+    padding: 18px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: #fff;
   }
 
-  .testimonial {
-    font-style: italic;
+  img {
+    width: 100%;
+  }
+
+  .skills-array {
+    margin: 0 1.6rem;
+    padding: 2.4rem 0rem;
+    list-style: none;
     color: #fff;
-    font-size: 2rem;
-  }
+    border-top: 2px solid $primaryBlue;
+    width: calc(100% - 3.2rem);
+    box-sizing: border-box;
+    height: 100%;
 
-  span {
-    display: block;
-    color: $secondaryBlue;
+    li {
+      text-transform: uppercase;
+      margin: 0 0 1.6rem;
+    }
   }
 }
