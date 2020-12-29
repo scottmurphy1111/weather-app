@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  background: url(../../assets/bg/richmond.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.richmond {
+  background: url(../../assets/bg/richmond.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.clear {
+  background: url(../../assets/bg/clear.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.thunderstorm {
+  background: url(../../assets/bg/thunderstorm.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.drizzle {
+  background: url(../../assets/bg/drizzle.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.rain {
+  background: url(../../assets/bg/rain.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.snow {
+  background: url(../../assets/bg/snow.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.clouds {
+  background: url(../../assets/bg/clouds.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+@media screen {
+  .preloader {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+  }
+}
+@media print {
+  .preloader {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.page-wrapper {
+  min-height: 100vh;
+}
+
+.component-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2.4rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 1px 4px 16px rgba(20, 20, 20, 0.25);
+}
+
+h1 {
+  margin: 0 0 8px;
+}

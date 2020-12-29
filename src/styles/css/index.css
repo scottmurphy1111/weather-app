@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  background: url(../../assets/bg/richmond.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+.richmond {
+  background: url(../../assets/bg/richmond.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+.clear {
+  background: url(../../assets/bg/clear.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+.thunderstorm {
+  background: url(../../assets/bg/thunderstorm.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+.drizzle {
+  background: url(../../assets/bg/drizzle.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+.rain {
+  background: url(../../assets/bg/rain.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+.snow {
+  background: url(../../assets/bg/snow.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+.clouds {
+  background: url(../../assets/bg/clouds.jpg) no-repeat 50% 50%;
+  background-size: cover; }
+
+@media screen {
+  .preloader {
+    position: absolute;
+    left: -9999px;
+    top: -9999px; } }
+
+@media print {
+  .preloader {
+    visibility: hidden;
+    display: none; } }
+
+.page-wrapper {
+  min-height: 100vh; }
+
+.component-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2.4rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 1px 4px 16px rgba(20, 20, 20, 0.25); }
+
+h1 {
+  margin: 0 0 8px; }
+
+p {
+  margin: 0 0 16px; }
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-right: 8px; }
+
+button {
+  padding: 10px;
+  width: 120px;
+  font-size: 16px;
+  background: #00c4fa;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  cursor: pointer; }
+
+.name-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 60px;
+  margin-bottom: 16px; }
+  .name-wrapper h1 {
+    margin: 0; }
+
+.more-info {
+  text-align: center;
+  margin: 0 0 16px; }
+  .more-info p {
+    margin-bottom: 4px; }
+  .more-info[data-active="false"] {
+    display: none; }
+  .more-info[data-active="true"] {
+    display: block; }
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 0; }
+  .weather-icon img {
+    width: 100%; }
+
+.wind-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px; }
+  .wind-wrapper span {
+    margin-right: 8px; }
+
+.wind-direction {
+  background: url(../../assets/wind-arrow.svg) no-repeat;
+  transform-origin: center center;
+  width: 12px;
+  height: 22px; }
+
+.last-updated {
+  margin-bottom: 16px; }
+
+.show-more {
+  background: #eee;
+  border: 1px solid #ddd; }
