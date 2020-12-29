@@ -31,20 +31,24 @@ const initWeatherData: WeatherData = {
 
 const App = () => {
   const [weatherData, setWeatherData] = useState<WeatherData>(initWeatherData);
-  const [error, setError] = useState('');
+  const [error, setError] = useState({
+    text: '',
+    status: 0
+  });
   
   const getWeather = async (e: any) => {
     e.preventDefault();
     const zip = e.target.elements.zip.value;
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip}&type=like&appid=${API_KEY}&units=imperial`);
     const data = await api_call.json();
+    console.log('api call', api_call);
 
     if (api_call.status === 400) {
       setWeatherData(initWeatherData);
-      setError('Please Enter a Zip Code');
+      setError({text: 'Please Enter a Zip Code', status: 400});
     } else if (api_call.status === 404) {
       setWeatherData(initWeatherData);
-      setError('Request not found');
+      setError({text: 'Zip Code not found', status: 404});
     } else {
       setWeatherData({
         dt: data.dt,
@@ -54,7 +58,7 @@ const App = () => {
         weather: data.weather,
         wind: data.wind
       })
-      setError('');
+      setError({text: '', status: 200});
     }
   };
 
@@ -72,7 +76,7 @@ const App = () => {
         <div className="wrap">
           {weatherData.weather.length ?
             <Weather weatherData={weatherData} error={error} reset={(e: MouseEvent) => reset(e)} /> :
-            <Form getWeather={(e: MouseEvent) => getWeather(e)} />
+            <Form getWeather={(e: MouseEvent) => getWeather(e)} error={error} setError={setError} />
           }
         </div>
       </div>
