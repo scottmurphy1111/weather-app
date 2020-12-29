@@ -3,7 +3,6 @@ import React from 'react'
 const Form = (params: any) => {
 
   const handleFocus = () => {
-    console.log('test');
     params.setError({ text: '', status: 0 })
   }
 

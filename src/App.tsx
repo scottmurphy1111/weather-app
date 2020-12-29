@@ -41,7 +41,6 @@ const App = () => {
     const zip = e.target.elements.zip.value;
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip}&type=like&appid=${API_KEY}&units=imperial`);
     const data = await api_call.json();
-    console.log('api call', api_call);
 
     if (api_call.status === 400) {
       setWeatherData(initWeatherData);
