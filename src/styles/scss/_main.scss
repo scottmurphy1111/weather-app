@@ -83,3 +83,10 @@ body {
 h1 {
   margin: 0 0 8px;
 }
+
+@media only screen and (max-width: 599px) {
+
+  .component-container {
+    width: 94%;
+  }
+}
