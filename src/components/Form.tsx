@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 const Form = (params: any) => {
 
-  const handleFocus = () => {
+  const zipInput = useRef<HTMLInputElement>(null);
+
+  const handleFocus = (e: any) => {
+    e.target.value = '';
     params.setError({ text: '', status: 0 })
+  }
+
+  const handleChange = (e: any) => {
+    e.target.value=e.target.value.replace(/[^\d]/,'');
   }
 
   return (
@@ -13,7 +20,7 @@ const Form = (params: any) => {
           <h1>Weather Finder</h1>
           <p>Enter Zip Code to find out temp, condition and more</p>
           <form onSubmit={params.getWeather}>
-            <input type="text" name="zip" placeholder="Zip Code..." maxLength={5} onFocus={() => handleFocus()} />
+            <input ref={zipInput} type="text" name="zip" placeholder="Zip Code..." maxLength={5} onFocus={(e: any) => handleFocus(e)} onChange={(e:any) => handleChange(e)} />
             <button>Get Weather</button>
           </form>
           {
