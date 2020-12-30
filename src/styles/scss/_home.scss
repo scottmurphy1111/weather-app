@@ -299,3 +299,20 @@
     width: 0%;
   }
 }
+
+.see-more {
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  width: 35px;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  transform: translateY(100px);
+  transition: all .5s ease-out 0.5s;
+
+  &.show {
+    transform: translateY(0px);
+  }
+}

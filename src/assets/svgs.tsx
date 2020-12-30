@@ -6,7 +6,6 @@ export const Gear = () => {
   useEffect(() => {
     setShow(true);
     setTimeout(() => {
-      // setHide(true);
       setShow(false);
     }, 4000)
   }, [setShow])
@@ -89,42 +88,6 @@ export const Fingers = () => (
 );
 
 export const Logo = () => (
-  // <svg
-  //   version='1.1'
-  //   id='Layer_1'
-  //   xmlns='http://www.w3.org/2000/svg'
-  //   x='0px'
-  //   y='0px'
-  //   viewBox='-23.9 -16.1 64 64'
-  // >
-  //   <circle
-  //     id='XMLID_27_'
-  //     className='logo-circle'
-  //     cx='8.4'
-  //     cy='15.5'
-  //     r='28.4'
-  //   />
-  //   <g id='XMLID_35_'>
-  //     <line
-  //       id='XMLID_28_'
-  //       className='logo-lines'
-  //       x1='5.9'
-  //       y1='25.5'
-  //       x2='11.5'
-  //       y2='5.9'
-  //     />
-  //     <path
-  //       id='XMLID_33_'
-  //       className='logo-lines'
-  //       d='M-1.8,8.6c-2.2,2.2-4.7,4.7-6.9,6.9l6.9,6.2'
-  //     />
-  //     <path
-  //       id='XMLID_34_'
-  //       className='logo-lines'
-  //       d='M18.6,22.1c2.2-2.2,4.7-4.7,6.9-6.9l-6.9-6.2'
-  //     />
-  //   </g>
-  // </svg>
   <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 1920 1080'>
     <path fill='#0080ff' d='M439.9,905.4h-57.4c-65.1,0-107.6-9.6-130.1-29.3c-22.3-19.5-33.6-58.5-33.6-115.8v-82.3c0-37.3-6.5-63.3-19.4-77.2
 	c-12.8-13.8-36.8-20.8-71.2-20.8h-23.7c-2.1,0-3.8-1.7-3.8-3.8v-73.1c0-2.1,1.7-3.8,3.8-3.8h23.7c34.4,0,58.4-6.9,71.2-20.6

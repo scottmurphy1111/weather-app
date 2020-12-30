@@ -1,6 +1,6 @@
 .projects {
   color: $primaryColor;
-  background: url(../../assets/images/light-pattern.jpg);
+  background: url(../../assets/images/bg-pattern-light.png);
 
   h2 {
     color: $primaryColor;
@@ -48,7 +48,7 @@
 
       .base-item {
         background: $primaryColor url(../../assets/images/portfolio/golf-ball.png) no-repeat 50% 0%;
-        background-size: 50%;
+        background-size: contain;
         width: 100%;
         height: 260px;
         display: flex;

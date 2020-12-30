@@ -1131,35 +1131,40 @@ a {
   100% {
     width: 0%; } }
 
+.see-more {
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  width: 35px;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  transform: translateY(100px);
+  transition: all .5s ease-out 0.5s; }
+  .see-more.show {
+    transform: translateY(0px); }
+
 .about h2 .logo {
   left: 0; }
 
-.about ul {
+.about .about-items {
+  display: flex; }
+
+.about .about-snippets {
   margin: 0px auto 0;
   padding: 0;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 100%; }
-  @media only screen and (min-width: 0px) and (max-width: 767px) {
-    .about ul {
-      margin: 0px auto 0; } }
-  .about ul:last-child li:first-child {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 10px; }
-    @media only screen and (min-width: 0px) and (max-width: 767px) {
-      .about ul:last-child li:first-child {
-        border-radius: 0; } }
-  .about ul:last-child li:last-child {
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 10px; }
-    @media only screen and (min-width: 0px) and (max-width: 767px) {
-      .about ul:last-child li:last-child {
-        border-radius: 0; } }
-  .about ul li {
+  .about .about-snippets li {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     opacity: 1;
     transition: 0.1s all ease-out 0s;
     width: 100%;
@@ -1170,42 +1175,33 @@ a {
     position: relative;
     overflow: hidden;
     -webkit-tap-highlight-color: transparent;
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -moz-osx-font-smoothing: grayscale;
     text-transform: uppercase;
     text-align: left;
     cursor: pointer;
     font-size: 2.4rem;
     font-weight: bold; }
-    .about ul li img {
+    .about .about-snippets li:last-child {
+      margin-bottom: 0; }
+    .about .about-snippets li img {
       width: 5.6rem;
       height: 5.6rem;
-      margin-right: 1.6rem; }
-    .about ul li .about-link {
+      margin-right: 0; }
+    .about .about-snippets li .about-link {
       pointer-events: none;
       color: #0080ff;
       display: flex;
       align-items: center; }
-      .about ul li .about-link h3 {
+      .about .about-snippets li .about-link h3 {
         margin: 0; }
-    .about ul li .about-description {
-      padding-left: 7.2rem;
+    .about .about-snippets li .about-description {
+      padding-left: 5.6rem;
       transition: all 0.1s ease-out 0s;
       opacity: 0;
       height: 0; }
-      .about ul li .about-description p {
+      .about .about-snippets li .about-description p {
         margin: 0;
         height: 28px; }
-      .about ul li .about-description.show {
+      .about .about-snippets li .about-description.show {
         opacity: 1; }
 
 .skills h2 {
@@ -1220,9 +1216,8 @@ a {
   flex-wrap: nowrap;
   justify-content: center; }
   .skillset > li {
-    margin: 0 1.6rem 0.8rem 0;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 1.6rem 0rem 0;
+    padding-right: 1.6rem;
     color: #fff;
     font-weight: bold;
     box-sizing: border-box;
@@ -1234,11 +1229,13 @@ a {
     align-items: flex-start;
     justify-content: stretch; }
     .skillset > li:last-child {
-      margin-right: 0; }
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none; }
   .skillset .image-container {
     width: 80px;
     height: 80px;
-    margin: 3.2rem auto;
+    margin: 0 auto 3.2rem;
     padding: 18px;
     box-sizing: border-box;
     border-radius: 50%;
@@ -1247,20 +1244,23 @@ a {
     width: 100%; }
   .skillset .skills-array {
     margin: 0 1.6rem;
-    padding: 2.4rem 0rem;
+    padding: 3.2rem 0rem 0;
     list-style: none;
     color: #fff;
     border-top: 2px solid #0080ff;
     width: calc(100% - 3.2rem);
     box-sizing: border-box;
-    height: 100%; }
+    height: 100%;
+    text-align: center; }
     .skillset .skills-array li {
       text-transform: uppercase;
       margin: 0 0 1.6rem; }
+      .skillset .skills-array li:last-child {
+        margin-bottom: 0; }
 
 .projects {
   color: #141414;
-  background: url(../../assets/images/light-pattern.jpg); }
+  background: url(../../assets/images/bg-pattern-light.png); }
   .projects h2 {
     color: #141414; }
   .projects .projects {
@@ -1300,7 +1300,7 @@ a {
         color: #0080ff; }
       .projects .projects > li .base-item {
         background: #141414 url(../../assets/images/portfolio/golf-ball.png) no-repeat 50% 0%;
-        background-size: 50%;
+        background-size: contain;
         width: 100%;
         height: 260px;
         display: flex;
@@ -1555,7 +1555,7 @@ a {
       text-align: left; }
 
 .testimonials-section {
-  background: url(../../assets/images/light-pattern.jpg); }
+  background: url(../../assets/images/bg-pattern-light.png); }
   .testimonials-section h2 {
     color: #141414; }
 

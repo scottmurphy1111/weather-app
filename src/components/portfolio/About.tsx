@@ -1,6 +1,5 @@
 import { AppContext } from '../../App';
 import React, { useContext, useEffect } from 'react';
-// import About from './About';
 import { getPanelOffset } from './getPanelOffset';
 
 interface AboutItem {
@@ -17,20 +16,15 @@ const hideShownContent = (content: any) => {
 }
 
 const addText = ((content: any, text: string) => {
-  console.log('add text', text);
-  // content.textContent = '';
   content.textContent += text[0];
   if (text.length > 1) {
     setTimeout(() => {
-      // console.log('text', text.length);
       addText(content, text.slice(1))
     }, 12)
   }
-
 });
 
 const removeText = ((content: any) => {
-  console.log('remove called',);
   content.innerHTML = '';
 })
 
@@ -66,7 +60,6 @@ const About = (params: any) => {
       removeText(currentCopy)
     } else {
       hideShownContent(shownContent);
-      // removeText(showDiv);
       description.classList.add('show');
 
       let showDiv = document.querySelector('.about-description.show p');
@@ -85,7 +78,6 @@ const About = (params: any) => {
   useEffect(() => {
     params.setAboutOffset(getPanelOffset('.about'));
     appendExperience();
-    // setTextMap(getContent());
   })
 
 
@@ -98,9 +90,9 @@ const About = (params: any) => {
         <div className='row'>
           <div className='col-xs-12'>
             <h2 className='category-title'>{title}</h2>
-            <ul className='about-snippets'>
-              {aboutSnippets.map((item: AboutItem, id: number) => {
-                return (
+            <div className="about-items">
+              <ul className='about-snippets'>
+                {aboutSnippets.map((item: AboutItem, id: number) => (
                   <li key={id} onClick={(e) => revealContent(e, id)}>
                     <div className="about-link" >
                       <img src={`${process.env.PUBLIC_URL}${item.icon}`} alt={`${item.heading}`} />
@@ -109,10 +101,9 @@ const About = (params: any) => {
                     <div className="about-description">
                       <p>{item.description}</p>
                     </div>
-                  </li>)
-              }
-              )}
-            </ul>
+                  </li>))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

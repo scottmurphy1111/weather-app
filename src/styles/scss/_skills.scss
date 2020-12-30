@@ -15,9 +15,8 @@
   justify-content: center;
 
   > li {
-    margin: 0 1.6rem 0.8rem 0;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 1.6rem 0rem 0;
+    padding-right: 1.6rem;
     color: #fff;
     font-weight: bold;
     box-sizing: border-box;
@@ -31,13 +30,15 @@
 
     &:last-child {
       margin-right: 0;
+      padding-right: 0;
+      border-right: none;
     }
   }
 
   .image-container {
     width: 80px;
     height: 80px;
-    margin: 3.2rem auto;
+    margin: 0 auto 3.2rem;
     padding: 18px;
     box-sizing: border-box;
     border-radius: 50%;
@@ -50,17 +51,22 @@
 
   .skills-array {
     margin: 0 1.6rem;
-    padding: 2.4rem 0rem;
+    padding: 3.2rem 0rem 0;
     list-style: none;
     color: #fff;
     border-top: 2px solid $primaryBlue;
     width: calc(100% - 3.2rem);
     box-sizing: border-box;
     height: 100%;
+    text-align: center;
 
     li {
       text-transform: uppercase;
       margin: 0 0 1.6rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

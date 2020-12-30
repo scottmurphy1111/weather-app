@@ -16,11 +16,9 @@ const Portfolio = () => {
   const [contactOffset, setContactOffset] = useState(0);
 
   const navElements = Array.from(document.querySelectorAll('[data-nav]'));
-  // console.log('nav els', navElements);
   const keys = navElements.map(item => {
     return item.textContent ? item.textContent.toLowerCase() : 'home';
   });
-  console.log('keys', keys);
   
   const navItems = navElements.reduce((acc: any, item: any, index) => {
     acc[keys[index]] = item;
@@ -38,32 +36,19 @@ const Portfolio = () => {
   })
 
   const getCurrentOffset = (pageOffset: any) => {
-    // console.log('offset', pageOffset, 
-    // 'top', homeOffset,
-    // 'sec', aboutOffset,
-    // 'thi', skillsOffset,
-    // 'fou', projectsOffset,
-    // 'fif', contactOffset);
-
     if (homeOffset < pageOffset && skillsOffset > pageOffset) {
       navItems.active = 'home';
-      // bgOverlay$.value.style.backgroundColor = 'rgba(25, 128, 229, 1';
     } else if (skillsOffset < pageOffset && projectsOffset > pageOffset) {
       navItems.active = 'skills';
-      // bgOverlay$.value.style.backgroundColor = 'rgba(25, 229, 128, 1';
     } else if (projectsOffset < pageOffset && aboutOffset > pageOffset) {
       navItems.active = 'projects';
-      // bgOverlay$.value.style.backgroundColor = 'rgba(229, 128, 25, 1';
     } else if (aboutOffset < pageOffset && contactOffset > pageOffset) {
       navItems.active = 'about';
-      // bgOverlay$.value.style.backgroundColor = 'rgba(128, 25, 229, 1';
     } else {
       navItems.active = 'contact';
-      // bgOverlay$.value.style.backgroundColor = 'rgba(229, 25, 128, 1';
     }
 
     setActive(navItems.active);
-
   };
 
   const bgOverlay$ = new BehaviorSubject<any>(null);
@@ -71,17 +56,13 @@ const Portfolio = () => {
   const monitorScrolling$ = () => fromEvent(window, 'scroll').pipe(
     map(() => window.pageYOffset),
     tap(value => {
-      console.log('value', value);
       bgOverlay$.next(document.querySelector('.bg-overlay'));
-      getCurrentOffset(value);
-      //value ? bgOverlay$.value.style.backgroundColor = 'rgba(5,159,134,0.05)' : bgOverlay$.value.style.backgroundColor = 'rgba(34,163,244,0.05)';
+      getCurrentOffset(value);     
     })
   );
 
   useEffect(() => {
-   const subscription = monitorScrolling$().subscribe(subVal => console.log('subVal', subVal));
-   // const bgOverlay = document.querySelector('.bg-overlay');
-   console.log('spo', aboutOffset);
+   const subscription = monitorScrolling$().subscribe();
    return () => subscription.unsubscribe();
   });
 
@@ -106,6 +87,5 @@ const Portfolio = () => {
     </>
   );
 }
-// }
 
 export default Portfolio;

@@ -12,7 +12,6 @@ const Socials = (({ data }: any) => {
       `https://api.stackexchange.com/2.2/users/${USER_ID}/?site=stackoverflow`
     );
     const soData = await api_call.json();
-    console.log('so data', soData);
     if (!soData.error_id) {
       setStackOverflowData(soData.items[0]);
     } else {

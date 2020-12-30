@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-// import Skills from './Skills';
 import { AppContext } from '../../App';
 import { getPanelOffset } from './getPanelOffset';
 import { Gear } from '../../assets/svgs';
@@ -13,6 +12,13 @@ const Home = (params: any) => {
   const disableScroll = () => {
     const body = document.body;
     return scrollable ? body.style.overflow = 'visible' : body.style.overflow = 'hidden';
+  };
+
+  const clickSeeMore = () => {
+    const section: HTMLElement | null = document.querySelector(`[data-section=skills`);
+    const scrollPosition = section?.offsetTop;
+
+    window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -49,6 +55,9 @@ const Home = (params: any) => {
                   </p>
                 </div>
               </div>
+            </div>
+            <div className={`see-more ${show ? "show" : ""}`} onClick={clickSeeMore}>
+              <img src={`${process.env.PUBLIC_URL}/assets/images/portfolio/see-more.svg`} />
             </div>
           </div>
         </div>

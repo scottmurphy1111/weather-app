@@ -13,19 +13,22 @@
           "projectName": "PGA Tour Information",
           "link": "https://scottmurphy1111.github.io/pga/players",
           "tech": "Angular, RxJS",
-          "capabilities": "API, Search, Page Limit, Pagination, Jest Unit Testing, Custom Design"
+          "capabilities": "API, Search, Page Limit, Pagination, Jest Unit Testing, Custom Design",
+          "image": "/assets/images/portfolio/golf-ball.png"
         },
         {
-          "projectName": "PGA Tour Information",
-          "link": "https://scottmurphy1111.github.io/pga/players",
-          "tech": "Angular, RxJS",
-          "capabilities": "API, Search, Page Limit, Pagination, Custom Design"
+          "projectName": "Weather App",
+          "link": "https://scottmurphy1111.github.io/weather-app",
+          "tech": "ReactJS",
+          "capabilities": "Hooks, API, Image Preloading, RxJS, Form Validation",
+          "image": "/assets/images/portfolio/thunderstorm.jpg"
         },
         {
-          "projectName": "PGA Tour Information",
-          "link": "https://scottmurphy1111.github.io/pga/players",
-          "tech": "Angular, RxJS",
-          "capabilities": "API, Search, Page Limit, Pagination, Custom Design"
+          "projectName": "Golf Course Starter",
+          "link": "https://scottmurphy1111.github.io/golf-course-starter",
+          "tech": "ReactJS",
+          "capabilities": "Routing, Custom Design",
+          "image": "/assets/images/portfolio/golf-course-bg.jpg"
         }
       ],
       "projectsOLD": [

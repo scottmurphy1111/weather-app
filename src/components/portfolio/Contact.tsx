@@ -27,12 +27,6 @@ const Contact = (params: any) => {
   }, [])
 
   return (
-
-
-    // componentDidMount() {
-    //   this.loadContact();
-    // }
-
     <section
       className='contact sliding-panel container-fluid'
       data-section='contact'

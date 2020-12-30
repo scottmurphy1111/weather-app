@@ -30,15 +30,10 @@ export default function VertNav() {
       value: 'contact',
       active: false
     }
-  ]
-
+  ];
 
   const handleClick = ((e: any) => {
-    console.log('clicked',);
-
     const selectedNav = e.target.dataset.nav;
-    console.log('selectedNav', selectedNav);
-
     const section: HTMLElement | null = document.querySelector(`[data-section=${selectedNav}`);
     const scrollPosition = section?.offsetTop;
 
@@ -65,10 +60,6 @@ export default function VertNav() {
                     }
                   })
                 }
-                {/* <li data-nav='projects' onClick={handleClick}>Projects</li>
-              <li data-nav='skills' onClick={handleClick}>Skills</li>
-              <li data-nav='about' onClick={handleClick}>About</li>
-            <li data-nav='contact' onClick={handleClick}>Contact</li> */}
               </ul>
             </div>
           </div>
