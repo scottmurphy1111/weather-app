@@ -4,7 +4,7 @@ import Form from './components/Form';
 import Weather from './components/Weather';
 import { WeatherData } from 'models/weather-data';
 
-const API_KEY = "fb308218343f86245f793d2f9145c2a9";
+const KEY = process.env.REACT_APP_API_KEY;
 
 const initWeatherData: WeatherData = {
   dt: 0,
@@ -39,7 +39,7 @@ const App = () => {
   const getWeather = async (e: any) => {
     e.preventDefault();
     const zip = e.target.elements.zip.value;
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip}&type=like&appid=${API_KEY}&units=imperial`);
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip}&type=like&appid=${KEY}&units=imperial`);
     const data = await api_call.json();
 
     if (api_call.status === 400) {
