@@ -82,6 +82,9 @@ form {
   flex-direction: row;
   justify-content: center;
   align-items: center; }
+  @media only screen and (max-width: 599px) {
+    form {
+      flex-direction: column; } }
 
 input {
   padding: 10px;
@@ -89,6 +92,10 @@ input {
   border: 1px solid #ccc;
   font-size: 16px;
   margin-right: 8px; }
+  @media only screen and (max-width: 599px) {
+    input {
+      margin-right: 0;
+      margin-bottom: 16px; } }
 
 button {
   padding: 10px;
@@ -113,7 +120,8 @@ button {
   padding: 0 60px;
   margin-bottom: 16px; }
   .name-wrapper h1 {
-    margin: 0; }
+    margin: 0;
+    text-align: center; }
 
 .more-info {
   text-align: center;
