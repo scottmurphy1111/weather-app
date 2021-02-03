@@ -1,6 +1,6 @@
 {
   "name": "weather-app",
-  "homepage": "https://scottmurphy1111.github.io/weather-app/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "3.4.4",
+    "serve": "^11.3.2",
     "typescript": "^4.1.2"
   },
   "scripts": {
@@ -25,7 +26,8 @@
     "eject": "react-scripts eject",
     "sass": "node-sass -w src/styles/scss -o src/styles/css",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "serve": "npm run build && serve -s build"
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.12.12",
